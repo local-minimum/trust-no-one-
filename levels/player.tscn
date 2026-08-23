@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://60mxtlvkhokn"]
+
+[ext_resource type="Script" uid="uid://1j3pg6vb0yfg" path="res://levels/player.gd" id="1_11i6m"]
+[ext_resource type="Script" uid="uid://b8128v5amfueg" path="res://common/adjustable_camera3d.gd" id="2_wnbtv"]
+[ext_resource type="Script" uid="uid://ctdd5eyn2w1jh" path="res://common/look_ray.gd" id="3_va2y3"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_kjfgv"]
+radius = 0.25
+height = 1.8
+
+[node name="Player" type="CharacterBody3D" unique_id=1942068578 node_paths=PackedStringArray("cam", "collider", "duck_ray")]
+collision_layer = 2
+input_ray_pickable = false
+script = ExtResource("1_11i6m")
+cam = NodePath("Camera3D")
+footfall_distance = 1.5
+collider = NodePath("Player Collider")
+duck_ray = NodePath("Duck Ray")
+
+[node name="Player Collider" type="CollisionShape3D" parent="." unique_id=1079919142]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, 0)
+shape = SubResource("CapsuleShape3D_kjfgv")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1366307134]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.6, 0)
+script = ExtResource("2_wnbtv")
+
+[node name="Look Ray" type="RayCast3D" parent="Camera3D" unique_id=1167054389]
+target_position = Vector3(0, 0, -8)
+collision_mask = 17
+script = ExtResource("3_va2y3")
+
+[node name="Duck Ray" type="RayCast3D" parent="." unique_id=1282806020]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.75, 0)
+target_position = Vector3(0, 1, 0)
