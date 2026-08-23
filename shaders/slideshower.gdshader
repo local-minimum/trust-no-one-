@@ -1,5 +1,6 @@
 shader_type spatial;
 render_mode unshaded;
+render_mode depth_prepass_alpha;
 
 uniform sampler2D tex;
 uniform ivec2 sprite_size = ivec2(64, 64);
