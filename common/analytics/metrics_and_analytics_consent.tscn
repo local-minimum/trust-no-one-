@@ -1,0 +1,149 @@
+[gd_scene format=3 uid="uid://l8ws60oqob3w"]
+
+[ext_resource type="Script" uid="uid://dw3e2v21gcn7d" path="res://common/analytics/metrics_and_analytics_consent.gd" id="1_k41t3"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vsahx"]
+content_margin_left = 16.0
+content_margin_top = 2.0
+content_margin_right = 16.0
+content_margin_bottom = 2.0
+bg_color = Color(0.35406289, 0.35406289, 0.3540628, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.5158667, 0.5158667, 0.51586646, 1)
+corner_radius_top_left = 1
+corner_radius_top_right = 1
+corner_radius_bottom_right = 1
+corner_radius_bottom_left = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bpr3m"]
+content_margin_left = 16.0
+content_margin_top = 2.0
+content_margin_right = 16.0
+content_margin_bottom = 2.0
+bg_color = Color(0.0885599, 0.08855992, 0.08855986, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+corner_radius_top_left = 1
+corner_radius_top_right = 1
+corner_radius_bottom_right = 1
+corner_radius_bottom_left = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s60cl"]
+content_margin_left = 16.0
+content_margin_top = 2.0
+content_margin_right = 16.0
+content_margin_bottom = 2.0
+bg_color = Color(0.0885599, 0.08855992, 0.08855986, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0.6431373, 0.827451, 1)
+corner_radius_top_left = 1
+corner_radius_top_right = 1
+corner_radius_bottom_right = 1
+corner_radius_bottom_left = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_k41t3"]
+content_margin_left = 16.0
+content_margin_top = 2.0
+content_margin_right = 16.0
+content_margin_bottom = 2.0
+bg_color = Color(0.0885599, 0.08855992, 0.08855986, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+corner_radius_top_left = 1
+corner_radius_top_right = 1
+corner_radius_bottom_right = 1
+corner_radius_bottom_left = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rjo6w"]
+content_margin_left = 16.0
+content_margin_top = 2.0
+content_margin_right = 16.0
+content_margin_bottom = 2.0
+bg_color = Color(0.0885599, 0.08855992, 0.08855986, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(3.465414e-06, 0.4768377, 0.61724705, 1)
+corner_radius_top_left = 1
+corner_radius_top_right = 1
+corner_radius_bottom_right = 1
+corner_radius_bottom_left = 1
+
+[sub_resource type="Theme" id="Theme_k41t3"]
+Button/styles/disabled = SubResource("StyleBoxFlat_vsahx")
+Button/styles/focus = SubResource("StyleBoxFlat_bpr3m")
+Button/styles/hover = SubResource("StyleBoxFlat_s60cl")
+Button/styles/normal = SubResource("StyleBoxFlat_k41t3")
+Button/styles/pressed = SubResource("StyleBoxFlat_rjo6w")
+HBoxContainer/constants/separation = 20
+MarginContainer/constants/margin_bottom = 20
+MarginContainer/constants/margin_left = 20
+MarginContainer/constants/margin_right = 20
+MarginContainer/constants/margin_top = 20
+VBoxContainer/constants/separation = 10
+
+[sub_resource type="LabelSettings" id="LabelSettings_kjfgv"]
+font_size = 32
+
+[node name="Metrics and Analytics Consent" type="MarginContainer" unique_id=1638295845 node_paths=PackedStringArray("yes_btn", "no_btn")]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = SubResource("Theme_k41t3")
+script = ExtResource("1_k41t3")
+yes_btn = NodePath("VBoxContainer/HBoxContainer/Yes")
+no_btn = NodePath("VBoxContainer/HBoxContainer/No")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=481675105]
+layout_mode = 2
+
+[node name="Title" type="Label" parent="VBoxContainer" unique_id=450794790]
+layout_mode = 2
+text = "Metrics & Analytics Consent"
+label_settings = SubResource("LabelSettings_kjfgv")
+horizontal_alignment = 1
+
+[node name="Body" type="Label" parent="VBoxContainer" unique_id=784096730]
+layout_mode = 2
+size_flags_vertical = 2
+text = "This game would like to gather basic and fully anonymous metrics about the player experience. This data does not identify seperate players, but does include timestamps. It is our understanding that this falls outside the scope of legislation such as GDPR. You can at any time change your consent in the settings, but as the data collected is not identifiable to a single player, collected data cannot be removed.
+
+Examples of data collected:
+- Duration spent on each level
+- How well player performed on the various challenges"
+autowrap_mode = 3
+
+[node name="Qustion" type="Label" parent="VBoxContainer" unique_id=1688538621]
+layout_mode = 2
+text = "Do you consent to the collection of non-identifiable, anonymous metrics? "
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer" unique_id=1919915766]
+layout_mode = 2
+alignment = 1
+
+[node name="Yes" type="Button" parent="VBoxContainer/HBoxContainer" unique_id=932764261]
+layout_mode = 2
+text = "Yes"
+
+[node name="No" type="Button" parent="VBoxContainer/HBoxContainer" unique_id=1253379218]
+layout_mode = 2
+text = "No"
+
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/Yes" to="." method="_on_yes_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/No" to="." method="_on_no_pressed"]
