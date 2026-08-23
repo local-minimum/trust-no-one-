@@ -1,0 +1,17 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://cxsvekra1pjsx"]
+
+[ext_resource type="Shader" uid="uid://btoqao0ls323r" path="res://shaders/slideshower.gdshader" id="1_fqm0t"]
+[ext_resource type="Texture2D" uid="uid://dw0mqpko0rjtn" path="res://models/room-hall.png" id="2_d7obu"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_fqm0t")
+shader_parameter/tex = ExtResource("2_d7obu")
+shader_parameter/sprite_size = Vector2i(1024, 1024)
+shader_parameter/sprite_spacing = Vector2i(0, 0)
+shader_parameter/sprites = Vector2i(1, 2)
+shader_parameter/directions = 1
+shader_parameter/sequence_start = PackedInt32Array(0, 0, 0, 0, 0, 0, 0, 0)
+shader_parameter/sequence_length = PackedInt32Array(2, 0, 0, 0, 0, 0, 0, 0)
+shader_parameter/billboard = false
+shader_parameter/animation_speed = 1.0

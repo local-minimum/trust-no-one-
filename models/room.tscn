@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://djiye8odt4qj4" path="res://models/walldoor.blend" id="3_wficf"]
 [ext_resource type="Material" uid="uid://nafyvleyabjm" path="res://models/room_door.tres" id="4_bnc1o"]
 [ext_resource type="Material" uid="uid://cvy6sxbxiwne7" path="res://models/room_wall.tres" id="4_flvyy"]
+[ext_resource type="Material" uid="uid://cxsvekra1pjsx" path="res://models/room_hall.tres" id="5_ulu4o"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_8ipqv"]
 render_priority = 0
@@ -23,6 +24,12 @@ shader_parameter/animation_speed = 0.30000000447036
 material = SubResource("ShaderMaterial_8ipqv")
 size = Vector2(5, 5)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_kjfgv"]
+size = Vector3(15, 0.5, 15)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_ulu4o"]
+data = PackedVector3Array(0, 2, -0.525, 0, 2.5, 0.52489996, 0, 2.5, -0.525, 0, 2.5, -2.5, 0, 2, -0.525, 0, 2.5, -0.525, 0, 2, -0.525, 0, 2.5, -2.5, 0, 0, -2.5, 0, 2, -0.525, 0, 0, -2.5, 0, 0, -0.525, 0, 2, -0.525, 0, 2, 0.52489996, 0, 2.5, 0.52489996, 0, 0, 2.5, 0, 2.5, 0.52489996, 0, 2, 0.52489996, 0, 2.5, 0.52489996, 0, 0, 2.5, 0, 2.5, 2.5, 0, 0, 2.5, 0, 2, 0.52489996, 0, 0, 0.52489996)
+
 [node name="Room" type="Node3D" unique_id=976863180]
 
 [node name="Floor" type="MeshInstance3D" parent="." unique_id=1390837627]
@@ -32,38 +39,68 @@ mesh = SubResource("QuadMesh_kjfgv")
 [node name="Wall West" parent="." unique_id=1483052904 instance=ExtResource("3_wficf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0, 0)
 
-[node name="Door" parent="Wall West" index="0" unique_id=410092105]
+[node name="Door" parent="Wall West" index="0" unique_id=2025986096]
 surface_material_override/0 = ExtResource("4_bnc1o")
 
-[node name="Room Side" parent="Wall West" index="1" unique_id=1717649518]
+[node name="Hall Floor" parent="Wall West" index="1" unique_id=818251316]
+surface_material_override/0 = ExtResource("5_ulu4o")
+
+[node name="Room Side" parent="Wall West" index="2" unique_id=387284934]
 surface_material_override/0 = ExtResource("4_flvyy")
 
 [node name="Wall North" parent="." unique_id=1524364584 instance=ExtResource("3_wficf")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, -2.5)
 
-[node name="Door" parent="Wall North" index="0" unique_id=410092105]
+[node name="Door" parent="Wall North" index="0" unique_id=2025986096]
 surface_material_override/0 = ExtResource("4_bnc1o")
 
-[node name="Room Side" parent="Wall North" index="1" unique_id=1717649518]
+[node name="Hall Floor" parent="Wall North" index="1" unique_id=818251316]
+surface_material_override/0 = ExtResource("5_ulu4o")
+
+[node name="Room Side" parent="Wall North" index="2" unique_id=387284934]
 surface_material_override/0 = ExtResource("4_flvyy")
 
 [node name="Wall East" parent="." unique_id=1960271088 instance=ExtResource("3_wficf")]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 2.5, 0, 9.685755e-08)
 
-[node name="Door" parent="Wall East" index="0" unique_id=410092105]
+[node name="Door" parent="Wall East" index="0" unique_id=2025986096]
 surface_material_override/0 = ExtResource("4_bnc1o")
 
-[node name="Room Side" parent="Wall East" index="1" unique_id=1717649518]
+[node name="Hall Floor" parent="Wall East" index="1" unique_id=818251316]
+surface_material_override/0 = ExtResource("5_ulu4o")
+
+[node name="Room Side" parent="Wall East" index="2" unique_id=387284934]
 surface_material_override/0 = ExtResource("4_flvyy")
 
 [node name="Wall South" parent="." unique_id=412282018 instance=ExtResource("3_wficf")]
 transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, 0, 0, 2.5)
 
-[node name="Door" parent="Wall South" index="0" unique_id=410092105]
+[node name="Door" parent="Wall South" index="0" unique_id=2025986096]
 surface_material_override/0 = ExtResource("4_bnc1o")
 
-[node name="Room Side" parent="Wall South" index="1" unique_id=1717649518]
+[node name="Hall Floor" parent="Wall South" index="1" unique_id=818251316]
+surface_material_override/0 = ExtResource("5_ulu4o")
+
+[node name="Room Side" parent="Wall South" index="2" unique_id=387284934]
 surface_material_override/0 = ExtResource("4_flvyy")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=820660076]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=1560537040]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.25, 0)
+shape = SubResource("BoxShape3D_kjfgv")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="StaticBody3D" unique_id=549190975]
+transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, 0, 0, 2.5)
+shape = SubResource("ConcavePolygonShape3D_ulu4o")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="StaticBody3D" unique_id=1100544370]
+transform = Transform3D(-4.371139e-08, 0, 0.99999994, 0, 0.99999994, 0, -1, 0, -4.3711385e-08, -2.5000002, 0, 0)
+shape = SubResource("ConcavePolygonShape3D_ulu4o")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="StaticBody3D" unique_id=877145243]
+transform = Transform3D(-4.371139e-08, 0, -0.99999994, 0, 0.99999994, 0, 1, 0, -4.3711385e-08, 2.5, 0, 0)
+shape = SubResource("ConcavePolygonShape3D_ulu4o")
 
 [editable path="Wall West"]
 [editable path="Wall North"]
