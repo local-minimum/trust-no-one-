@@ -14,6 +14,10 @@ config/name="Trust No One*"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[audio]
+
+buses/default_bus_layout="uid://bxfklj4g2kx1o"
+
 [autoload]
 
 SignalBus="*uid://dtufmdvf5wois"
