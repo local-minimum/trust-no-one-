@@ -14,4 +14,4 @@ shader_parameter/directions = 1
 shader_parameter/sequence_start = PackedInt32Array(0, 0, 0, 0, 0, 0, 0, 0)
 shader_parameter/sequence_length = PackedInt32Array(2, 0, 0, 0, 0, 0, 0, 0)
 shader_parameter/billboard = false
-shader_parameter/animation_speed = 1.0
+shader_parameter/animation_speed = 0.40000000596048
