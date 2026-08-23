@@ -24,6 +24,15 @@ shader_parameter/animation_speed = 0.30000000447036
 material = SubResource("ShaderMaterial_8ipqv")
 size = Vector2(5, 5)
 
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_qh6cp"]
+points = PackedVector3Array(0.01, 1, 0, -0.01, 1, 0, 0.01, -1, 0, 0.01, 1, -1.05, -0.01, 1, -1.05, -0.01, -1, 0, 0.01, -1, -1.05, -0.01, -1, -1.05)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_t3m14"]
+points = PackedVector3Array(0.01, 1, 0, -0.01, 1, 0, 0.01, -1, 0, 0.01, 1, -1.05, -0.01, 1, -1.05, -0.01, -1, 0, 0.01, -1, -1.05, -0.01, -1, -1.05)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_fdqvq"]
+points = PackedVector3Array(0.01, 1, 0, -0.01, 1, 0, 0.01, -1, 0, 0.01, 1, -1.05, -0.01, 1, -1.05, -0.01, -1, 0, 0.01, -1, -1.05, -0.01, -1, -1.05)
+
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_ulu4o"]
 points = PackedVector3Array(0.01, 1, 0, -0.01, 1, 0, 0.01, -1, 0, 0.01, 1, -1.05, -0.01, 1, -1.05, -0.01, -1, 0, 0.01, -1, -1.05, -0.01, -1, -1.05)
 
@@ -57,10 +66,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0, 0)
 [node name="Door" parent="Wall West" index="0" unique_id=1163846168]
 surface_material_override/0 = ExtResource("4_bnc1o")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Wall West/Door" index="0" unique_id=405296747]
+[node name="StaticBody3D" type="StaticBody3D" parent="Wall West/Door" index="0" unique_id=187454499]
 
-[node name="CollisionShape3D" parent="Wall West/Door/StaticBody3D" index="0"]
-shape = SubResource("ConvexPolygonShape3D_ulu4o")
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Wall West/Door/StaticBody3D" unique_id=216262503]
+shape = SubResource("ConvexPolygonShape3D_qh6cp")
 
 [node name="Hall Floor" parent="Wall West" index="1" unique_id=146706546]
 surface_material_override/0 = ExtResource("5_ulu4o")
@@ -74,10 +83,10 @@ transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0
 [node name="Door" parent="Wall North" index="0" unique_id=1163846168]
 surface_material_override/0 = ExtResource("4_bnc1o")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Wall North/Door" index="0" unique_id=1176370739]
+[node name="StaticBody3D" type="StaticBody3D" parent="Wall North/Door" index="0" unique_id=216266877]
 
-[node name="CollisionShape3D" parent="Wall North/Door/StaticBody3D" index="0"]
-shape = SubResource("ConvexPolygonShape3D_ulu4o")
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Wall North/Door/StaticBody3D" unique_id=498995209]
+shape = SubResource("ConvexPolygonShape3D_t3m14")
 
 [node name="Hall Floor" parent="Wall North" index="1" unique_id=146706546]
 surface_material_override/0 = ExtResource("5_ulu4o")
@@ -91,10 +100,10 @@ transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 2.5,
 [node name="Door" parent="Wall East" index="0" unique_id=1163846168]
 surface_material_override/0 = ExtResource("4_bnc1o")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Wall East/Door" index="0" unique_id=727661956]
+[node name="StaticBody3D" type="StaticBody3D" parent="Wall East/Door" index="0" unique_id=247418898]
 
-[node name="CollisionShape3D" parent="Wall East/Door/StaticBody3D" index="0"]
-shape = SubResource("ConvexPolygonShape3D_ulu4o")
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Wall East/Door/StaticBody3D" unique_id=775832398]
+shape = SubResource("ConvexPolygonShape3D_fdqvq")
 
 [node name="Hall Floor" parent="Wall East" index="1" unique_id=146706546]
 surface_material_override/0 = ExtResource("5_ulu4o")
