@@ -1,0 +1,17 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://cvy6sxbxiwne7"]
+
+[ext_resource type="Shader" uid="uid://btoqao0ls323r" path="res://shaders/slideshower.gdshader" id="1_5rcvg"]
+[ext_resource type="Texture2D" uid="uid://dm41dfjjcahrr" path="res://models/room-wall.png" id="2_s8d5t"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_5rcvg")
+shader_parameter/tex = ExtResource("2_s8d5t")
+shader_parameter/sprite_size = Vector2i(1024, 1024)
+shader_parameter/sprite_spacing = Vector2i(-512, 0)
+shader_parameter/sprites = Vector2i(2, 1)
+shader_parameter/directions = 1
+shader_parameter/sequence_start = PackedInt32Array(0, 0, 0, 0, 0, 0, 0, 0)
+shader_parameter/sequence_length = PackedInt32Array(2, 0, 0, 0, 0, 0, 0, 0)
+shader_parameter/billboard = false
+shader_parameter/animation_speed = 0.40000000596048

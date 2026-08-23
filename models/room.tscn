@@ -1,0 +1,71 @@
+[gd_scene format=3 uid="uid://0aluqrktgias"]
+
+[ext_resource type="Shader" uid="uid://btoqao0ls323r" path="res://shaders/slideshower.gdshader" id="1_ycakp"]
+[ext_resource type="Texture2D" uid="uid://b4plko2ipa3s" path="res://models/room-floor.png" id="2_qp0ck"]
+[ext_resource type="PackedScene" uid="uid://djiye8odt4qj4" path="res://models/walldoor.blend" id="3_wficf"]
+[ext_resource type="Material" uid="uid://nafyvleyabjm" path="res://models/room_door.tres" id="4_bnc1o"]
+[ext_resource type="Material" uid="uid://cvy6sxbxiwne7" path="res://models/room_wall.tres" id="4_flvyy"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8ipqv"]
+render_priority = 0
+shader = ExtResource("1_ycakp")
+shader_parameter/tex = ExtResource("2_qp0ck")
+shader_parameter/sprite_size = Vector2i(512, 512)
+shader_parameter/sprite_spacing = Vector2i(0, 0)
+shader_parameter/sprites = Vector2i(2, 1)
+shader_parameter/directions = 1
+shader_parameter/sequence_start = PackedInt32Array(0, 0, 0, 0, 0, 0, 0, 0)
+shader_parameter/sequence_length = PackedInt32Array(2, 0, 0, 0, 0, 0, 0, 0)
+shader_parameter/billboard = false
+shader_parameter/animation_speed = 0.30000000447036
+
+[sub_resource type="QuadMesh" id="QuadMesh_kjfgv"]
+material = SubResource("ShaderMaterial_8ipqv")
+size = Vector2(5, 5)
+
+[node name="Room" type="Node3D" unique_id=976863180]
+
+[node name="Floor" type="MeshInstance3D" parent="." unique_id=1390837627]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0)
+mesh = SubResource("QuadMesh_kjfgv")
+
+[node name="Wall West" parent="." unique_id=1483052904 instance=ExtResource("3_wficf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0, 0)
+
+[node name="Door" parent="Wall West" index="0" unique_id=410092105]
+surface_material_override/0 = ExtResource("4_bnc1o")
+
+[node name="Room Side" parent="Wall West" index="1" unique_id=1717649518]
+surface_material_override/0 = ExtResource("4_flvyy")
+
+[node name="Wall North" parent="." unique_id=1524364584 instance=ExtResource("3_wficf")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, -2.5)
+
+[node name="Door" parent="Wall North" index="0" unique_id=410092105]
+surface_material_override/0 = ExtResource("4_bnc1o")
+
+[node name="Room Side" parent="Wall North" index="1" unique_id=1717649518]
+surface_material_override/0 = ExtResource("4_flvyy")
+
+[node name="Wall East" parent="." unique_id=1960271088 instance=ExtResource("3_wficf")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 2.5, 0, 9.685755e-08)
+
+[node name="Door" parent="Wall East" index="0" unique_id=410092105]
+surface_material_override/0 = ExtResource("4_bnc1o")
+
+[node name="Room Side" parent="Wall East" index="1" unique_id=1717649518]
+surface_material_override/0 = ExtResource("4_flvyy")
+
+[node name="Wall South" parent="." unique_id=412282018 instance=ExtResource("3_wficf")]
+transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, 0, 0, 2.5)
+
+[node name="Door" parent="Wall South" index="0" unique_id=410092105]
+surface_material_override/0 = ExtResource("4_bnc1o")
+
+[node name="Room Side" parent="Wall South" index="1" unique_id=1717649518]
+surface_material_override/0 = ExtResource("4_flvyy")
+
+[editable path="Wall West"]
+[editable path="Wall North"]
+[editable path="Wall East"]
+[editable path="Wall South"]
