@@ -43,3 +43,7 @@ signal on_complete_inspect_object(obj: Node3D)
 enum CinematicMode { INITIAL, DYNAMIC_TARGET, DYNAMIC_OFFSET }
 signal on_look_at_object(obj: Node3D, offset: Vector3, cinematic_follow: CinematicMode, ease_time: float, callback: Variant)
 signal on_unlook_at_object(obj: Node3D, ease_time: float, callback: Variant)
+
+# Rooms
+signal on_enter_room(room: Room)
+signal on_leave_room(room: Room, correct: bool, direction: Vector2i)

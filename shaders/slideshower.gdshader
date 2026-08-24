@@ -11,7 +11,7 @@ uniform int[8] sequence_start;
 uniform int[8] sequence_length;
 uniform bool billboard = true;
 
-uniform float animation_speed : hint_range(0.0, 5.0, 0.1) = 1.0;
+uniform float animation_speed : hint_range(0.0, 5.0, 0.01) = 1.0;
 instance uniform float offset : hint_range(-1.0, 1.0, 0.01) = 0.0;
 
 varying vec2 sprite_starts;

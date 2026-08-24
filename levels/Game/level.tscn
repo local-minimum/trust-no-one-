@@ -2,10 +2,165 @@
 
 [ext_resource type="PackedScene" uid="uid://0aluqrktgias" path="res://models/room.tscn" id="1_opbm8"]
 [ext_resource type="PackedScene" uid="uid://60mxtlvkhokn" path="res://levels/player.tscn" id="2_dlgm3"]
+[ext_resource type="PackedScene" uid="uid://djiye8odt4qj4" path="res://models/walldoor.blend" id="3_othq8"]
+[ext_resource type="Material" uid="uid://nafyvleyabjm" path="res://models/room_door.tres" id="4_4omes"]
+[ext_resource type="Material" uid="uid://cxsvekra1pjsx" path="res://models/room_hall.tres" id="5_m17kh"]
+[ext_resource type="Shader" uid="uid://btoqao0ls323r" path="res://shaders/slideshower.gdshader" id="6_m17kh"]
+[ext_resource type="Texture2D" uid="uid://ds8h2ybi0ax3g" path="res://sprites/plank.png" id="7_cwb3i"]
+[ext_resource type="Texture2D" uid="uid://dnrkdf3uhbuyr" path="res://sprites/painting-frame.png" id="7_l63vd"]
+[ext_resource type="Texture2D" uid="uid://d0kvbr0qlrgf3" path="res://sprites/painting-trust.png" id="8_xktuk"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ykoeq"]
+render_priority = 0
+shader = ExtResource("6_m17kh")
+shader_parameter/tex = ExtResource("7_l63vd")
+shader_parameter/sprite_size = Vector2i(400, 300)
+shader_parameter/sprite_spacing = Vector2i(0, 0)
+shader_parameter/sprites = Vector2i(1, 2)
+shader_parameter/directions = 1
+shader_parameter/sequence_start = PackedInt32Array(0, 0, 0, 0, 0, 0, 0, 0)
+shader_parameter/sequence_length = PackedInt32Array(2, 0, 0, 0, 0, 0, 0, 0)
+shader_parameter/billboard = false
+shader_parameter/animation_speed = 1.0
+
+[sub_resource type="QuadMesh" id="QuadMesh_nunso"]
+material = SubResource("ShaderMaterial_ykoeq")
+size = Vector2(0.8, 0.6)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ir86x"]
+render_priority = 0
+shader = ExtResource("6_m17kh")
+shader_parameter/tex = ExtResource("8_xktuk")
+shader_parameter/sprite_size = Vector2i(400, 300)
+shader_parameter/sprite_spacing = Vector2i(0, 0)
+shader_parameter/sprites = Vector2i(1, 2)
+shader_parameter/directions = 1
+shader_parameter/sequence_start = PackedInt32Array(0, 0, 0, 0, 0, 0, 0, 0)
+shader_parameter/sequence_length = PackedInt32Array(2, 0, 0, 0, 0, 0, 0, 0)
+shader_parameter/billboard = false
+shader_parameter/animation_speed = 0.3499999921768
+
+[sub_resource type="QuadMesh" id="QuadMesh_op3gc"]
+material = SubResource("ShaderMaterial_ir86x")
+size = Vector2(0.8, 0.6)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0ltmj"]
+render_priority = 0
+shader = ExtResource("6_m17kh")
+shader_parameter/tex = ExtResource("7_cwb3i")
+shader_parameter/sprite_size = Vector2i(512, 70)
+shader_parameter/sprite_spacing = Vector2i(0, 0)
+shader_parameter/sprites = Vector2i(1, 2)
+shader_parameter/directions = 1
+shader_parameter/sequence_start = PackedInt32Array(0, 0, 0, 0, 0, 0, 0, 0)
+shader_parameter/sequence_length = PackedInt32Array(2, 0, 0, 0, 0, 0, 0, 0)
+shader_parameter/billboard = false
+shader_parameter/animation_speed = 0.5999999865888
+
+[sub_resource type="QuadMesh" id="QuadMesh_kjfgv"]
+material = SubResource("ShaderMaterial_0ltmj")
+size = Vector2(1.024, 0.14)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_m17kh"]
+render_priority = 0
+shader = ExtResource("6_m17kh")
+shader_parameter/tex = ExtResource("7_cwb3i")
+shader_parameter/sprite_size = Vector2i(512, 70)
+shader_parameter/sprite_spacing = Vector2i(0, 0)
+shader_parameter/sprites = Vector2i(1, 2)
+shader_parameter/directions = 1
+shader_parameter/sequence_start = PackedInt32Array(0, 0, 0, 0, 0, 0, 0, 0)
+shader_parameter/sequence_length = PackedInt32Array(2, 0, 0, 0, 0, 0, 0, 0)
+shader_parameter/billboard = false
+shader_parameter/animation_speed = 0.51999998837696
+
+[sub_resource type="QuadMesh" id="QuadMesh_m17kh"]
+material = SubResource("ShaderMaterial_m17kh")
+size = Vector2(1.024, 0.14)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_kjfgv"]
+size = Vector3(15, 0.5, 15)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0ltmj"]
+size = Vector3(0.05, 2, 2)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ulu4o"]
+size = Vector3(0.05, 2, 4.5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_qh6cp"]
+size = Vector3(0.05, 2, 4)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_t3m14"]
+size = Vector3(0.05, 2, 2)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_fdqvq"]
+size = Vector3(0.05, 2, 2.45)
 
 [node name="Level" type="Node3D" unique_id=1796817656]
 
-[node name="Room" parent="." unique_id=976863180 instance=ExtResource("1_opbm8")]
+[node name="Room 1" parent="." unique_id=976863180 node_paths=PackedStringArray("dead_end") instance=ExtResource("1_opbm8")]
+dead_end = NodePath("../DeadEnd")
 
 [node name="Player" parent="." unique_id=1942068578 instance=ExtResource("2_dlgm3")]
-transform = Transform3D(-0.006399393, 0, -0.9999795, 0, 1, 0, 0.9999795, 0, -0.006399393, -2.039384, 0, 6.1150393)
+transform = Transform3D(0.9999796, 0, -0.0063995123, 0, 1, 0, 0.0063995123, 0, 0.9999796, -5.9819374, 0, 8.895155)
+
+[node name="DeadEnd" parent="." unique_id=1826216039 instance=ExtResource("3_othq8")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -6, 0, 9.5)
+
+[node name="Door" parent="DeadEnd" index="0" unique_id=1163846168]
+surface_material_override/0 = ExtResource("4_4omes")
+
+[node name="Hall Floor" parent="DeadEnd" index="1" unique_id=146706546]
+surface_material_override/0 = ExtResource("5_m17kh")
+
+[node name="Painting2" type="MeshInstance3D" parent="DeadEnd/Hall Floor" index="0" unique_id=341253488]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -4.4829907, 1.4385633, -0.32152528)
+mesh = SubResource("QuadMesh_nunso")
+
+[node name="Text2" type="MeshInstance3D" parent="DeadEnd/Hall Floor/Painting2" unique_id=13312058]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.9802322e-08, 0, 0.014682293)
+mesh = SubResource("QuadMesh_op3gc")
+
+[node name="Plank" type="MeshInstance3D" parent="DeadEnd" unique_id=1643912466]
+transform = Transform3D(-6.677969e-08, -1.2551708e-08, -1.5, 0.2871496, 1.4722586, -2.5103414e-08, 1.4722586, -0.2871496, -6.3141854e-08, -0.05145645, 1.16918, 0)
+mesh = SubResource("QuadMesh_kjfgv")
+
+[node name="Plank2" type="MeshInstance3D" parent="DeadEnd" unique_id=273544000]
+transform = Transform3D(-6.560992e-08, 2.3701023e-09, -1.5, -0.0542216, 1.4990199, 4.740203e-09, 1.4990199, 0.0542216, -6.54814e-08, -0.05145645, 1.6268348, 0)
+mesh = SubResource("QuadMesh_m17kh")
+
+[node name="Plank4" type="MeshInstance3D" parent="DeadEnd" unique_id=1066495299]
+transform = Transform3D(-6.577284e-08, -5.190553e-09, -1.5, 0.11874602, 1.4952928, -1.0381108e-08, 1.4952928, -0.11874602, -6.515556e-08, -0.05145645, 0.758863, 0)
+mesh = SubResource("QuadMesh_m17kh")
+
+[node name="Plank3" type="MeshInstance3D" parent="DeadEnd" unique_id=1386292882]
+transform = Transform3D(-6.569511e-08, 4.095793e-09, -1.5, -0.093700826, 1.4970709, 8.191586e-09, 1.4970709, 0.093700826, -6.5311e-08, -0.05145645, 0.4162649, 0)
+mesh = SubResource("QuadMesh_kjfgv")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="DeadEnd" unique_id=1253156078]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="DeadEnd/StaticBody3D" unique_id=781910843]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.25, 0)
+shape = SubResource("BoxShape3D_kjfgv")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="DeadEnd/StaticBody3D" unique_id=2135715965]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("BoxShape3D_0ltmj")
+
+[node name="CollisionShape3D9" type="CollisionShape3D" parent="DeadEnd/StaticBody3D" unique_id=1629964914]
+transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, -2.2999997, 1, 1)
+shape = SubResource("BoxShape3D_ulu4o")
+
+[node name="CollisionShape3D14" type="CollisionShape3D" parent="DeadEnd/StaticBody3D" unique_id=695549272]
+transform = Transform3D(1, 0, -1.7484555e-07, 0, 1, 0, 1.7484555e-07, 0, 1, -4.5000005, 1, -0.9999995)
+shape = SubResource("BoxShape3D_qh6cp")
+
+[node name="CollisionShape3D17" type="CollisionShape3D" parent="DeadEnd/StaticBody3D" unique_id=854858213]
+transform = Transform3D(1, 0, -1.7484555e-07, 0, 1, 0, 1.7484555e-07, 0, 1, -2.5000005, 1, -1.9999998)
+shape = SubResource("BoxShape3D_t3m14")
+
+[node name="CollisionShape3D23" type="CollisionShape3D" parent="DeadEnd/StaticBody3D" unique_id=1339438557]
+transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, -1.2484512, 1, -0.97129154)
+shape = SubResource("BoxShape3D_fdqvq")
+
+[editable path="DeadEnd"]

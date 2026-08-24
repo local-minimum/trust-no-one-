@@ -1,6 +1,9 @@
 extends Node3D
 class_name RoomDoor
 
+signal opened(room_side: bool)
+signal closed(room_side: bool)
+
 @export var room_area: Area3D
 @export var hall_area: Area3D
 @export var open_angle: float = -PI * 0.8
@@ -31,6 +34,8 @@ func _enter_area(_b: Node3D, a: Area3D) -> void:
         _tween = create_tween()
         _tween.tween_property(self, "rotation:y", open_angle if a == hall_area else -open_angle, transition_duration);
 
+        opened.emit(a == room_area)
+
 func _exit_area(_b: Node3D, a: Area3D) -> void:
     if _active_area == a && _opened:
         _opened = false
@@ -39,3 +44,5 @@ func _exit_area(_b: Node3D, a: Area3D) -> void:
             _tween.kill()
         _tween = create_tween()
         _tween.tween_property(self, "rotation:y", 0.0, transition_duration);
+
+        closed.emit(a == room_area)
