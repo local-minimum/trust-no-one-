@@ -29,6 +29,9 @@ shader_parameter/animation_speed = 0.30000000447036
 material = SubResource("ShaderMaterial_8ipqv")
 size = Vector2(5, 5)
 
+[sub_resource type="QuadMesh" id="QuadMesh_7sa57"]
+size = Vector2(1, 2)
+
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_qh6cp"]
 points = PackedVector3Array(0.01, 1, 0, -0.01, 1, 0, 0.01, -1, 0, 0.01, 1, -1.05, -0.01, 1, -1.05, -0.01, -1, 0, 0.01, -1, -1.05, -0.01, -1, -1.05)
 
@@ -113,13 +116,18 @@ size = Vector3(0.05, 2, 2)
 [sub_resource type="BoxShape3D" id="BoxShape3D_fdqvq"]
 size = Vector3(0.05, 2, 2.45)
 
-[node name="Room" type="Node3D" unique_id=976863180 node_paths=PackedStringArray("doors")]
+[node name="Room" type="Node3D" unique_id=976863180 node_paths=PackedStringArray("doors", "_room_number")]
 script = ExtResource("1_t3m14")
 doors = [NodePath("Wall West/Door"), NodePath("Wall North/Door"), NodePath("Wall East/Door"), NodePath("Wall South/Door")]
+_room_number = NodePath("Floor/FloorNumber")
 
 [node name="Floor" type="MeshInstance3D" parent="." unique_id=1390837627]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0)
 mesh = SubResource("QuadMesh_kjfgv")
+
+[node name="FloorNumber" type="MeshInstance3D" parent="Floor" unique_id=2052796201]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.1671939e-09, 0.026702285)
+mesh = SubResource("QuadMesh_7sa57")
 
 [node name="Wall West" parent="." unique_id=1483052904 instance=ExtResource("3_wficf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0, 0)

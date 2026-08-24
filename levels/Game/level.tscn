@@ -4,12 +4,138 @@
 [ext_resource type="Script" uid="uid://cvck2052webr8" path="res://levels/Game/level.gd" id="1_xktuk"]
 [ext_resource type="PackedScene" uid="uid://60mxtlvkhokn" path="res://levels/player.tscn" id="2_dlgm3"]
 [ext_resource type="PackedScene" uid="uid://djiye8odt4qj4" path="res://models/walldoor.blend" id="3_othq8"]
+[ext_resource type="Texture2D" uid="uid://cm2ap38k6ncno" path="res://sprites/num_1.png" id="3_ykoeq"]
 [ext_resource type="Material" uid="uid://nafyvleyabjm" path="res://models/room_door.tres" id="4_4omes"]
+[ext_resource type="Texture2D" uid="uid://cphp8qligypnf" path="res://sprites/num_2.png" id="4_nunso"]
 [ext_resource type="Material" uid="uid://cxsvekra1pjsx" path="res://models/room_hall.tres" id="5_m17kh"]
+[ext_resource type="Texture2D" uid="uid://cqp2urt67pw2q" path="res://sprites/num_3.png" id="5_op3gc"]
+[ext_resource type="Texture2D" uid="uid://8ox6vfqyrki5" path="res://sprites/num_4.png" id="6_24sfg"]
 [ext_resource type="Shader" uid="uid://btoqao0ls323r" path="res://shaders/slideshower.gdshader" id="6_m17kh"]
 [ext_resource type="Texture2D" uid="uid://ds8h2ybi0ax3g" path="res://sprites/plank.png" id="7_cwb3i"]
 [ext_resource type="Texture2D" uid="uid://dnrkdf3uhbuyr" path="res://sprites/painting-frame.png" id="7_l63vd"]
+[ext_resource type="Texture2D" uid="uid://dkspcvihd3yse" path="res://sprites/num_5.png" id="7_nkckd"]
+[ext_resource type="Texture2D" uid="uid://b73ue7l4pwj5f" path="res://sprites/num_6.png" id="8_07k2p"]
 [ext_resource type="Texture2D" uid="uid://d0kvbr0qlrgf3" path="res://sprites/painting-trust.png" id="8_xktuk"]
+[ext_resource type="Texture2D" uid="uid://c7asq5cl1lb1g" path="res://sprites/num_7.png" id="9_g0llx"]
+[ext_resource type="Texture2D" uid="uid://p570325iwar3" path="res://sprites/num_8.png" id="9_ieofn"]
+[ext_resource type="Texture2D" uid="uid://c80qkoikf0fba" path="res://sprites/num_9.png" id="11_mcl0i"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ieofn"]
+render_priority = 0
+shader = ExtResource("6_m17kh")
+shader_parameter/tex = ExtResource("3_ykoeq")
+shader_parameter/sprite_size = Vector2i(256, 512)
+shader_parameter/sprite_spacing = Vector2i(0, 0)
+shader_parameter/sprites = Vector2i(2, 1)
+shader_parameter/directions = 1
+shader_parameter/sequence_start = PackedInt32Array(0, 0, 0, 0, 0, 0, 0, 0)
+shader_parameter/sequence_length = PackedInt32Array(2, 0, 0, 0, 0, 0, 0, 0)
+shader_parameter/billboard = false
+shader_parameter/animation_speed = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_op3gc"]
+render_priority = 0
+shader = ExtResource("6_m17kh")
+shader_parameter/tex = ExtResource("4_nunso")
+shader_parameter/sprite_size = Vector2i(256, 512)
+shader_parameter/sprite_spacing = Vector2i(0, 0)
+shader_parameter/sprites = Vector2i(2, 1)
+shader_parameter/directions = 1
+shader_parameter/sequence_start = PackedInt32Array(0, 0, 0, 0, 0, 0, 0, 0)
+shader_parameter/sequence_length = PackedInt32Array(2, 0, 0, 0, 0, 0, 0, 0)
+shader_parameter/billboard = false
+shader_parameter/animation_speed = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_nunso"]
+render_priority = 0
+shader = ExtResource("6_m17kh")
+shader_parameter/tex = ExtResource("5_op3gc")
+shader_parameter/sprite_size = Vector2i(256, 512)
+shader_parameter/sprite_spacing = Vector2i(0, 0)
+shader_parameter/sprites = Vector2i(2, 1)
+shader_parameter/directions = 1
+shader_parameter/sequence_start = PackedInt32Array(0, 0, 0, 0, 0, 0, 0, 0)
+shader_parameter/sequence_length = PackedInt32Array(2, 0, 0, 0, 0, 0, 0, 0)
+shader_parameter/billboard = false
+shader_parameter/animation_speed = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_nkckd"]
+render_priority = 0
+shader = ExtResource("6_m17kh")
+shader_parameter/tex = ExtResource("6_24sfg")
+shader_parameter/sprite_size = Vector2i(256, 512)
+shader_parameter/sprite_spacing = Vector2i(0, 0)
+shader_parameter/sprites = Vector2i(2, 1)
+shader_parameter/directions = 1
+shader_parameter/sequence_start = PackedInt32Array(0, 0, 0, 0, 0, 0, 0, 0)
+shader_parameter/sequence_length = PackedInt32Array(2, 0, 0, 0, 0, 0, 0, 0)
+shader_parameter/billboard = false
+shader_parameter/animation_speed = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_24sfg"]
+render_priority = 0
+shader = ExtResource("6_m17kh")
+shader_parameter/tex = ExtResource("7_nkckd")
+shader_parameter/sprite_size = Vector2i(256, 512)
+shader_parameter/sprite_spacing = Vector2i(0, 0)
+shader_parameter/sprites = Vector2i(2, 1)
+shader_parameter/directions = 1
+shader_parameter/sequence_start = PackedInt32Array(0, 0, 0, 0, 0, 0, 0, 0)
+shader_parameter/sequence_length = PackedInt32Array(2, 0, 0, 0, 0, 0, 0, 0)
+shader_parameter/billboard = false
+shader_parameter/animation_speed = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_g0llx"]
+render_priority = 0
+shader = ExtResource("6_m17kh")
+shader_parameter/tex = ExtResource("8_07k2p")
+shader_parameter/sprite_size = Vector2i(256, 512)
+shader_parameter/sprite_spacing = Vector2i(0, 0)
+shader_parameter/sprites = Vector2i(2, 1)
+shader_parameter/directions = 1
+shader_parameter/sequence_start = PackedInt32Array(0, 0, 0, 0, 0, 0, 0, 0)
+shader_parameter/sequence_length = PackedInt32Array(2, 0, 0, 0, 0, 0, 0, 0)
+shader_parameter/billboard = false
+shader_parameter/animation_speed = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_xitda"]
+render_priority = 0
+shader = ExtResource("6_m17kh")
+shader_parameter/tex = ExtResource("9_g0llx")
+shader_parameter/sprite_size = Vector2i(256, 512)
+shader_parameter/sprite_spacing = Vector2i(0, 0)
+shader_parameter/sprites = Vector2i(2, 1)
+shader_parameter/directions = 1
+shader_parameter/sequence_start = PackedInt32Array(0, 0, 0, 0, 0, 0, 0, 0)
+shader_parameter/sequence_length = PackedInt32Array(2, 0, 0, 0, 0, 0, 0, 0)
+shader_parameter/billboard = false
+shader_parameter/animation_speed = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_mcl0i"]
+render_priority = 0
+shader = ExtResource("6_m17kh")
+shader_parameter/tex = ExtResource("9_ieofn")
+shader_parameter/sprite_size = Vector2i(256, 512)
+shader_parameter/sprite_spacing = Vector2i(0, 0)
+shader_parameter/sprites = Vector2i(2, 1)
+shader_parameter/directions = 1
+shader_parameter/sequence_start = PackedInt32Array(0, 0, 0, 0, 0, 0, 0, 0)
+shader_parameter/sequence_length = PackedInt32Array(2, 0, 0, 0, 0, 0, 0, 0)
+shader_parameter/billboard = false
+shader_parameter/animation_speed = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_s8mnq"]
+render_priority = 0
+shader = ExtResource("6_m17kh")
+shader_parameter/tex = ExtResource("11_mcl0i")
+shader_parameter/sprite_size = Vector2i(256, 512)
+shader_parameter/sprite_spacing = Vector2i(0, 0)
+shader_parameter/sprites = Vector2i(2, 1)
+shader_parameter/directions = 1
+shader_parameter/sequence_start = PackedInt32Array(0, 0, 0, 0, 0, 0, 0, 0)
+shader_parameter/sequence_length = PackedInt32Array(2, 0, 0, 0, 0, 0, 0, 0)
+shader_parameter/billboard = false
+shader_parameter/animation_speed = 1.0
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ykoeq"]
 render_priority = 0
@@ -101,6 +227,7 @@ size = Vector3(0.05, 2, 2.45)
 script = ExtResource("1_xktuk")
 _rooms = [NodePath("Room 1"), NodePath("Room 2")]
 _dead_end = NodePath("DeadEnd")
+_number_mats = Array[Material]([SubResource("ShaderMaterial_ieofn"), SubResource("ShaderMaterial_op3gc"), SubResource("ShaderMaterial_nunso"), SubResource("ShaderMaterial_nkckd"), SubResource("ShaderMaterial_24sfg"), SubResource("ShaderMaterial_g0llx"), SubResource("ShaderMaterial_xitda"), SubResource("ShaderMaterial_mcl0i"), SubResource("ShaderMaterial_s8mnq")])
 
 [node name="Room 1" parent="." unique_id=976863180 instance=ExtResource("1_opbm8")]
 

@@ -6,7 +6,13 @@ enum Phase { PLACED, ENTERED, EXITED }
 @export var doors: Array[RoomDoor]
 @export var correct_door: RoomDoor
 @export var correct_entry_offset: Vector2i
+@export var _room_number: MeshInstance3D
 
+var solved_times: int
+var attempted_times: int
+var solved: bool:
+    get():
+        return solved_times > 0
 
 var _phase: Phase = Phase.PLACED
 var _entry_door: RoomDoor
@@ -31,6 +37,10 @@ func neighbour_global_position(direction: Vector2i) -> Vector3:
         _:
             push_error("%s not a valid direction from %s" % [direction, name])
             return global_position
+
+func initiallize() -> void:
+    _phase = Phase.PLACED
+    _entry_door = null
 
 func place_deadend(dead_end: Node3D, direction: Vector2i) -> void:
     if dead_end == null:
@@ -71,6 +81,7 @@ func _handle_door_opened(_room_side: bool, door: RoomDoor) -> void:
     if _entry_door == null:
         _entry_door = door
         SignalBus.on_enter_room.emit(self, _door_direction(door))
+        attempted_times += 1
 
 func _handle_door_closed(room_side: bool, door: RoomDoor) -> void:
     if !room_side && _phase == Phase.PLACED:
@@ -78,4 +89,10 @@ func _handle_door_closed(room_side: bool, door: RoomDoor) -> void:
 
     _phase = Phase.ENTERED if room_side else Phase.EXITED
     if !room_side:
-        SignalBus.on_leave_room.emit(self, _is_correct_door(door), _door_direction(door))
+        var correct: bool = _is_correct_door(door)
+        SignalBus.on_leave_room.emit(self, correct, _door_direction(door))
+        if correct:
+            solved_times += 1
+
+func set_room_number(material: Material) -> void:
+    (_room_number.mesh as QuadMesh).material = material
