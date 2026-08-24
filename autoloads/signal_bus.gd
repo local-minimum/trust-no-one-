@@ -45,5 +45,5 @@ signal on_look_at_object(obj: Node3D, offset: Vector3, cinematic_follow: Cinemat
 signal on_unlook_at_object(obj: Node3D, ease_time: float, callback: Variant)
 
 # Rooms
-signal on_enter_room(room: Room)
+signal on_enter_room(room: Room, direction: Vector2i)
 signal on_leave_room(room: Room, correct: bool, direction: Vector2i)

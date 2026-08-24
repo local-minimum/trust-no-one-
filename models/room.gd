@@ -4,7 +4,6 @@ class_name Room
 enum Phase { PLACED, ENTERED, EXITED }
 
 @export var doors: Array[RoomDoor]
-@export var dead_end: Node3D
 @export var correct_door: RoomDoor
 @export var correct_entry_offset: Vector2i
 
@@ -19,7 +18,21 @@ func _enter_tree() -> void:
         if door.closed.connect(_handle_door_closed.bind(door)) != OK:
             push_error("Failed to connect door closed")
 
-func _place_deadend(direction: Vector2i) -> void:
+func neighbour_global_position(direction: Vector2i) -> Vector3:
+    match direction:
+        Vector2i(-1, 0):
+            return global_position + Vector3(-12.0, 0.0, -6.0)
+        Vector2i(1, 0):
+            return global_position + Vector3(12.0, 0.0, 6.0)
+        Vector2i(0, -1):
+            return global_position + Vector3(6.0, 0.0, -12.0)
+        Vector2i(0, 1):
+            return global_position + Vector3(-6.0, 0.0, 12.0)
+        _:
+            push_error("%s not a valid direction from %s" % [direction, name])
+            return global_position
+
+func place_deadend(dead_end: Node3D, direction: Vector2i) -> void:
     if dead_end == null:
         push_error("Room %s has no dead-end" % [name])
         return
@@ -57,11 +70,10 @@ func _is_correct_door(door: RoomDoor) -> bool:
 func _handle_door_opened(_room_side: bool, door: RoomDoor) -> void:
     if _entry_door == null:
         _entry_door = door
-        SignalBus.on_enter_room.emit(self)
-        _place_deadend(_door_direction(door))
+        SignalBus.on_enter_room.emit(self, _door_direction(door))
 
 func _handle_door_closed(room_side: bool, door: RoomDoor) -> void:
-    if _phase == Phase.PLACED:
+    if !room_side && _phase == Phase.PLACED:
         return
 
     _phase = Phase.ENTERED if room_side else Phase.EXITED

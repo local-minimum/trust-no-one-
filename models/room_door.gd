@@ -37,6 +37,7 @@ func _enter_area(_b: Node3D, a: Area3D) -> void:
         opened.emit(a == room_area)
 
 func _exit_area(_b: Node3D, a: Area3D) -> void:
+    await get_tree().create_timer(0.1).timeout
     if _active_area == a && _opened:
         _opened = false
         _active_area = null

@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://buhdx4edna1t6"]
 
 [ext_resource type="PackedScene" uid="uid://0aluqrktgias" path="res://models/room.tscn" id="1_opbm8"]
+[ext_resource type="Script" uid="uid://cvck2052webr8" path="res://levels/Game/level.gd" id="1_xktuk"]
 [ext_resource type="PackedScene" uid="uid://60mxtlvkhokn" path="res://levels/player.tscn" id="2_dlgm3"]
 [ext_resource type="PackedScene" uid="uid://djiye8odt4qj4" path="res://models/walldoor.blend" id="3_othq8"]
 [ext_resource type="Material" uid="uid://nafyvleyabjm" path="res://models/room_door.tres" id="4_4omes"]
@@ -96,10 +97,15 @@ size = Vector3(0.05, 2, 2)
 [sub_resource type="BoxShape3D" id="BoxShape3D_fdqvq"]
 size = Vector3(0.05, 2, 2.45)
 
-[node name="Level" type="Node3D" unique_id=1796817656]
+[node name="Level" type="Node3D" unique_id=1796817656 node_paths=PackedStringArray("_rooms", "_dead_end")]
+script = ExtResource("1_xktuk")
+_rooms = [NodePath("Room 1"), NodePath("Room 2")]
+_dead_end = NodePath("DeadEnd")
 
-[node name="Room 1" parent="." unique_id=976863180 node_paths=PackedStringArray("dead_end") instance=ExtResource("1_opbm8")]
-dead_end = NodePath("../DeadEnd")
+[node name="Room 1" parent="." unique_id=976863180 instance=ExtResource("1_opbm8")]
+
+[node name="Room 2" parent="." unique_id=615196368 instance=ExtResource("1_opbm8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.0161285, 0, -12.013237)
 
 [node name="Player" parent="." unique_id=1942068578 instance=ExtResource("2_dlgm3")]
 transform = Transform3D(0.9999796, 0, -0.0063995123, 0, 1, 0, 0.0063995123, 0, 0.9999796, -5.9819374, 0, 8.895155)
