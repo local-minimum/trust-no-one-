@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://d0kvbr0qlrgf3" path="res://sprites/painting-trust.png" id="9_fdqvq"]
 [ext_resource type="Texture2D" uid="uid://dnrkdf3uhbuyr" path="res://sprites/painting-frame.png" id="9_nbdnv"]
 [ext_resource type="Texture2D" uid="uid://d3gujoytj1tey" path="res://sprites/painting-agrees.png" id="11_d5ec4"]
+[ext_resource type="Texture2D" uid="uid://b2bpdu0e6eonj" path="res://sprites/woodlouse.png" id="12_6mw1f"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_8ipqv"]
 render_priority = 0
@@ -115,6 +116,23 @@ size = Vector3(0.05, 2, 2)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_fdqvq"]
 size = Vector3(0.05, 2, 2.45)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_wfk6r"]
+render_priority = 0
+shader = ExtResource("1_ycakp")
+shader_parameter/tex = ExtResource("12_6mw1f")
+shader_parameter/sprite_size = Vector2i(600, 400)
+shader_parameter/sprite_spacing = Vector2i(0, 0)
+shader_parameter/sprites = Vector2i(1, 2)
+shader_parameter/directions = 1
+shader_parameter/sequence_start = PackedInt32Array(0, 0, 0, 0, 0, 0, 0, 0)
+shader_parameter/sequence_length = PackedInt32Array(2, 0, 0, 0, 0, 0, 0, 0)
+shader_parameter/billboard = true
+shader_parameter/animation_speed = 1.0
+
+[sub_resource type="QuadMesh" id="QuadMesh_hmnmk"]
+material = SubResource("ShaderMaterial_wfk6r")
+size = Vector2(1.2, 0.8)
 
 [node name="Room" type="Node3D" unique_id=976863180 node_paths=PackedStringArray("doors", "_room_number")]
 script = ExtResource("1_t3m14")
@@ -455,6 +473,10 @@ shape = SubResource("BoxShape3D_fdqvq")
 [node name="CollisionShape3D24" type="CollisionShape3D" parent="StaticBody3D" unique_id=1268105518]
 transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, 3.7515488, 1, 1.0287089)
 shape = SubResource("BoxShape3D_fdqvq")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1822133941]
+transform = Transform3D(-0.71828705, 0, 0.69574684, 0, 1, 0, -0.69574684, 0, -0.71828705, -0.8743689, 0.28627247, 1.1237572)
+mesh = SubResource("QuadMesh_hmnmk")
 
 [editable path="Wall West"]
 [editable path="Wall North"]

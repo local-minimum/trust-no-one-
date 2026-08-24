@@ -4,7 +4,7 @@ class_name Room
 enum Phase { PLACED, ENTERED, EXITED }
 
 @export var doors: Array[RoomDoor]
-@export var correct_door: RoomDoor
+@export var correct_doors: Array[RoomDoor]
 @export var correct_entry_offset: Vector2i
 @export var _room_number: MeshInstance3D
 
@@ -73,8 +73,8 @@ func _door_direction(door: RoomDoor) -> Vector2i:
     return Vector2i(-1, 0)
 
 func _is_correct_door(door: RoomDoor) -> bool:
-    if correct_door:
-        return door == correct_door
+    if !correct_doors.is_empty():
+        return correct_doors.has(door)
     return _door_direction(door) - _door_direction(_entry_door) == correct_entry_offset;
 
 func _handle_door_opened(_room_side: bool, door: RoomDoor) -> void:

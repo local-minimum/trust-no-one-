@@ -225,14 +225,15 @@ size = Vector3(0.05, 2, 2.45)
 
 [node name="Level" type="Node3D" unique_id=1796817656 node_paths=PackedStringArray("_rooms", "_dead_end")]
 script = ExtResource("1_xktuk")
-_rooms = [NodePath("Room 1"), NodePath("Room 2")]
+_rooms = [NodePath("Room First"), NodePath("Room Empty")]
 _dead_end = NodePath("DeadEnd")
 _number_mats = Array[Material]([SubResource("ShaderMaterial_ieofn"), SubResource("ShaderMaterial_op3gc"), SubResource("ShaderMaterial_nunso"), SubResource("ShaderMaterial_nkckd"), SubResource("ShaderMaterial_24sfg"), SubResource("ShaderMaterial_g0llx"), SubResource("ShaderMaterial_xitda"), SubResource("ShaderMaterial_mcl0i"), SubResource("ShaderMaterial_s8mnq")])
 
-[node name="Room 1" parent="." unique_id=976863180 instance=ExtResource("1_opbm8")]
+[node name="Room First" parent="." unique_id=976863180 instance=ExtResource("1_opbm8")]
 
-[node name="Room 2" parent="." unique_id=615196368 instance=ExtResource("1_opbm8")]
+[node name="Room Empty" parent="." unique_id=615196368 node_paths=PackedStringArray("correct_doors") instance=ExtResource("1_opbm8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.0161285, 0, -12.013237)
+correct_doors = [NodePath("Wall West/Door"), NodePath("Wall North/Door"), NodePath("Wall East/Door"), NodePath("Wall South/Door")]
 
 [node name="Player" parent="." unique_id=1942068578 instance=ExtResource("2_dlgm3")]
 transform = Transform3D(0.9999796, 0, -0.0063995123, 0, 1, 0, 0.0063995123, 0, 0.9999796, -5.9819374, 0, 8.895155)
@@ -296,4 +297,9 @@ shape = SubResource("BoxShape3D_t3m14")
 transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, -1.2484512, 1, -0.97129154)
 shape = SubResource("BoxShape3D_fdqvq")
 
+[editable path="Room Empty"]
+[editable path="Room Empty/Wall West"]
+[editable path="Room Empty/Wall North"]
+[editable path="Room Empty/Wall East"]
+[editable path="Room Empty/Wall South"]
 [editable path="DeadEnd"]
