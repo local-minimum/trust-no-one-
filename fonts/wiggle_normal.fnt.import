@@ -1,0 +1,17 @@
+[remap]
+
+importer="font_data_bmfont"
+type="FontFile"
+uid="uid://dkqm23662tqn1"
+path="res://.godot/imported/wiggle_normal.fnt-2f9e71328e4a68a20e828be51e699713.fontdata"
+
+[deps]
+
+source_file="res://fonts/wiggle_normal.fnt"
+dest_files=["res://.godot/imported/wiggle_normal.fnt-2f9e71328e4a68a20e828be51e699713.fontdata"]
+
+[params]
+
+fallbacks=[]
+compress=true
+scaling_mode=2

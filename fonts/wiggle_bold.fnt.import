@@ -1,0 +1,17 @@
+[remap]
+
+importer="font_data_bmfont"
+type="FontFile"
+uid="uid://vdjnsx82vh0f"
+path="res://.godot/imported/wiggle_bold.fnt-07e0ef5949201cda0e068e390027af68.fontdata"
+
+[deps]
+
+source_file="res://fonts/wiggle_bold.fnt"
+dest_files=["res://.godot/imported/wiggle_bold.fnt-07e0ef5949201cda0e068e390027af68.fontdata"]
+
+[params]
+
+fallbacks=[]
+compress=true
+scaling_mode=2

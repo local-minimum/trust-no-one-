@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://5dkfeemajiut"]
+
+[ext_resource type="FontFile" uid="uid://dkqm23662tqn1" path="res://fonts/wiggle_normal.fnt" id="1_wm2v2"]
+[ext_resource type="FontFile" uid="uid://vdjnsx82vh0f" path="res://fonts/wiggle_bold.fnt" id="2_2y30t"]
+[ext_resource type="Script" uid="uid://byjgbxxo75rip" path="res://fonts/wiggly_ui_text.gd" id="3_2y30t"]
+
+[node name="Node2D" type="Node2D" unique_id=1538133046]
+
+[node name="WigglyUIText" type="RichTextLabel" parent="." unique_id=1701331783]
+custom_minimum_size = Vector2(600, 600)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 376.0
+offset_top = 228.0
+offset_right = 976.0
+offset_bottom = 828.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_fonts/normal_font = ExtResource("1_wm2v2")
+theme_override_fonts/bold_font = ExtResource("2_2y30t")
+bbcode_enabled = true
+text = "THIS IS A  LIE
+IT IS THE TRUTH.
+YOU SHOULD EXIT TO THE LEFT"
+script = ExtResource("3_2y30t")
+wiggly_text = "THIS IS A  LIE
+IT IS THE TRUTH.
+YOU SHOULD EXIT TO THE LEFT"
+speed = 4.484
