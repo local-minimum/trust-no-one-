@@ -512,8 +512,8 @@ CAME IN
  "
 label1 = NodePath("Text")
 label2 = NodePath("Text2")
-wave_length = 5
-speed = 0.2
+wave_length = 4
+speed = 6.024
 
 [node name="Text" type="Label3D" parent="Woodlousie/Speech Bubble" unique_id=2111189649]
 sorting_offset = 0.1
@@ -525,7 +525,6 @@ font_size = 16
 autowrap_trim_flags = 0
 
 [node name="Text2" type="Label3D" parent="Woodlousie/Speech Bubble" unique_id=1154602122]
-visible = false
 sorting_offset = 0.1
 billboard = 1
 double_sided = false
