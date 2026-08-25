@@ -1,0 +1,95 @@
+[gd_scene format=3 uid="uid://dofr308g8am8r"]
+
+[ext_resource type="Shader" uid="uid://btoqao0ls323r" path="res://shaders/slideshower.gdshader" id="1_4k22w"]
+[ext_resource type="Texture2D" uid="uid://di5lme7eoak5v" path="res://sprites/vivel.png" id="2_7gks5"]
+[ext_resource type="Script" uid="uid://m4e4y4p68wp3" path="res://levels/Game/character.gd" id="3_5ulil"]
+[ext_resource type="Texture2D" uid="uid://6klhqwdodovx" path="res://sprites/speech_bubble.png" id="4_aqki5"]
+[ext_resource type="Script" uid="uid://myodc6ti2elg" path="res://levels/Game/speech_bubble.gd" id="5_tw3o4"]
+[ext_resource type="FontFile" uid="uid://dkqm23662tqn1" path="res://fonts/wiggle_normal.fnt" id="6_wyc0n"]
+[ext_resource type="FontFile" uid="uid://vdjnsx82vh0f" path="res://fonts/wiggle_bold.fnt" id="7_vtgf1"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_58pty"]
+render_priority = 3
+shader = ExtResource("1_4k22w")
+shader_parameter/tex = ExtResource("2_7gks5")
+shader_parameter/sprite_size = Vector2i(600, 400)
+shader_parameter/sprite_spacing = Vector2i(0, 0)
+shader_parameter/sprites = Vector2i(1, 2)
+shader_parameter/directions = 1
+shader_parameter/sequence_start = PackedInt32Array(0, 0, 0, 0, 0, 0, 0, 0)
+shader_parameter/sequence_length = PackedInt32Array(2, 0, 0, 0, 0, 0, 0, 0)
+shader_parameter/billboard = true
+shader_parameter/animation_speed = 0.20999999530608
+
+[sub_resource type="QuadMesh" id="QuadMesh_kr4f2"]
+material = SubResource("ShaderMaterial_58pty")
+size = Vector2(1.2, 0.8)
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_i3jg0"]
+radius = 1.0769374
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7sa57"]
+render_priority = 0
+shader = ExtResource("1_4k22w")
+shader_parameter/tex = ExtResource("4_aqki5")
+shader_parameter/sprite_size = Vector2i(600, 500)
+shader_parameter/sprite_spacing = Vector2i(0, 0)
+shader_parameter/sprites = Vector2i(1, 2)
+shader_parameter/directions = 1
+shader_parameter/sequence_start = PackedInt32Array(0, 0, 0, 0, 0, 0, 0, 0)
+shader_parameter/sequence_length = PackedInt32Array(2, 0, 0, 0, 0, 0, 0, 0)
+shader_parameter/billboard = true
+shader_parameter/animation_speed = 0.45999998971808
+
+[sub_resource type="QuadMesh" id="QuadMesh_tcd4a"]
+material = SubResource("ShaderMaterial_7sa57")
+size = Vector2(1.2, 1)
+
+[node name="Tvivel" type="MeshInstance3D" unique_id=1744457802 node_paths=PackedStringArray("bubble", "detection_area")]
+mesh = SubResource("QuadMesh_kr4f2")
+script = ExtResource("3_5ulil")
+bubble = NodePath("Speech Bubble")
+detection_area = NodePath("Area3D")
+
+[node name="Area3D" type="Area3D" parent="." unique_id=404517948]
+collision_layer = 0
+collision_mask = 2
+input_ray_pickable = false
+monitorable = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=1042966671]
+shape = SubResource("SphereShape3D_i3jg0")
+
+[node name="Speech Bubble" type="MeshInstance3D" parent="." unique_id=742823548 node_paths=PackedStringArray("label1", "label2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.095324874, 0.92417616, -0.092333555)
+mesh = SubResource("QuadMesh_tcd4a")
+script = ExtResource("5_tw3o4")
+wiggly_text = "I WOOD SAY
+YOU WOOD
+BE SAFE
+IF YOU TAKE
+THE DOOR YOU
+CAME IN
+ "
+label1 = NodePath("Text")
+label2 = NodePath("Text2")
+wave_length = 4
+speed = 6.024
+
+[node name="Text" type="Label3D" parent="Speech Bubble" unique_id=735643676]
+sorting_offset = 0.1
+billboard = 1
+double_sided = false
+modulate = Color(0, 0, 0, 1)
+font = ExtResource("6_wyc0n")
+font_size = 16
+autowrap_trim_flags = 0
+
+[node name="Text2" type="Label3D" parent="Speech Bubble" unique_id=1828217118]
+sorting_offset = 0.1
+billboard = 1
+double_sided = false
+modulate = Color(0, 0, 0, 1)
+font = ExtResource("7_vtgf1")
+font_size = 16
+autowrap_trim_flags = 0
