@@ -1,28 +1,22 @@
 [gd_scene format=3 uid="uid://cfelmhc86djyq"]
 
 [ext_resource type="Script" uid="uid://cbgfqqfwx7v5o" path="res://common/subtitles/subtitles.gd" id="1_p2jd1"]
-[ext_resource type="FontFile" uid="uid://vrrmdx83skor" path="res://fonts/roboto/Roboto-Regular.ttf" id="2_bvfgd"]
-[ext_resource type="FontFile" uid="uid://cc4xli25271fd" path="res://fonts/roboto/Roboto-Bold.ttf" id="3_3ukyr"]
-[ext_resource type="FontFile" uid="uid://b5c0p00x6g6u5" path="res://fonts/roboto/Roboto-Italic.ttf" id="4_vbbp5"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5r7rs"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_uf1ab"]
-font = ExtResource("2_bvfgd")
 font_size = 28
 font_color = Color(0.831761, 0.8317611, 0.8317609, 1)
 shadow_size = 2
 shadow_color = Color(0.08235294, 0.08235294, 0.08235294, 0.8666667)
 
 [sub_resource type="LabelSettings" id="LabelSettings_p8cgh"]
-font = ExtResource("3_3ukyr")
 font_size = 28
 font_color = Color(0.83137256, 0.83137256, 0.83137256, 1)
 shadow_size = 2
 shadow_color = Color(0.08235294, 0.08235294, 0.08235294, 0.8666667)
 
 [sub_resource type="LabelSettings" id="LabelSettings_wdlki"]
-font = ExtResource("4_vbbp5")
 font_size = 28
 font_color = Color(0.83137256, 0.83137256, 0.83137256, 1)
 shadow_size = 2
@@ -81,6 +75,5 @@ mouse_filter = 2
 [node name="Line 1" type="Label" parent="MarginContainer/CenterContainer/PanelContainer/MarginContainer/Subtitles" unique_id=325371103]
 visible = false
 layout_mode = 2
-theme_override_fonts/font = ExtResource("4_vbbp5")
 theme_override_font_sizes/font_size = 36
 horizontal_alignment = 1
