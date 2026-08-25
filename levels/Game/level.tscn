@@ -19,6 +19,13 @@
 [ext_resource type="Texture2D" uid="uid://c7asq5cl1lb1g" path="res://sprites/num_7.png" id="9_g0llx"]
 [ext_resource type="Texture2D" uid="uid://p570325iwar3" path="res://sprites/num_8.png" id="9_ieofn"]
 [ext_resource type="Texture2D" uid="uid://c80qkoikf0fba" path="res://sprites/num_9.png" id="11_mcl0i"]
+[ext_resource type="Texture2D" uid="uid://b2bpdu0e6eonj" path="res://sprites/woodlouse.png" id="13_8lgmf"]
+[ext_resource type="Script" uid="uid://m4e4y4p68wp3" path="res://levels/Game/character.gd" id="14_tt44h"]
+[ext_resource type="Texture2D" uid="uid://6klhqwdodovx" path="res://sprites/speech_bubble.png" id="15_cypbv"]
+[ext_resource type="Script" uid="uid://myodc6ti2elg" path="res://levels/Game/speech_bubble.gd" id="16_58pty"]
+[ext_resource type="FontFile" uid="uid://dkqm23662tqn1" path="res://fonts/wiggle_normal.fnt" id="17_81l0q"]
+[ext_resource type="FontFile" uid="uid://vdjnsx82vh0f" path="res://fonts/wiggle_bold.fnt" id="18_1d05p"]
+[ext_resource type="Texture2D" uid="uid://byhxt730e66r8" path="res://sprites/larva.png" id="19_tt44h"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ieofn"]
 render_priority = 0
@@ -137,6 +144,63 @@ shader_parameter/sequence_length = PackedInt32Array(2, 0, 0, 0, 0, 0, 0, 0)
 shader_parameter/billboard = false
 shader_parameter/animation_speed = 1.0
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_wfk6r"]
+render_priority = 3
+shader = ExtResource("6_m17kh")
+shader_parameter/tex = ExtResource("13_8lgmf")
+shader_parameter/sprite_size = Vector2i(600, 400)
+shader_parameter/sprite_spacing = Vector2i(0, 0)
+shader_parameter/sprites = Vector2i(1, 2)
+shader_parameter/directions = 1
+shader_parameter/sequence_start = PackedInt32Array(0, 0, 0, 0, 0, 0, 0, 0)
+shader_parameter/sequence_length = PackedInt32Array(2, 0, 0, 0, 0, 0, 0, 0)
+shader_parameter/billboard = true
+shader_parameter/animation_speed = 0.2999999932944
+
+[sub_resource type="QuadMesh" id="QuadMesh_6kqwp"]
+material = SubResource("ShaderMaterial_wfk6r")
+size = Vector2(1.8, 1.2)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7sa57"]
+render_priority = 0
+shader = ExtResource("6_m17kh")
+shader_parameter/tex = ExtResource("15_cypbv")
+shader_parameter/sprite_size = Vector2i(600, 500)
+shader_parameter/sprite_spacing = Vector2i(0, 0)
+shader_parameter/sprites = Vector2i(1, 2)
+shader_parameter/directions = 1
+shader_parameter/sequence_start = PackedInt32Array(0, 0, 0, 0, 0, 0, 0, 0)
+shader_parameter/sequence_length = PackedInt32Array(2, 0, 0, 0, 0, 0, 0, 0)
+shader_parameter/billboard = true
+shader_parameter/animation_speed = 0.45999998971808
+
+[sub_resource type="QuadMesh" id="QuadMesh_tcd4a"]
+material = SubResource("ShaderMaterial_7sa57")
+size = Vector2(1.2, 1)
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_i3jg0"]
+radius = 1.0769374
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8lgmf"]
+render_priority = 3
+shader = ExtResource("6_m17kh")
+shader_parameter/tex = ExtResource("19_tt44h")
+shader_parameter/sprite_size = Vector2i(600, 600)
+shader_parameter/sprite_spacing = Vector2i(0, 0)
+shader_parameter/sprites = Vector2i(1, 2)
+shader_parameter/directions = 1
+shader_parameter/sequence_start = PackedInt32Array(0, 0, 0, 0, 0, 0, 0, 0)
+shader_parameter/sequence_length = PackedInt32Array(2, 0, 0, 0, 0, 0, 0, 0)
+shader_parameter/billboard = true
+shader_parameter/animation_speed = 0.76999998278896
+
+[sub_resource type="QuadMesh" id="QuadMesh_0ltmj"]
+material = SubResource("ShaderMaterial_8lgmf")
+size = Vector2(1.2, 1.2)
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_tt44h"]
+radius = 1.2826781
+
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ykoeq"]
 render_priority = 0
 shader = ExtResource("6_m17kh")
@@ -231,6 +295,109 @@ _number_mats = Array[Material]([SubResource("ShaderMaterial_ieofn"), SubResource
 
 [node name="Room First" parent="." unique_id=976863180 instance=ExtResource("1_opbm8")]
 
+[node name="Floor" parent="Room First" index="0" unique_id=1390837627]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0.018432617, -0.018432617, -0.0181427)
+
+[node name="Woodlousie" type="MeshInstance3D" parent="Room First" unique_id=823847932 node_paths=PackedStringArray("bubble", "detection_area")]
+transform = Transform3D(-0.71828705, 0, 0.69574684, 0, 1, 0, -0.69574684, 0, -0.71828705, -1.620922, 0.44772023, 1.3993213)
+mesh = SubResource("QuadMesh_6kqwp")
+script = ExtResource("14_tt44h")
+bubble = NodePath("Speech Bubble")
+detection_area = NodePath("Area3D")
+
+[node name="Speech Bubble" type="MeshInstance3D" parent="Room First/Woodlousie" unique_id=2092045862 node_paths=PackedStringArray("label1", "label2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.095324874, 0.92417616, -0.092333555)
+mesh = SubResource("QuadMesh_tcd4a")
+script = ExtResource("16_58pty")
+wiggly_text = "I WOOD SAY
+YOU WOOD
+BE SAFE
+IF YOU TAKE
+THE DOOR YOU
+CAME IN
+ "
+label1 = NodePath("Text")
+label2 = NodePath("Text2")
+wave_length = 4
+speed = 6.024
+
+[node name="Text" type="Label3D" parent="Room First/Woodlousie/Speech Bubble" unique_id=1411326928]
+sorting_offset = 0.1
+billboard = 1
+double_sided = false
+modulate = Color(0, 0, 0, 1)
+font = ExtResource("17_81l0q")
+font_size = 16
+autowrap_trim_flags = 0
+
+[node name="Text2" type="Label3D" parent="Room First/Woodlousie/Speech Bubble" unique_id=1216664452]
+sorting_offset = 0.1
+billboard = 1
+double_sided = false
+modulate = Color(0, 0, 0, 1)
+font = ExtResource("18_1d05p")
+font_size = 16
+autowrap_trim_flags = 0
+
+[node name="Area3D" type="Area3D" parent="Room First/Woodlousie" unique_id=1041712435]
+collision_layer = 0
+collision_mask = 2
+input_ray_pickable = false
+monitorable = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Room First/Woodlousie/Area3D" unique_id=450557305]
+shape = SubResource("SphereShape3D_i3jg0")
+
+[node name="Larvey" type="MeshInstance3D" parent="Room First" unique_id=93817334 node_paths=PackedStringArray("bubble", "detection_area")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.182373, 0.5411377, -0.8866577)
+mesh = SubResource("QuadMesh_0ltmj")
+script = ExtResource("14_tt44h")
+bubble = NodePath("Speech Bubble")
+detection_area = NodePath("Area3D")
+
+[node name="Area3D" type="Area3D" parent="Room First/Larvey" unique_id=1658077838]
+collision_layer = 0
+collision_mask = 2
+input_ray_pickable = false
+monitorable = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Room First/Larvey/Area3D" unique_id=885283444]
+shape = SubResource("SphereShape3D_tt44h")
+
+[node name="Speech Bubble" type="MeshInstance3D" parent="Room First/Larvey" unique_id=1999700558 node_paths=PackedStringArray("label1", "label2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.08, 0)
+mesh = SubResource("QuadMesh_tcd4a")
+script = ExtResource("16_58pty")
+wiggly_text = "I WOOD SAY
+YOU WOOD
+BE SAFE
+IF YOU TAKE
+THE DOOR YOU
+CAME IN
+ "
+label1 = NodePath("Text")
+label2 = NodePath("Text2")
+wave_length = 4
+speed = 6.024
+
+[node name="Text" type="Label3D" parent="Room First/Larvey/Speech Bubble" unique_id=646973628]
+sorting_offset = 0.1
+billboard = 1
+double_sided = false
+modulate = Color(0, 0, 0, 1)
+font = ExtResource("17_81l0q")
+font_size = 16
+autowrap_trim_flags = 0
+
+[node name="Text2" type="Label3D" parent="Room First/Larvey/Speech Bubble" unique_id=400969678]
+sorting_offset = 0.1
+billboard = 1
+double_sided = false
+modulate = Color(0, 0, 0, 1)
+font = ExtResource("18_1d05p")
+font_size = 16
+autowrap_trim_flags = 0
+
 [node name="Room Empty" parent="." unique_id=615196368 node_paths=PackedStringArray("correct_doors") instance=ExtResource("1_opbm8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.0161285, 0, -12.013237)
 correct_doors = [NodePath("Wall West/Door"), NodePath("Wall North/Door"), NodePath("Wall East/Door"), NodePath("Wall South/Door")]
@@ -297,6 +464,11 @@ shape = SubResource("BoxShape3D_t3m14")
 transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, -1.2484512, 1, -0.97129154)
 shape = SubResource("BoxShape3D_fdqvq")
 
+[editable path="Room First"]
+[editable path="Room First/Wall West"]
+[editable path="Room First/Wall North"]
+[editable path="Room First/Wall East"]
+[editable path="Room First/Wall South"]
 [editable path="Room Empty"]
 [editable path="Room Empty/Wall West"]
 [editable path="Room Empty/Wall North"]
