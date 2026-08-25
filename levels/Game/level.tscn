@@ -27,6 +27,7 @@
 [ext_resource type="FontFile" uid="uid://vdjnsx82vh0f" path="res://fonts/wiggle_bold.fnt" id="18_1d05p"]
 [ext_resource type="Texture2D" uid="uid://byhxt730e66r8" path="res://sprites/larva.png" id="19_tt44h"]
 [ext_resource type="Texture2D" uid="uid://di5lme7eoak5v" path="res://sprites/vivel.png" id="20_cypbv"]
+[ext_resource type="Texture2D" uid="uid://ba1nhgqijr2ys" path="res://sprites/tick.png" id="21_58pty"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ieofn"]
 render_priority = 0
@@ -219,6 +220,39 @@ shader_parameter/animation_speed = 0.20999999530608
 material = SubResource("ShaderMaterial_58pty")
 size = Vector2(1.2, 0.8)
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_hmnmk"]
+render_priority = 0
+shader = ExtResource("6_m17kh")
+shader_parameter/tex = ExtResource("21_58pty")
+shader_parameter/sprite_size = Vector2i(600, 600)
+shader_parameter/sprite_spacing = Vector2i(0, 0)
+shader_parameter/sprites = Vector2i(1, 2)
+shader_parameter/directions = 1
+shader_parameter/sequence_start = PackedInt32Array(0, 0, 0, 0, 0, 0, 0, 0)
+shader_parameter/sequence_length = PackedInt32Array(2, 0, 0, 0, 0, 0, 0, 0)
+shader_parameter/billboard = false
+shader_parameter/animation_speed = 0.27999999374144
+
+[sub_resource type="QuadMesh" id="QuadMesh_7sa57"]
+material = SubResource("ShaderMaterial_hmnmk")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_81l0q"]
+render_priority = 0
+shader = ExtResource("6_m17kh")
+shader_parameter/tex = ExtResource("15_cypbv")
+shader_parameter/sprite_size = Vector2i(600, 500)
+shader_parameter/sprite_spacing = Vector2i(0, 0)
+shader_parameter/sprites = Vector2i(1, 2)
+shader_parameter/directions = 1
+shader_parameter/sequence_start = PackedInt32Array(0, 0, 0, 0, 0, 0, 0, 0)
+shader_parameter/sequence_length = PackedInt32Array(2, 0, 0, 0, 0, 0, 0, 0)
+shader_parameter/billboard = false
+shader_parameter/animation_speed = 0.45999998971808
+
+[sub_resource type="QuadMesh" id="QuadMesh_1d05p"]
+material = SubResource("ShaderMaterial_81l0q")
+size = Vector2(1.2, 1)
+
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ykoeq"]
 render_priority = 0
 shader = ExtResource("6_m17kh")
@@ -383,7 +417,7 @@ monitorable = false
 shape = SubResource("SphereShape3D_tt44h")
 
 [node name="Speech Bubble" type="MeshInstance3D" parent="Room First/Larvey" unique_id=1999700558 node_paths=PackedStringArray("label1", "label2")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.08, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.960127, 0)
 mesh = SubResource("QuadMesh_tcd4a")
 script = ExtResource("16_58pty")
 wiggly_text = "I WOOD SAY
@@ -465,6 +499,56 @@ modulate = Color(0, 0, 0, 1)
 font = ExtResource("18_1d05p")
 font_size = 16
 autowrap_trim_flags = 0
+
+[node name="Ticks" type="MeshInstance3D" parent="Room First" unique_id=2017193524 node_paths=PackedStringArray("bubble", "detection_area")]
+transform = Transform3D(1.1924881e-08, 0, -1, -0.31648102, -0.94859886, -3.7739984e-09, -0.94859886, 0.31648102, -1.1311928e-08, 2.4935303, 1.1248169, 1.801205)
+mesh = SubResource("QuadMesh_7sa57")
+script = ExtResource("14_tt44h")
+bubble = NodePath("Speech Bubble")
+detection_area = NodePath("Area3D")
+
+[node name="Speech Bubble" type="MeshInstance3D" parent="Room First/Ticks" unique_id=195408168 node_paths=PackedStringArray("label1", "label2")]
+transform = Transform3D(-0.9995913, -0.028596222, -2.3844896e-08, 0.028596222, -0.9995913, 3.4100633e-10, -2.3844887e-08, -3.4100656e-10, 1, -0.24012733, -0.66419953, 0.010192871)
+mesh = SubResource("QuadMesh_1d05p")
+script = ExtResource("16_58pty")
+wiggly_text = "I WOOD SAY
+YOU WOOD
+BE SAFE
+IF YOU TAKE
+THE DOOR YOU
+CAME IN
+ "
+label1 = NodePath("Text")
+label2 = NodePath("Text2")
+wave_length = 4
+speed = 6.024
+
+[node name="Text" type="Label3D" parent="Room First/Ticks/Speech Bubble" unique_id=1561463899]
+transform = Transform3D(1, 0, -8.881784e-16, 0, 1, -2.220446e-16, 8.881784e-16, 2.220446e-16, 1, 0, 0, 0.03503418)
+sorting_offset = 0.1
+double_sided = false
+modulate = Color(0, 0, 0, 1)
+font = ExtResource("17_81l0q")
+font_size = 16
+autowrap_trim_flags = 0
+
+[node name="Text2" type="Label3D" parent="Room First/Ticks/Speech Bubble" unique_id=1755484159]
+transform = Transform3D(1, 0, -8.881784e-16, 0, 1, -2.220446e-16, 8.881784e-16, 2.220446e-16, 1, 0, 0, 0.03503418)
+sorting_offset = 0.1
+double_sided = false
+modulate = Color(0, 0, 0, 1)
+font = ExtResource("18_1d05p")
+font_size = 16
+autowrap_trim_flags = 0
+
+[node name="Area3D" type="Area3D" parent="Room First/Ticks" unique_id=60542000]
+collision_layer = 0
+collision_mask = 2
+input_ray_pickable = false
+monitorable = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Room First/Ticks/Area3D" unique_id=241759461]
+shape = SubResource("SphereShape3D_tt44h")
 
 [node name="Room Empty" parent="." unique_id=615196368 node_paths=PackedStringArray("correct_doors") instance=ExtResource("1_opbm8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.0161285, 0, -12.013237)
