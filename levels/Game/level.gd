@@ -7,10 +7,14 @@ extends Node3D
 
 var _stage: int = 0:
     set(value):
-        print_debug("Progress %s -> %s" % [_stage, value])
+        _rooms_visited += 1
+        print_debug("Progress %s -> %s (%s)" % [_stage, value, _rooms_visited])
         _stage = value
+
+var _rooms_visited: int
 var _next_stage: int
 var _current_room: Room
+var _room_history: Array[Room]
 
 func _enter_tree() -> void:
     if SignalBus.on_enter_room.connect(_handle_enter_room) != OK:
@@ -30,12 +34,14 @@ func _ready() -> void:
     start_room.visible = true
     start_room.set_process(true)
     start_room.set_room_number(_number_mats[_stage])
+    _room_history.append(start_room)
 
 func _get_next_room(current: Room) -> Room:
+    var options: Array[Room]
     for room: Room in _rooms:
         if room && room != current:
-            return room
-    return null
+            options.append(room)
+    return options.pick_random()
 
 func _handle_enter_room(room: Room, direction: Vector2i) -> void:
     if _current_room != room:
@@ -44,6 +50,10 @@ func _handle_enter_room(room: Room, direction: Vector2i) -> void:
             _current_room.set_process(false)
 
         _current_room = room
+
+        _room_history.append(_current_room)
+        while _room_history.size() >= mini(_rooms.size() - 1, 10):
+            _room_history.remove_at(0)
 
         if _dead_end:
             _dead_end.visible = true
