@@ -337,10 +337,13 @@ size = Vector3(0.05, 2, 2)
 [sub_resource type="BoxShape3D" id="BoxShape3D_fdqvq"]
 size = Vector3(0.05, 2, 2.45)
 
-[node name="Level" type="Node3D" unique_id=1796817656 node_paths=PackedStringArray("_start_room", "_rooms", "_dead_end")]
+[node name="Level" type="Node3D" unique_id=1796817656 node_paths=PackedStringArray("_force_order", "_easy_rooms", "_medium_rooms", "_hard_rooms", "_choice_rooms", "_dead_end")]
 script = ExtResource("1_xktuk")
-_start_room = [NodePath("Room Worries Hard")]
-_rooms = [NodePath("Room Worries Easy"), NodePath("Room Empty"), NodePath("Room Worries Medium"), NodePath("Room Worries Hard")]
+_force_order = [NodePath("Room Worries Hard"), NodePath("Room Worries Easy")]
+_easy_rooms = [NodePath("Room Worries Easy")]
+_medium_rooms = [NodePath("Room Worries Medium")]
+_hard_rooms = [NodePath("Room Worries Hard")]
+_choice_rooms = [NodePath("Room Empty")]
 _dead_end = NodePath("DeadEnd")
 _number_mats = Array[Material]([SubResource("ShaderMaterial_ieofn"), SubResource("ShaderMaterial_op3gc"), SubResource("ShaderMaterial_nunso"), SubResource("ShaderMaterial_nkckd"), SubResource("ShaderMaterial_24sfg"), SubResource("ShaderMaterial_g0llx"), SubResource("ShaderMaterial_xitda"), SubResource("ShaderMaterial_mcl0i"), SubResource("ShaderMaterial_s8mnq")])
 

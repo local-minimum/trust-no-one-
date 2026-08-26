@@ -1,7 +1,10 @@
 extends Node3D
 
-@export var _start_room: Array[Room]
-@export var _rooms: Array[Room]
+@export var _force_order: Array[Room]
+@export var _easy_rooms: Array[Room]
+@export var _medium_rooms: Array[Room]
+@export var _hard_rooms: Array[Room]
+@export var _choice_rooms: Array[Room]
 @export var _dead_end: Node3D
 @export var _number_mats: Array[Material]
 
@@ -24,23 +27,59 @@ func _enter_tree() -> void:
         push_error("Failed to connect exit room")
 
 func _ready() -> void:
-    for room: Room in _rooms:
-        room.global_position = Vector3(0.0, -10.0, 0.0)
-        room.visible = false
-        room.set_process(false)
+    _disable_all_rooms()
 
-    var start_room: Room = _start_room.pick_random()
+    var start_room: Room = _get_next_room(null)
     start_room.global_position = Vector3.ZERO
     start_room.visible = true
     start_room.set_process(true)
     start_room.set_room_number(_number_mats[_stage])
     _room_history.append(start_room)
 
+func _disable_room(room: Room) -> void:
+    room.global_position = Vector3(0.0, -10.0, 0.0)
+    room.visible = false
+    room.set_process(false)
+
+func _disable_all_rooms() -> void:
+    for room: Room in _easy_rooms:
+        _disable_room(room)
+    for room: Room in _medium_rooms:
+        _disable_room(room)
+    for room: Room in _hard_rooms:
+        _disable_room(room)
+    for room: Room in _choice_rooms:
+        _disable_room(room)
+
 func _get_next_room(current: Room) -> Room:
+    if _rooms_visited < _force_order.size():
+        return _force_order[_rooms_visited]
+
     var options: Array[Room]
+    var _rooms: Array[Room]
+
+    if _stage < 3:
+        _rooms = _easy_rooms
+    elif _stage < 6:
+        _rooms = _medium_rooms
+    elif _stage < 9:
+        _rooms = _hard_rooms
+    else:
+        return _choice_rooms.pick_random()
+
     for room: Room in _rooms:
-        if room && room != current:
+        if room && room != current && !_room_history.has(room):
             options.append(room)
+
+    if options.is_empty():
+        for room: Room in _rooms:
+            if room != current:
+                _room_history.erase(room)
+                options.append(room)
+
+    if options.is_empty():
+        return _rooms.pick_random()
+
     return options.pick_random()
 
 func _handle_enter_room(room: Room, direction: Vector2i) -> void:
@@ -52,8 +91,6 @@ func _handle_enter_room(room: Room, direction: Vector2i) -> void:
         _current_room = room
 
         _room_history.append(_current_room)
-        while _room_history.size() >= mini(_rooms.size() - 1, 10):
-            _room_history.remove_at(0)
 
         if _dead_end:
             _dead_end.visible = true
