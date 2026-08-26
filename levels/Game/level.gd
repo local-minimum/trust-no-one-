@@ -1,5 +1,6 @@
 extends Node3D
 
+@export var _start_room: Array[Room]
 @export var _rooms: Array[Room]
 @export var _dead_end: Node3D
 @export var _number_mats: Array[Material]
@@ -21,7 +22,7 @@ func _ready() -> void:
         room.visible = false
         room.set_process(false)
 
-    var start_room: Room = _rooms.pick_random()
+    var start_room: Room = _start_room.pick_random()
     start_room.global_position = Vector3.ZERO
     start_room.visible = true
     start_room.set_process(true)

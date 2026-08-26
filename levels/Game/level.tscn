@@ -26,6 +26,8 @@
 [ext_resource type="PackedScene" uid="uid://dofr308g8am8r" path="res://levels/Game/tvivel.tscn" id="15_58pty"]
 [ext_resource type="Texture2D" uid="uid://dlhkqea0im5pl" path="res://sprites/door_death.png" id="15_tcd4a"]
 [ext_resource type="PackedScene" uid="uid://dpln8nu0ytfhs" path="res://levels/Game/fly.tscn" id="17_1d05p"]
+[ext_resource type="PackedScene" uid="uid://8k4emb7sh4dx" path="res://levels/Game/knott.tscn" id="18_6kqwp"]
+[ext_resource type="Texture2D" uid="uid://bu0wvsfirlwo5" path="res://sprites/door_time.png" id="27_cypbv"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ieofn"]
 render_priority = 0
@@ -298,13 +300,32 @@ size = Vector3(0.05, 2, 2)
 [sub_resource type="BoxShape3D" id="BoxShape3D_fdqvq"]
 size = Vector3(0.05, 2, 2.45)
 
-[node name="Level" type="Node3D" unique_id=1796817656 node_paths=PackedStringArray("_rooms", "_dead_end")]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_58pty"]
+render_priority = 2
+shader = ExtResource("6_m17kh")
+shader_parameter/tex = ExtResource("27_cypbv")
+shader_parameter/sprite_size = Vector2i(128, 128)
+shader_parameter/sprite_spacing = Vector2i(0, 0)
+shader_parameter/sprites = Vector2i(2, 1)
+shader_parameter/directions = 1
+shader_parameter/sequence_start = PackedInt32Array(0, 0, 0, 0, 0, 0, 0, 0)
+shader_parameter/sequence_length = PackedInt32Array(2, 0, 0, 0, 0, 0, 0, 0)
+shader_parameter/billboard = false
+shader_parameter/animation_speed = 0.32999999262384
+
+[sub_resource type="QuadMesh" id="QuadMesh_81l0q"]
+material = SubResource("ShaderMaterial_58pty")
+size = Vector2(0.4, 0.4)
+
+[node name="Level" type="Node3D" unique_id=1796817656 node_paths=PackedStringArray("_start_room", "_rooms", "_dead_end")]
 script = ExtResource("1_xktuk")
-_rooms = [NodePath("Room Worries Easy"), NodePath("Room Empty")]
+_start_room = [NodePath("Room Worries Medium")]
+_rooms = [NodePath("Room Worries Easy"), NodePath("Room Empty"), NodePath("Room Worries Medium")]
 _dead_end = NodePath("DeadEnd")
 _number_mats = Array[Material]([SubResource("ShaderMaterial_ieofn"), SubResource("ShaderMaterial_op3gc"), SubResource("ShaderMaterial_nunso"), SubResource("ShaderMaterial_nkckd"), SubResource("ShaderMaterial_24sfg"), SubResource("ShaderMaterial_g0llx"), SubResource("ShaderMaterial_xitda"), SubResource("ShaderMaterial_mcl0i"), SubResource("ShaderMaterial_s8mnq")])
 
-[node name="Room Worries Easy" parent="." unique_id=976863180 instance=ExtResource("1_opbm8")]
+[node name="Room Worries Easy" parent="." unique_id=976863180 node_paths=PackedStringArray("correct_doors") instance=ExtResource("1_opbm8")]
+correct_doors = [NodePath("Wall South/Door")]
 
 [node name="Floor" parent="Room Worries Easy" index="0" unique_id=1390837627]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0.018432617, -0.018432617, -0.0181427)
@@ -432,6 +453,37 @@ shape = SubResource("BoxShape3D_t3m14")
 transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, -1.2484512, 1, -0.97129154)
 shape = SubResource("BoxShape3D_fdqvq")
 
+[node name="Room Worries Medium" parent="." unique_id=684482728 instance=ExtResource("1_opbm8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 0, 0)
+
+[node name="Floor" parent="Room Worries Medium" index="0" unique_id=1390837627]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0.018432617, -0.018432617, -0.0181427)
+
+[node name="Door Sign" type="MeshInstance3D" parent="Room Worries Medium/Wall West/Door" parent_id_path=PackedInt32Array(684482728, 1483052904, 1163846168) index="1" unique_id=2109775292]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.012170315, 0.21948242, -0.52379763)
+mesh = SubResource("QuadMesh_81l0q")
+
+[node name="Door Sign2" type="MeshInstance3D" parent="Room Worries Medium/Wall North/Door" parent_id_path=PackedInt32Array(684482728, 1524364584, 1163846168) index="1" unique_id=1076858994]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.012170315, 0.21948242, -0.52379763)
+mesh = SubResource("QuadMesh_1yn8p")
+
+[node name="Door Sign" type="MeshInstance3D" parent="Room Worries Medium/Wall East/Door" parent_id_path=PackedInt32Array(684482728, 1960271088, 1163846168) index="1" unique_id=2054592448]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.012170315, 0.21948242, -0.52379763)
+mesh = SubResource("QuadMesh_5qjco")
+
+[node name="Door Sign" type="MeshInstance3D" parent="Room Worries Medium/Wall South/Door" parent_id_path=PackedInt32Array(684482728, 412282018, 1163846168) index="1" unique_id=385676857]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.012170315, 0.21948242, -0.52379763)
+mesh = SubResource("QuadMesh_0ltmj")
+
+[node name="Knott" parent="Room Worries Medium" unique_id=60636311 instance=ExtResource("18_6kqwp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.40979004, 0)
+texts = Array[String](["IT IS NOT MY
+COUNCIL TO
+NOT GO WHERE
+FEELINGS
+SHATTER
+ "])
+
 [editable path="Room Worries Easy"]
 [editable path="Room Worries Easy/Wall West"]
 [editable path="Room Worries Easy/Wall North"]
@@ -443,3 +495,8 @@ shape = SubResource("BoxShape3D_fdqvq")
 [editable path="Room Empty/Wall East"]
 [editable path="Room Empty/Wall South"]
 [editable path="DeadEnd"]
+[editable path="Room Worries Medium"]
+[editable path="Room Worries Medium/Wall West"]
+[editable path="Room Worries Medium/Wall North"]
+[editable path="Room Worries Medium/Wall East"]
+[editable path="Room Worries Medium/Wall South"]
