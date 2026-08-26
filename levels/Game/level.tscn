@@ -411,10 +411,10 @@ size = Vector3(0.05, 2, 2.45)
 
 [node name="Level" type="Node3D" unique_id=1796817656 node_paths=PackedStringArray("_force_order", "_easy_rooms", "_medium_rooms", "_hard_rooms", "_choice_rooms", "_dead_end")]
 script = ExtResource("1_xktuk")
-_force_order = [NodePath("Room Fruits Easy"), NodePath("Room Worries Easy"), NodePath("Room Worries Medium"), NodePath("Room Fruits Medium"), NodePath("Room Worries Hard"), NodePath("Room Empty")]
+_force_order = [NodePath("Room Fruits Hard"), NodePath("Room Fruits Easy"), NodePath("Room Worries Easy"), NodePath("Room Worries Medium"), NodePath("Room Fruits Medium"), NodePath("Room Worries Hard"), NodePath("Room Empty")]
 _easy_rooms = [NodePath("Room Worries Easy"), NodePath("Room Fruits Easy")]
 _medium_rooms = [NodePath("Room Worries Medium"), NodePath("Room Fruits Medium")]
-_hard_rooms = [NodePath("Room Worries Hard")]
+_hard_rooms = [NodePath("Room Worries Hard"), NodePath("Room Fruits Hard")]
 _choice_rooms = [NodePath("Room Empty")]
 _dead_end = NodePath("DeadEnd")
 _number_mats = Array[Material]([SubResource("ShaderMaterial_ieofn"), SubResource("ShaderMaterial_op3gc"), SubResource("ShaderMaterial_nunso"), SubResource("ShaderMaterial_nkckd"), SubResource("ShaderMaterial_24sfg"), SubResource("ShaderMaterial_g0llx"), SubResource("ShaderMaterial_xitda"), SubResource("ShaderMaterial_mcl0i"), SubResource("ShaderMaterial_s8mnq")])
@@ -631,6 +631,61 @@ WITH THIS.
 TAKE A BITE!
  "])
 
+[node name="Room Fruits Hard" parent="." unique_id=1653184456 node_paths=PackedStringArray("correct_doors") instance=ExtResource("1_opbm8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 33.01613, 0, 22.986763)
+correct_doors = [NodePath("Wall West/Door")]
+
+[node name="Door Sign" type="MeshInstance3D" parent="Room Fruits Hard/Wall West/Door/StaticBody3D/CollisionShape3D" parent_id_path=PackedInt32Array(1653184456, 216262503) index="0" unique_id=1048693561]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.012170315, 0.21948242, -0.52379763)
+mesh = SubResource("QuadMesh_ht7y6")
+
+[node name="Door Sign" type="MeshInstance3D" parent="Room Fruits Hard/Wall North/Door" parent_id_path=PackedInt32Array(1653184456, 1524364584, 1163846168) index="1" unique_id=1574866265]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.012170315, 0.21948242, -0.52379763)
+mesh = SubResource("QuadMesh_cm5ca")
+
+[node name="Door Sign" type="MeshInstance3D" parent="Room Fruits Hard/Wall East/Door" parent_id_path=PackedInt32Array(1653184456, 1960271088, 1163846168) index="1" unique_id=1793438041]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.012170315, 0.21948242, -0.52379763)
+mesh = SubResource("QuadMesh_taco4")
+
+[node name="Door Sign" type="MeshInstance3D" parent="Room Fruits Hard/Wall South/Door" parent_id_path=PackedInt32Array(1653184456, 412282018, 1163846168) index="1" unique_id=1507454641]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.012170315, 0.21948242, -0.52379763)
+mesh = SubResource("QuadMesh_k5pah")
+
+[node name="Tvivel" parent="Room Fruits Hard" unique_id=1401136583 instance=ExtResource("15_58pty")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3040161, 0.41467285, -1.3000488)
+texts = Array[String](["I GET
+NERVOUS
+AROUND
+DOCTORS...
+ ", "PLEASE GO 
+THE WAY
+THAT KEEPS
+THEM AWAY. 
+ "])
+
+[node name="Knott" parent="Room Fruits Hard" unique_id=1162000739 instance=ExtResource("18_6kqwp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.7514191, 0.4414673, 1.6521835)
+texts = Array[String](["I NEVER SAID
+GO BACK
+WHERE YOU
+CAME FROM...
+ ", "BUT DON'T
+LEAVE WHERE
+YOU'D GO
+SOLO."])
+
+[node name="Ticks" parent="Room Fruits Hard" unique_id=534956764 instance=ExtResource("16_81l0q")]
+transform = Transform3D(2.9802322e-08, -2.2351742e-08, 1, -0.316481, -0.94859886, -1.5261406e-08, 0.9485988, -0.31648102, -2.9802322e-08, -2.4330444, 0.6861572, 1.352356)
+texts = Array[String](["COME CLOSE!
+SNAIL SAID
+SOMETHING
+ABOUT TANKS
+BEING SAFE...
+ ", "AND HAVING
+MANY ROUND
+BALLS INSIDE.
+ "])
+
 [node name="Room Fruits Easy" parent="." unique_id=1093522793 node_paths=PackedStringArray("correct_doors") instance=ExtResource("1_opbm8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.98387146, 0, 22.986763)
 correct_doors = [NodePath("Wall East/Door")]
@@ -767,6 +822,11 @@ shape = SubResource("BoxShape3D_fdqvq")
 [editable path="Room Fruits Medium/Wall North"]
 [editable path="Room Fruits Medium/Wall East"]
 [editable path="Room Fruits Medium/Wall South"]
+[editable path="Room Fruits Hard"]
+[editable path="Room Fruits Hard/Wall West"]
+[editable path="Room Fruits Hard/Wall North"]
+[editable path="Room Fruits Hard/Wall East"]
+[editable path="Room Fruits Hard/Wall South"]
 [editable path="Room Fruits Easy"]
 [editable path="Room Fruits Easy/Wall West"]
 [editable path="Room Fruits Easy/Wall North"]
