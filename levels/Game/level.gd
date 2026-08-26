@@ -5,7 +5,10 @@ extends Node3D
 @export var _dead_end: Node3D
 @export var _number_mats: Array[Material]
 
-var _stage: int = 0
+var _stage: int = 0:
+    set(value):
+        print_debug("Progress %s -> %s" % [_stage, value])
+        _stage = value
 var _next_stage: int
 var _current_room: Room
 

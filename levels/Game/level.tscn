@@ -23,10 +23,12 @@
 [ext_resource type="Texture2D" uid="uid://cislcijncdodo" path="res://sprites/door_broken_heart.png" id="13_cypbv"]
 [ext_resource type="PackedScene" uid="uid://cjrp84phrmbqf" path="res://levels/Game/woodlousie.tscn" id="13_tt44h"]
 [ext_resource type="Texture2D" uid="uid://c8vxfkj4uqdbr" path="res://sprites/door_money.png" id="14_6kqwp"]
+[ext_resource type="PackedScene" uid="uid://bd3nloqirhi60" path="res://levels/Game/larvey.tscn" id="14_cypbv"]
 [ext_resource type="PackedScene" uid="uid://dofr308g8am8r" path="res://levels/Game/tvivel.tscn" id="15_58pty"]
 [ext_resource type="Texture2D" uid="uid://dlhkqea0im5pl" path="res://sprites/door_death.png" id="15_tcd4a"]
 [ext_resource type="PackedScene" uid="uid://dpln8nu0ytfhs" path="res://levels/Game/fly.tscn" id="17_1d05p"]
 [ext_resource type="PackedScene" uid="uid://8k4emb7sh4dx" path="res://levels/Game/knott.tscn" id="18_6kqwp"]
+[ext_resource type="PackedScene" uid="uid://cjd01rtuj6f12" path="res://levels/Game/snail.tscn" id="19_tcd4a"]
 [ext_resource type="Texture2D" uid="uid://bu0wvsfirlwo5" path="res://sprites/door_time.png" id="27_cypbv"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ieofn"]
@@ -453,8 +455,9 @@ shape = SubResource("BoxShape3D_t3m14")
 transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, -1.2484512, 1, -0.97129154)
 shape = SubResource("BoxShape3D_fdqvq")
 
-[node name="Room Worries Medium" parent="." unique_id=684482728 instance=ExtResource("1_opbm8")]
+[node name="Room Worries Medium" parent="." unique_id=684482728 node_paths=PackedStringArray("correct_doors") instance=ExtResource("1_opbm8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 0, 0)
+correct_doors = [NodePath("Wall East/Door")]
 
 [node name="Floor" parent="Room Worries Medium" index="0" unique_id=1390837627]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0.018432617, -0.018432617, -0.0181427)
@@ -482,6 +485,28 @@ COUNCIL TO
 NOT GO WHERE
 FEELINGS
 SHATTER
+ "])
+
+[node name="Snail" parent="Room Worries Medium" unique_id=2077069823 instance=ExtResource("19_tcd4a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.361248, 0.4317627, 1.2878006)
+texts = Array[String](["IT IS ON 
+THE WALL
+THIS IS
+YOUR CALL
+ 
+ ", "WETHER LARGE
+OR SMALL
+IT TICK-TOCKS
+FOR ALL
+ "])
+
+[node name="Larvey" parent="Room Worries Medium" unique_id=1072808151 instance=ExtResource("14_cypbv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.4954338, 0.61834717, -1.4459305)
+texts = Array[String](["I SHOULD BE
+IN THE CENTER!
+GO OPPOSITE
+KNOT'S
+DIRECTION.
  "])
 
 [editable path="Room Worries Easy"]
