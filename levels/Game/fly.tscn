@@ -50,6 +50,11 @@ mesh = SubResource("QuadMesh_hmnmk")
 script = ExtResource("3_hjhht")
 bubble = NodePath("Speech Bubble")
 detection_area = NodePath("Area3D")
+texts = Array[String](["ONLY ON THING
+COUNTS
+THE DOLLAR
+AMOUNTS
+ "])
 
 [node name="Area3D" type="Area3D" parent="." unique_id=1826740922]
 collision_layer = 0

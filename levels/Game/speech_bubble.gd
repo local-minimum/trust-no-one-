@@ -1,5 +1,5 @@
 extends MeshInstance3D
-
+class_name SpeechBubble
 
 @export_multiline() var wiggly_text: String:
     set(value):
