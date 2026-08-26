@@ -460,8 +460,8 @@ ALL ENDS
 
 [node name="Fly" parent="Room Worries Easy" unique_id=878648819 instance=ExtResource("17_1d05p")]
 transform = Transform3D(-0.9659258, 0, -0.25881913, 0, 1, 0, 0.25881913, 0, -0.9659258, 1.7136841, 0.28759766, 1.736023)
-texts = Array[String](["ONLY ON THING
-COUNTS:
+texts = Array[String](["ONLY ONE 
+THING COUNTS:
 THE DOLLAR
 AMOUNTS
  "])
@@ -564,7 +564,7 @@ BETTER!
   "])
 
 [node name="Room Empty" parent="." unique_id=615196368 node_paths=PackedStringArray("correct_doors") instance=ExtResource("1_opbm8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.01612854, 0, -15.013237)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.01612854, 0, -20.013237)
 correct_doors = [NodePath("Wall West/Door"), NodePath("Wall North/Door"), NodePath("Wall East/Door"), NodePath("Wall South/Door")]
 
 [node name="Door Sign" type="MeshInstance3D" parent="Room Empty/Wall West/Door/StaticBody3D/CollisionShape3D" parent_id_path=PackedInt32Array(615196368, 216262503) index="0" unique_id=1752019444]
@@ -584,7 +584,7 @@ transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.01
 mesh = SubResource("QuadMesh_0ltmj")
 
 [node name="Room Fruits Medium" parent="." unique_id=1042837682 node_paths=PackedStringArray("correct_doors") instance=ExtResource("1_opbm8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.016129, 0, 17.986763)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.016129, 0, 22.986763)
 correct_doors = [NodePath("Wall East/Door")]
 
 [node name="Door Sign" type="MeshInstance3D" parent="Room Fruits Medium/Wall West/Door/StaticBody3D/CollisionShape3D" parent_id_path=PackedInt32Array(1042837682, 216262503) index="0" unique_id=1315253363]
@@ -625,14 +625,14 @@ THAT WAY
 [node name="Ticks" parent="Room Fruits Medium" unique_id=1609070663 instance=ExtResource("16_81l0q")]
 transform = Transform3D(1.1924881e-08, 0, -1, -0.31648102, -0.94859886, -3.7739984e-09, -0.94859886, 0.31648102, -1.1311928e-08, 2.4796906, 0.6325399, 1.2827682)
 texts = Array[String](["I HEARD THE
-WORMS' NIECE
+WORMS' COUSIN
 HAD SUCCESS
 WITH THIS.
 TAKE A BITE!
  "])
 
 [node name="Room Fruits Easy" parent="." unique_id=1093522793 node_paths=PackedStringArray("correct_doors") instance=ExtResource("1_opbm8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.98387146, 0, 17.986763)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.98387146, 0, 22.986763)
 correct_doors = [NodePath("Wall East/Door")]
 
 [node name="Door Sign" type="MeshInstance3D" parent="Room Fruits Easy/Wall West/Door/StaticBody3D/CollisionShape3D" parent_id_path=PackedInt32Array(1093522793, 216262503) index="0" unique_id=1704524933]
@@ -664,15 +664,20 @@ ONE WAY OUT
 OF DODGE
 USES THE
 RIGHT BERRY!
+ ", "THEY AREN'T
+MANY, SO
+SHOULD BE
+EASY 
+TO CARRY!
  "])
 
 [node name="Woodlousie" parent="Room Fruits Easy" unique_id=230970029 instance=ExtResource("13_tt44h")]
 transform = Transform3D(-0.71828705, 0, 0.69574684, 0, 1, 0, -0.69574684, 0, -0.71828705, -1.1282806, 0.3432373, -1.1043167)
 texts = Array[String](["ONLY ONE WAY
 WOOD BE FAIR
-EVEN SPLIT
-BETWEEN ME
-AND MY FRIEND.
+ONE EACH TO
+ME AND MY 
+FRIEND.
  	"])
 
 [node name="Player" parent="." unique_id=1942068578 instance=ExtResource("2_dlgm3")]
