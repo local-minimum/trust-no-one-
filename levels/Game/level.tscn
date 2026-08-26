@@ -411,6 +411,7 @@ size = Vector3(0.05, 2, 2.45)
 
 [node name="Level" type="Node3D" unique_id=1796817656 node_paths=PackedStringArray("_force_order", "_easy_rooms", "_medium_rooms", "_hard_rooms", "_choice_rooms", "_dead_end")]
 script = ExtResource("1_xktuk")
+_music = "uid://dy638pj2i62i"
 _force_order = [NodePath("Room Fruits Hard"), NodePath("Room Fruits Easy"), NodePath("Room Worries Easy"), NodePath("Room Worries Medium"), NodePath("Room Fruits Medium"), NodePath("Room Worries Hard"), NodePath("Room Empty")]
 _easy_rooms = [NodePath("Room Worries Easy"), NodePath("Room Fruits Easy")]
 _medium_rooms = [NodePath("Room Worries Medium"), NodePath("Room Fruits Medium")]

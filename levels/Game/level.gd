@@ -1,5 +1,6 @@
 extends Node3D
 
+@export_file("*.mp3") var _music: String
 @export var _force_order: Array[Room]
 @export var _easy_rooms: Array[Room]
 @export var _medium_rooms: Array[Room]
@@ -27,6 +28,7 @@ func _enter_tree() -> void:
         push_error("Failed to connect exit room")
 
 func _ready() -> void:
+    AudioHub.play_music(_music)
     _disable_all_rooms()
 
     var start_room: Room = _get_next_room(null)
