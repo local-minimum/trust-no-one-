@@ -739,7 +739,7 @@ MY ????
  "])
 
 [node name="Woodlousie" parent="Room Elements Easy" unique_id=1926230252 instance=ExtResource("13_tt44h")]
-transform = Transform3D(-0.71828705, 0, 0.69574684, 0, 1, 0, -0.69574684, 0, -0.71828705, -0.8670044, 0.42077637, 0.81700134)
+transform = Transform3D(-0.71828705, 0, 0.69574684, 0, 1, 0, -0.69574684, 0, -0.71828705, -1.4130898, 0.42077637, 1.4564896)
 texts = Array[String](["I WOOD NOT
 MULCH ON
 THIS SOLID
@@ -883,7 +883,7 @@ transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.01
 mesh = SubResource("QuadMesh_5gf62")
 
 [node name="Woodlousie" parent="Room Warnings Medium" unique_id=970065732 instance=ExtResource("13_tt44h")]
-transform = Transform3D(-0.71828705, 0, 0.69574684, 0, 1, 0, -0.69574684, 0, -0.71828705, -0.5876465, 0.33789063, 0.6229248)
+transform = Transform3D(-0.71828705, 0, 0.69574684, 0, 1, 0, -0.69574684, 0, -0.71828705, -1.5429535, 0.33789063, 1.3485718)
 texts = Array[String](["I WOOD URGE
 AN EXIT THRU
 THE ULTIMATE
@@ -893,7 +893,7 @@ FALL APPART.
  "])
 
 [node name="Snail" parent="Room Warnings Medium" unique_id=592335693 instance=ExtResource("19_tcd4a")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.37957764, 0.4807129, -1.0217743)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.4215698, 0.4807129, -1.5460968)
 texts = Array[String](["'PLOSIVE IS
 TOO LOUD -
 C'ROSIVE
@@ -907,7 +907,7 @@ WHERE I TELL!
  "])
 
 [node name="Fly" parent="Room Warnings Medium" unique_id=2019280184 instance=ExtResource("17_1d05p")]
-transform = Transform3D(-0.9659258, 0, -0.25881907, 0, 1, 0, 0.25881907, 0, -0.9659258, -0.83325195, 0.41366577, -0.89178467)
+transform = Transform3D(-0.9659258, 0, -0.25881907, 0, 1, 0, 0.25881907, 0, -0.9659258, -1.4171906, 0.41366577, -1.5106812)
 texts = Array[String](["YOU HAVE
 TO
 IGNITE YOUR
@@ -1047,7 +1047,7 @@ SHATTER
  "])
 
 [node name="Snail" parent="Room Worries Medium" unique_id=547132205 instance=ExtResource("19_tcd4a")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.361248, 0.4317627, 1.2878006)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.6393547, 0.4317627, 1.6916006)
 texts = Array[String](["IT IS ON 
 THE WALL
 THIS IS
@@ -1060,7 +1060,7 @@ FOR ALL
  "])
 
 [node name="Larvey" parent="Room Worries Medium" unique_id=114750606 instance=ExtResource("14_cypbv")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.4954338, 0.61834717, -1.4459305)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.730999, 0.61846924, -1.6673088)
 texts = Array[String](["I SHOULD BE
 IN THE CENTER!
 GO OPPOSITE
@@ -1132,7 +1132,7 @@ transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.01
 mesh = SubResource("QuadMesh_k5pah")
 
 [node name="Fly" parent="Room Fruits Medium" unique_id=901251132 instance=ExtResource("17_1d05p")]
-transform = Transform3D(-0.9659258, 0, -0.25881907, 0, 1, 0, 0.25881907, 0, -0.9659258, -1.2438354, 0.453125, -0.9812622)
+transform = Transform3D(-0.9659258, 0, -0.25881907, 0, 1, 0, 0.25881907, 0, -0.9659258, -1.6718216, 0.453125, -1.6342449)
 texts = Array[String](["WHEN IN DOUBT
 SOME ARE MORE
 SOME ARE LESS
@@ -1235,7 +1235,7 @@ transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.01
 mesh = SubResource("QuadMesh_k5pah")
 
 [node name="Snail" parent="Room Fruits Easy" unique_id=1538487275 instance=ExtResource("19_tcd4a")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1246948, 0.45996094, -1.0000916)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.4981079, 0.45996094, 1.4467163)
 texts = Array[String](["WHEN LIFE
 GIVES YOU
 LEMONS
@@ -1255,7 +1255,7 @@ TO CARRY!
  "])
 
 [node name="Woodlousie" parent="Room Fruits Easy" unique_id=230970029 instance=ExtResource("13_tt44h")]
-transform = Transform3D(-0.71828705, 0, 0.69574684, 0, 1, 0, -0.69574684, 0, -0.71828705, -1.1282806, 0.3432373, -1.1043167)
+transform = Transform3D(-0.71828705, 0, 0.69574684, 0, 1, 0, -0.69574684, 0, -0.71828705, -1.3864365, 0.3432373, -1.4558792)
 texts = Array[String](["ONLY ONE WAY
 WOOD BE FAIR
 ONE EACH TO
