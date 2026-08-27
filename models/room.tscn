@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://d0kvbr0qlrgf3" path="res://sprites/painting-trust.png" id="9_fdqvq"]
 [ext_resource type="Texture2D" uid="uid://dnrkdf3uhbuyr" path="res://sprites/painting-frame.png" id="9_nbdnv"]
 [ext_resource type="Texture2D" uid="uid://d3gujoytj1tey" path="res://sprites/painting-agrees.png" id="11_d5ec4"]
+[ext_resource type="Texture2D" uid="uid://60jg6sf34olh" path="res://sprites/paintings-back.png" id="12_6mw1f"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_8ipqv"]
 render_priority = 0
@@ -84,6 +85,23 @@ shader_parameter/animation_speed = 0.3499999921768
 
 [sub_resource type="QuadMesh" id="QuadMesh_d5ec4"]
 material = SubResource("ShaderMaterial_ir86x")
+size = Vector2(0.8, 0.6)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_yvs3c"]
+render_priority = 0
+shader = ExtResource("1_ycakp")
+shader_parameter/tex = ExtResource("12_6mw1f")
+shader_parameter/sprite_size = Vector2i(400, 300)
+shader_parameter/sprite_spacing = Vector2i(0, 0)
+shader_parameter/sprites = Vector2i(1, 2)
+shader_parameter/directions = 1
+shader_parameter/sequence_start = PackedInt32Array(0, 0, 0, 0, 0, 0, 0, 0)
+shader_parameter/sequence_length = PackedInt32Array(2, 0, 0, 0, 0, 0, 0, 0)
+shader_parameter/billboard = false
+shader_parameter/animation_speed = 0.3499999921768
+
+[sub_resource type="QuadMesh" id="QuadMesh_dmi1t"]
+material = SubResource("ShaderMaterial_yvs3c")
 size = Vector2(0.8, 0.6)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_kr4f2"]
@@ -161,6 +179,14 @@ mesh = SubResource("QuadMesh_0ltmj")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.9802322e-08, 0, 0.014682293)
 mesh = SubResource("QuadMesh_d5ec4")
 
+[node name="Painting3" type="MeshInstance3D" parent="Wall West/Hall Floor" index="2" unique_id=1292996085]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -1.6690092, 1.4385633, 0.97847456)
+mesh = SubResource("QuadMesh_0ltmj")
+
+[node name="Text" parent="Wall West/Hall Floor/Painting3" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.0146820545)
+mesh = SubResource("QuadMesh_dmi1t")
+
 [node name="Room Side" parent="Wall West" index="2" unique_id=1540176426]
 surface_material_override/0 = ExtResource("4_flvyy")
 
@@ -216,6 +242,14 @@ mesh = SubResource("QuadMesh_0ltmj")
 [node name="Text2" type="MeshInstance3D" parent="Wall North/Hall Floor/Painting2" unique_id=406766163]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.9802322e-08, 0, 0.014682293)
 mesh = SubResource("QuadMesh_d5ec4")
+
+[node name="Painting3" type="MeshInstance3D" parent="Wall North/Hall Floor" index="2" unique_id=498365409]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -1.6690092, 1.4385633, 0.97847456)
+mesh = SubResource("QuadMesh_0ltmj")
+
+[node name="Text" parent="Wall North/Hall Floor/Painting3" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.0146820545)
+mesh = SubResource("QuadMesh_dmi1t")
 
 [node name="Room Side" parent="Wall North" index="2" unique_id=1540176426]
 surface_material_override/0 = ExtResource("4_flvyy")
@@ -273,6 +307,14 @@ mesh = SubResource("QuadMesh_0ltmj")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.9802322e-08, 0, 0.014682293)
 mesh = SubResource("QuadMesh_d5ec4")
 
+[node name="Painting3" type="MeshInstance3D" parent="Wall East/Hall Floor" index="2" unique_id=911525529]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -1.6690092, 1.4385633, 0.97847456)
+mesh = SubResource("QuadMesh_0ltmj")
+
+[node name="Text" parent="Wall East/Hall Floor/Painting3" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.0146820545)
+mesh = SubResource("QuadMesh_dmi1t")
+
 [node name="Room Side" parent="Wall East" index="2" unique_id=1540176426]
 surface_material_override/0 = ExtResource("4_flvyy")
 
@@ -322,7 +364,15 @@ mesh = SubResource("QuadMesh_0ltmj")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.0146820545)
 mesh = SubResource("QuadMesh_ir86x")
 
-[node name="Painting2" type="MeshInstance3D" parent="Wall South/Hall Floor" index="1" unique_id=521606081]
+[node name="Painting3" type="MeshInstance3D" parent="Wall South/Hall Floor" index="1" unique_id=1739241283]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -1.6690092, 1.4385633, 0.97847456)
+mesh = SubResource("QuadMesh_0ltmj")
+
+[node name="Text" type="MeshInstance3D" parent="Wall South/Hall Floor/Painting3" unique_id=357964137]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.0146820545)
+mesh = SubResource("QuadMesh_dmi1t")
+
+[node name="Painting2" type="MeshInstance3D" parent="Wall South/Hall Floor" index="2" unique_id=521606081]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -4.4829907, 1.4385633, -0.32152528)
 mesh = SubResource("QuadMesh_0ltmj")
 
