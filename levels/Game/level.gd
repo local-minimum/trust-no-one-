@@ -21,8 +21,6 @@ var _stage: int = 0:
         _stage = value
 
 var _rooms_visited: int
-var _prev_stage: int
-var _is_correct: bool
 var _next_stage: int
 var _current_room: Room
 var _room_history: Array[Room]
@@ -100,9 +98,9 @@ func _get_next_room(current: Room) -> Room:
 
 func _handle_enter_room(room: Room, direction: Vector2i) -> void:
     if _current_room != room:
+        print_debug("Enter room new room %s, current was %s" % [room, _current_room])
         if _current_room:
-            _current_room.visible = false
-            _current_room.set_process(false)
+            _disable_room(_current_room)
 
         _current_room = room
 
@@ -115,14 +113,13 @@ func _handle_enter_room(room: Room, direction: Vector2i) -> void:
 
         if !_first_room && _next_stage <= _stage:
             AudioHub.play_sfx(_laugh, 0.8, AudioHub.Bus.SFX)
-        _first_room = false
 
+        _first_room = false
         _stage = _next_stage
         room.set_room_number(_number_mats[_stage])
 
 func _handle_exit_room(room: Room, correct: bool, direction: Vector2i) -> void:
-    _prev_stage = _stage
-    _is_correct = correct
+    print_debug("Exiting room %s (current %s) correct=%s, stage=%s, next_stage=%s (before update)" % [room, _current_room, correct, _stage, _next_stage])
     if correct:
         _next_stage = _stage + 1
     else:
