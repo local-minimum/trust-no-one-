@@ -3,7 +3,6 @@ class_name Room
 
 enum Phase { PLACED, ENTERED, EXITED }
 
-@export var doors: Array[RoomDoor]
 @export var correct_doors: Array[RoomDoor]
 @export var _room_number: MeshInstance3D
 
@@ -17,7 +16,7 @@ var _phase: Phase = Phase.PLACED
 var _entry_door: RoomDoor
 
 func _enter_tree() -> void:
-    for door: RoomDoor in doors:
+    for door: RoomDoor in find_children("", "RoomDoor"):
         if door.opened.connect(_handle_door_opened.bind(door)) != OK:
             push_error("Failed to connect door opened")
         if door.closed.connect(_handle_door_closed.bind(door)) != OK:

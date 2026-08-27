@@ -691,19 +691,19 @@ transform = Transform3D(1.1924881e-08, 0, -1, -0.31648102, -0.94859886, -3.77399
 texts = Array[String](["I HEARD
 WOOD-LOUISE
 SAY YOU'D
-NEVER GUESS
-TO FOLLOW
+BETTER
+FOLLOW
 YOUR HEART!
  "])
 
 [node name="Larvey" parent="Room Cards Easy" unique_id=1072808151 instance=ExtResource("14_cypbv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.2037964, 0.5493164, 1.6303253)
-texts = Array[String](["ONLLLY ONE
-LLLOVELY 
-DOOR USES
-THE MOST
-ALLLURING
-LLLLETTER.
+texts = Array[String](["onLLLy one
+LLLoveLLLy
+door uses
+the most
+aLLLuring
+LLLLetter.
  "])
 
 [node name="Room Cards Medium" parent="." unique_id=1193004075 node_paths=PackedStringArray("correct_doors") instance=ExtResource("1_opbm8")]
@@ -878,10 +878,11 @@ MY ????
 
 [node name="Woodlousie" parent="Room Elements Easy" unique_id=1095833840 instance=ExtResource("13_tt44h")]
 transform = Transform3D(-0.71828705, 0, 0.69574684, 0, 1, 0, -0.69574684, 0, -0.71828705, -1.4130898, 0.42077637, 1.4564896)
-texts = Array[String](["I WOOD NOT
-MULCH ON
-THIS SOLID
-DIRECTION."])
+texts = Array[String](["I WOOD
+SUGGEST
+THE SOLID
+DIRECTION.
+ "])
 
 [node name="Tvivel" parent="Room Elements Easy" unique_id=610129169 instance=ExtResource("15_58pty")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.6453857, 0.38989258, -1.7982788)
@@ -1037,8 +1038,8 @@ TOO LOUD -
 C'ROSIVE
 HURT MY
 SHELL...
- ", "R' ACTIVE 
-MAKE NOXIC
+ ", "RAD' ACTIVE 
+MAKE SHROOM
 CLOUD -
 NOW GO
 WHERE I TELL!
@@ -1079,10 +1080,10 @@ mesh = SubResource("QuadMesh_5gf62")
 
 [node name="Knott" parent="Room Warnings Hard" unique_id=1498825222 instance=ExtResource("18_6kqwp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5964355, 0.4548645, 1.6785889)
-texts = Array[String](["NEVER
-DO NOT
-CROSS
-WHAT FRETS.
+texts = Array[String](["NEVER DO 
+NOT CROSS
+THE DROPS
+THAT BURN.
  "])
 
 [node name="Larvey" parent="Room Warnings Hard" unique_id=262388380 instance=ExtResource("14_cypbv")]
@@ -1202,8 +1203,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.730999, 0.61846924, -1.6673
 texts = Array[String](["I SHOULD BE
 IN THE CENTER!
 GO OPPOSITE
-KNOT'S
-DIRECTION.
+KNOT'S DOOR.
  "])
 
 [node name="Room Worries Hard" parent="." unique_id=828086948 node_paths=PackedStringArray("correct_doors") instance=ExtResource("1_opbm8")]
@@ -1331,25 +1331,23 @@ THEM AWAY.
 
 [node name="Knott" parent="Room Fruits Hard" unique_id=1162000739 instance=ExtResource("18_6kqwp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.7514191, 0.4414673, 1.6521835)
-texts = Array[String](["I NEVER SAID
-GO BACK
-WHERE YOU
-CAME FROM...
- ", "BUT DON'T
-LEAVE WHERE
+texts = Array[String](["DON'T LEAVE 
+WHERE
 YOU'D GO
-SOLO."])
+SOLO.
+ "])
 
 [node name="Ticks" parent="Room Fruits Hard" unique_id=534956764 instance=ExtResource("16_81l0q")]
 transform = Transform3D(2.9802322e-08, -2.2351742e-08, 1, -0.316481, -0.94859886, -1.5261406e-08, 0.9485988, -0.31648102, -2.9802322e-08, -2.4330444, 0.6861572, 1.352356)
 texts = Array[String](["COME CLOSE!
 SNAIL SAID
 SOMETHING
-ABOUT TANKS
+ABOUT WRATH
 BEING SAFE...
  ", "AND HAVING
 MANY ROUND
-BALLS INSIDE.
+BALLS ON A
+STICK.
  "])
 
 [node name="Room Fruits Easy" parent="." unique_id=1093522793 node_paths=PackedStringArray("correct_doors") instance=ExtResource("1_opbm8")]
@@ -1379,12 +1377,12 @@ GIVES YOU
 LEMONS
 IT'S NOT
 EASY TO BE
-MERRY!
+MERRY...
  ", "BUT ONLY
 ONE WAY OUT 
 OF DODGE
 USES THE
-RIGHT BERRY!
+RIGHT BERRY...
  ", "THEY AREN'T
 MANY, SO
 SHOULD BE

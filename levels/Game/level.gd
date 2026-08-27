@@ -16,9 +16,13 @@ var _stage: int = 0:
     set(value):
         _rooms_visited += 1
         print_debug("Progress %s -> %s (%s)" % [_stage, value, _rooms_visited])
+        if _stage == value:
+            push_warning("Updating stage to same stage %s!" % value)
         _stage = value
 
 var _rooms_visited: int
+var _prev_stage: int
+var _is_correct: bool
 var _next_stage: int
 var _current_room: Room
 var _room_history: Array[Room]
@@ -65,13 +69,18 @@ func _get_next_room(current: Room) -> Room:
     var options: Array[Room]
     var _rooms: Array[Room]
 
-    if _stage < 3:
+    if _stage < 2:
         _rooms = _easy_rooms
-    elif _stage < 6:
+    elif _stage < 4:
         _rooms = _medium_rooms
-    elif _stage < 9:
+    elif _stage == 5:
+        _rooms = _easy_rooms if randf() < 0.5 else _medium_rooms
+    elif _stage < 7:
         _rooms = _hard_rooms
     else:
+        if !_choice_rooms:
+            push_error("Lacking ending!")
+
         return _choice_rooms.pick_random()
 
     for room: Room in _rooms:
@@ -105,19 +114,23 @@ func _handle_enter_room(room: Room, direction: Vector2i) -> void:
             room.place_deadend(_dead_end, direction)
 
         if !_first_room && _next_stage <= _stage:
-            AudioHub.play_sfx(_laugh, 0.8)
+            AudioHub.play_sfx(_laugh, 0.8, AudioHub.Bus.SFX)
         _first_room = false
 
         _stage = _next_stage
         room.set_room_number(_number_mats[_stage])
 
 func _handle_exit_room(room: Room, correct: bool, direction: Vector2i) -> void:
+    _prev_stage = _stage
+    _is_correct = correct
     if correct:
         _next_stage = _stage + 1
     else:
         _next_stage = 0
 
     var next: Room = _get_next_room(room)
+    if next == room:
+        push_error("Trying to go back to same room!")
     next.global_position = room.neighbour_global_position(direction)
     next.visible = true
     next.set_process(true)
