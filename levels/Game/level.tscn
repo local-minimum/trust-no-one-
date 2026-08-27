@@ -557,9 +557,9 @@ size = Vector3(0.05, 2, 2.45)
 script = ExtResource("1_xktuk")
 _music = "uid://dy638pj2i62i"
 _laugh = "uid://7k2pimpnaxxt"
-_force_order = [NodePath("Room Elements Easy"), NodePath("Room Warnings Easy"), NodePath("Room Fruits Easy"), NodePath("Room Worries Easy"), NodePath("Room Warnings Medium"), NodePath("Room Fruits Medium"), NodePath("Room Worries Medium"), NodePath("Room Warnings Hard"), NodePath("Room Worries Hard"), NodePath("Room Fruits Hard"), NodePath("Room Empty")]
+_force_order = [NodePath("Room Elements Medium"), NodePath("Room Elements Easy"), NodePath("Room Warnings Easy"), NodePath("Room Fruits Easy"), NodePath("Room Worries Easy"), NodePath("Room Warnings Medium"), NodePath("Room Fruits Medium"), NodePath("Room Worries Medium"), NodePath("Room Warnings Hard"), NodePath("Room Worries Hard"), NodePath("Room Fruits Hard"), NodePath("Room Empty")]
 _easy_rooms = [NodePath("Room Worries Easy"), NodePath("Room Fruits Easy"), NodePath("Room Warnings Easy"), NodePath("Room Elements Easy")]
-_medium_rooms = [NodePath("Room Worries Medium"), NodePath("Room Fruits Medium"), NodePath("Room Warnings Medium")]
+_medium_rooms = [NodePath("Room Worries Medium"), NodePath("Room Fruits Medium"), NodePath("Room Warnings Medium"), NodePath("Room Elements Medium")]
 _hard_rooms = [NodePath("Room Worries Hard"), NodePath("Room Fruits Hard"), NodePath("Room Warnings Hard")]
 _choice_rooms = [NodePath("Room Empty")]
 _dead_end = NodePath("DeadEnd")
@@ -634,8 +634,9 @@ OPPOSITE WAY.
 PLEASE.
  "])
 
-[node name="Room Elements Medium" parent="." unique_id=156121908 instance=ExtResource("1_opbm8")]
+[node name="Room Elements Medium" parent="." unique_id=156121908 node_paths=PackedStringArray("correct_doors") instance=ExtResource("1_opbm8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.016129, 0, 63.986763)
+correct_doors = [NodePath("Wall East/Door")]
 
 [node name="Door Sign" type="MeshInstance3D" parent="Room Elements Medium/Wall West/Door/StaticBody3D/CollisionShape3D" parent_id_path=PackedInt32Array(156121908, 216262503) index="0" unique_id=699186968]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.012170315, 0.21948242, -0.52379763)
@@ -652,6 +653,25 @@ mesh = SubResource("QuadMesh_8u1ia")
 [node name="Door Sign" type="MeshInstance3D" parent="Room Elements Medium/Wall South/Door" parent_id_path=PackedInt32Array(156121908, 412282018, 1163846168) index="1" unique_id=2094597273]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.012170315, 0.21948242, -0.52379763)
 mesh = SubResource("QuadMesh_lnwpo")
+
+[node name="Fly" parent="Room Elements Medium" unique_id=878648819 instance=ExtResource("17_1d05p")]
+transform = Transform3D(-0.9659258, 0, -0.25881907, 0, 1, 0, 0.25881907, 0, -0.9659258, 1.3134766, 0.43408203, 1.2841187)
+texts = Array[String](["LET THE
+WIND BE
+YOUR GUIDE
+TO SUCCESS,
+FAME,
+AND WEALTH.
+ "])
+
+[node name="Knott" parent="Room Elements Medium" unique_id=60636311 instance=ExtResource("18_6kqwp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.0849724, 0.43481445, -0.89793396)
+texts = Array[String](["DON'T DO
+NO NOTHING
+WHICH MAY
+SINGE MY
+SKIN.
+ "])
 
 [node name="Room Warnings Easy" parent="." unique_id=1734800621 node_paths=PackedStringArray("correct_doors") instance=ExtResource("1_opbm8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.01612854, 0, 43.986763)
@@ -735,7 +755,7 @@ NOW GO
 WHERE I TELL!
  "])
 
-[node name="Fly" parent="Room Warnings Medium" unique_id=878648819 instance=ExtResource("17_1d05p")]
+[node name="Fly" parent="Room Warnings Medium" unique_id=2019280184 instance=ExtResource("17_1d05p")]
 transform = Transform3D(-0.9659258, 0, -0.25881907, 0, 1, 0, 0.25881907, 0, -0.9659258, -0.83325195, 0.41366577, -0.89178467)
 texts = Array[String](["YOU HAVE
 TO
@@ -768,7 +788,7 @@ mesh = SubResource("QuadMesh_gecdy")
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.012170315, 0.21948242, -0.52379763)
 mesh = SubResource("QuadMesh_5gf62")
 
-[node name="Knott" parent="Room Warnings Hard" unique_id=60636311 instance=ExtResource("18_6kqwp")]
+[node name="Knott" parent="Room Warnings Hard" unique_id=1498825222 instance=ExtResource("18_6kqwp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5964355, 0.4548645, 1.6785889)
 texts = Array[String](["NEVER
 DO NOT
