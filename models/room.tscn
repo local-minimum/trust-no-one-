@@ -87,6 +87,18 @@ shader_parameter/animation_speed = 0.3499999921768
 material = SubResource("ShaderMaterial_ir86x")
 size = Vector2(0.8, 0.6)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_kr4f2"]
+size = Vector3(0.4, 2, 3)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_t3m14"]
+points = PackedVector3Array(0.01, 1, 0, -0.01, 1, 0, 0.01, -1, 0, 0.01, 1, -1.05, -0.01, 1, -1.05, -0.01, -1, 0, 0.01, -1, -1.05, -0.01, -1, -1.05)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_fdqvq"]
+points = PackedVector3Array(0.01, 1, 0, -0.01, 1, 0, 0.01, -1, 0, 0.01, 1, -1.05, -0.01, 1, -1.05, -0.01, -1, 0, 0.01, -1, -1.05, -0.01, -1, -1.05)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_ulu4o"]
+points = PackedVector3Array(0.01, 1, 0, -0.01, 1, 0, 0.01, -1, 0, 0.01, 1, -1.05, -0.01, 1, -1.05, -0.01, -1, 0, 0.01, -1, -1.05, -0.01, -1, -1.05)
+
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_yvs3c"]
 render_priority = 0
 shader = ExtResource("1_ycakp")
@@ -103,18 +115,6 @@ shader_parameter/animation_speed = 0.3499999921768
 [sub_resource type="QuadMesh" id="QuadMesh_dmi1t"]
 material = SubResource("ShaderMaterial_yvs3c")
 size = Vector2(0.8, 0.6)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_kr4f2"]
-size = Vector3(0.75, 2, 3)
-
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_t3m14"]
-points = PackedVector3Array(0.01, 1, 0, -0.01, 1, 0, 0.01, -1, 0, 0.01, 1, -1.05, -0.01, 1, -1.05, -0.01, -1, 0, 0.01, -1, -1.05, -0.01, -1, -1.05)
-
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_fdqvq"]
-points = PackedVector3Array(0.01, 1, 0, -0.01, 1, 0, 0.01, -1, 0, 0.01, 1, -1.05, -0.01, 1, -1.05, -0.01, -1, 0, 0.01, -1, -1.05, -0.01, -1, -1.05)
-
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_ulu4o"]
-points = PackedVector3Array(0.01, 1, 0, -0.01, 1, 0, 0.01, -1, 0, 0.01, 1, -1.05, -0.01, 1, -1.05, -0.01, -1, 0, 0.01, -1, -1.05, -0.01, -1, -1.05)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_kjfgv"]
 size = Vector3(15, 0.5, 15)
@@ -183,10 +183,6 @@ mesh = SubResource("QuadMesh_d5ec4")
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -1.6690092, 1.4385633, 0.97847456)
 mesh = SubResource("QuadMesh_0ltmj")
 
-[node name="Text" parent="Wall West/Hall Floor/Painting3" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.0146820545)
-mesh = SubResource("QuadMesh_dmi1t")
-
 [node name="Room Side" parent="Wall West" index="2" unique_id=1540176426]
 surface_material_override/0 = ExtResource("4_flvyy")
 
@@ -197,7 +193,7 @@ collision_mask = 2
 monitorable = false
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Wall West/West Room Area" unique_id=1355763141]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.099999905, 0, 3.7252903e-09)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.29999995, 0, 3.7252903e-09)
 shape = SubResource("BoxShape3D_kr4f2")
 
 [node name="West Hall Area" type="Area3D" parent="Wall West" unique_id=1188257775]
@@ -207,7 +203,7 @@ collision_mask = 2
 monitorable = false
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Wall West/West Hall Area" unique_id=211993127]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.099999905, 0, 3.7252903e-09)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.10000014, 0, 3.7252903e-09)
 shape = SubResource("BoxShape3D_kr4f2")
 
 [node name="Wall North" parent="." unique_id=1524364584 instance=ExtResource("3_wficf")]
@@ -247,10 +243,6 @@ mesh = SubResource("QuadMesh_d5ec4")
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -1.6690092, 1.4385633, 0.97847456)
 mesh = SubResource("QuadMesh_0ltmj")
 
-[node name="Text" parent="Wall North/Hall Floor/Painting3" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.0146820545)
-mesh = SubResource("QuadMesh_dmi1t")
-
 [node name="Room Side" parent="Wall North" index="2" unique_id=1540176426]
 surface_material_override/0 = ExtResource("4_flvyy")
 
@@ -261,7 +253,7 @@ collision_mask = 2
 monitorable = false
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Wall North/North Room Area" unique_id=953366891]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.099999905, 0, 3.7252903e-09)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.29999995, 0, 1.3038516e-08)
 shape = SubResource("BoxShape3D_kr4f2")
 
 [node name="North Hall Area" type="Area3D" parent="Wall North" unique_id=1276243463]
@@ -271,7 +263,7 @@ collision_mask = 2
 monitorable = false
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Wall North/North Hall Area" unique_id=1028522852]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.099999905, 0, 3.7252903e-09)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.10000014, 0, -5.5879354e-09)
 shape = SubResource("BoxShape3D_kr4f2")
 
 [node name="Wall East" parent="." unique_id=1960271088 instance=ExtResource("3_wficf")]
@@ -311,10 +303,6 @@ mesh = SubResource("QuadMesh_d5ec4")
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -1.6690092, 1.4385633, 0.97847456)
 mesh = SubResource("QuadMesh_0ltmj")
 
-[node name="Text" parent="Wall East/Hall Floor/Painting3" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.0146820545)
-mesh = SubResource("QuadMesh_dmi1t")
-
 [node name="Room Side" parent="Wall East" index="2" unique_id=1540176426]
 surface_material_override/0 = ExtResource("4_flvyy")
 
@@ -325,7 +313,7 @@ collision_mask = 2
 monitorable = false
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Wall East/East Room Area" unique_id=1825110537]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.099999905, 0, 3.7252903e-09)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.29999995, 0, 2.0489097e-08)
 shape = SubResource("BoxShape3D_kr4f2")
 
 [node name="East Hall Area" type="Area3D" parent="Wall East" unique_id=429470640]
@@ -335,7 +323,7 @@ collision_mask = 2
 monitorable = false
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Wall East/East Hall Area" unique_id=428289801]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.099999905, 0, 3.7252903e-09)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.10000014, 0, -1.3038516e-08)
 shape = SubResource("BoxShape3D_kr4f2")
 
 [node name="Wall South" parent="." unique_id=412282018 instance=ExtResource("3_wficf")]
@@ -384,13 +372,12 @@ mesh = SubResource("QuadMesh_d5ec4")
 surface_material_override/0 = ExtResource("4_flvyy")
 
 [node name="South Room Area" type="Area3D" parent="Wall South" unique_id=1688391999]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 1, 0.024999894)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.20000005, 1, 0.024999933)
 collision_layer = 0
 collision_mask = 2
 monitorable = false
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Wall South/South Room Area" unique_id=1006094170]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.099999905, 0, 3.7252903e-09)
 shape = SubResource("BoxShape3D_kr4f2")
 
 [node name="South Hall Area" type="Area3D" parent="Wall South" unique_id=417969166]
@@ -400,7 +387,7 @@ collision_mask = 2
 monitorable = false
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Wall South/South Hall Area" unique_id=2137498520]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.099999905, 0, 3.7252903e-09)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.1, 0, 0)
 shape = SubResource("BoxShape3D_kr4f2")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=820660076]
