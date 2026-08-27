@@ -2,6 +2,8 @@ extends Node3D
 class_name Level
 
 @export_file("*.mp3") var _music: String
+@export_file("*.mp3") var _laugh: String
+
 @export var _force_order: Array[Room]
 @export var _easy_rooms: Array[Room]
 @export var _medium_rooms: Array[Room]
@@ -20,6 +22,7 @@ var _rooms_visited: int
 var _next_stage: int
 var _current_room: Room
 var _room_history: Array[Room]
+var _first_room: bool = true
 
 func _enter_tree() -> void:
     if SignalBus.on_enter_room.connect(_handle_enter_room) != OK:
@@ -100,6 +103,10 @@ func _handle_enter_room(room: Room, direction: Vector2i) -> void:
             _dead_end.visible = true
             _dead_end.set_process(true)
             room.place_deadend(_dead_end, direction)
+
+        if !_first_room && _next_stage <= _stage:
+            AudioHub.play_sfx(_laugh, 0.8)
+        _first_room = false
 
         _stage = _next_stage
         room.set_room_number(_number_mats[_stage])
