@@ -264,7 +264,11 @@ var _focusing: bool:
                 _focusing_tween.kill()
             _focusing_tween = create_tween()
             _focusing_tween.tween_property(cam, "fov", VideoSettings.field_of_view, focus_fov_ease_time).set_trans(Tween.TRANS_CIRC)
+
 var _focusing_tween: Tween
+
+enum MuteState { NOTHING, MUSIC, ALL }
+var _mute: MuteState = MuteState.NOTHING
 
 func _input(event: InputEvent) -> void:
     if Engine.is_editor_hint():
@@ -275,6 +279,19 @@ func _input(event: InputEvent) -> void:
     if event.is_action_pressed(&"pause"):
         get_viewport().set_input_as_handled()
         SignalBus.on_pause_game.emit(true)
+
+    if event.is_action_pressed(&"mute"):
+        match _mute:
+            MuteState.NOTHING:
+                AudioHub.mute_bus(AudioHub.Bus.MUSIC)
+                _mute = MuteState.MUSIC
+            MuteState.MUSIC:
+                AudioHub.mute_bus(AudioHub.Bus.MASTER)
+                _mute = MuteState.ALL
+            _:
+                AudioHub.unmute_bus(AudioHub.Bus.MUSIC)
+                AudioHub.unmute_bus(AudioHub.Bus.MASTER)
+                _mute = MuteState.NOTHING
 
     if !cinematic:
         if Input.mouse_mode != Input.MOUSE_MODE_CAPTURED && event is InputEventMouseButton:

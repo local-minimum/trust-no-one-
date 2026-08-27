@@ -1,4 +1,5 @@
 extends Node3D
+class_name Level
 
 @export_file("*.mp3") var _music: String
 @export var _force_order: Array[Room]
@@ -37,6 +38,7 @@ func _ready() -> void:
     start_room.set_process(true)
     start_room.set_room_number(_number_mats[_stage])
     _room_history.append(start_room)
+
 
 func _disable_room(room: Room) -> void:
     room.global_position = Vector3(0.0, -10.0, 0.0)

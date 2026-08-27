@@ -157,57 +157,6 @@ shader_parameter/sequence_length = PackedInt32Array(2, 0, 0, 0, 0, 0, 0, 0)
 shader_parameter/billboard = false
 shader_parameter/animation_speed = 1.0
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_i3jg0"]
-render_priority = 2
-shader = ExtResource("6_m17kh")
-shader_parameter/tex = ExtResource("13_1d05p")
-shader_parameter/sprite_size = Vector2i(128, 128)
-shader_parameter/sprite_spacing = Vector2i(0, 0)
-shader_parameter/sprites = Vector2i(2, 1)
-shader_parameter/directions = 1
-shader_parameter/sequence_start = PackedInt32Array(0, 0, 0, 0, 0, 0, 0, 0)
-shader_parameter/sequence_length = PackedInt32Array(2, 0, 0, 0, 0, 0, 0, 0)
-shader_parameter/billboard = false
-shader_parameter/animation_speed = 0.32999999262384
-
-[sub_resource type="QuadMesh" id="QuadMesh_w7fie"]
-material = SubResource("ShaderMaterial_i3jg0")
-size = Vector2(0.4, 0.4)
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_8g2xe"]
-render_priority = 2
-shader = ExtResource("6_m17kh")
-shader_parameter/tex = ExtResource("14_6kqwp")
-shader_parameter/sprite_size = Vector2i(128, 128)
-shader_parameter/sprite_spacing = Vector2i(0, 0)
-shader_parameter/sprites = Vector2i(2, 1)
-shader_parameter/directions = 1
-shader_parameter/sequence_start = PackedInt32Array(0, 0, 0, 0, 0, 0, 0, 0)
-shader_parameter/sequence_length = PackedInt32Array(2, 0, 0, 0, 0, 0, 0, 0)
-shader_parameter/billboard = false
-shader_parameter/animation_speed = 0.32999999262384
-
-[sub_resource type="QuadMesh" id="QuadMesh_5qjco"]
-material = SubResource("ShaderMaterial_8g2xe")
-size = Vector2(0.4, 0.4)
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_li71o"]
-render_priority = 2
-shader = ExtResource("6_m17kh")
-shader_parameter/tex = ExtResource("15_tcd4a")
-shader_parameter/sprite_size = Vector2i(128, 128)
-shader_parameter/sprite_spacing = Vector2i(0, 0)
-shader_parameter/sprites = Vector2i(2, 1)
-shader_parameter/directions = 1
-shader_parameter/sequence_start = PackedInt32Array(0, 0, 0, 0, 0, 0, 0, 0)
-shader_parameter/sequence_length = PackedInt32Array(2, 0, 0, 0, 0, 0, 0, 0)
-shader_parameter/billboard = false
-shader_parameter/animation_speed = 0.32999999262384
-
-[sub_resource type="QuadMesh" id="QuadMesh_1yn8p"]
-material = SubResource("ShaderMaterial_li71o")
-size = Vector2(0.4, 0.4)
-
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_kr4f2"]
 render_priority = 2
 shader = ExtResource("6_m17kh")
@@ -223,40 +172,6 @@ shader_parameter/animation_speed = 0.32999999262384
 
 [sub_resource type="QuadMesh" id="QuadMesh_0ltmj"]
 material = SubResource("ShaderMaterial_kr4f2")
-size = Vector2(0.4, 0.4)
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_58pty"]
-render_priority = 2
-shader = ExtResource("6_m17kh")
-shader_parameter/tex = ExtResource("27_cypbv")
-shader_parameter/sprite_size = Vector2i(128, 128)
-shader_parameter/sprite_spacing = Vector2i(0, 0)
-shader_parameter/sprites = Vector2i(2, 1)
-shader_parameter/directions = 1
-shader_parameter/sequence_start = PackedInt32Array(0, 0, 0, 0, 0, 0, 0, 0)
-shader_parameter/sequence_length = PackedInt32Array(2, 0, 0, 0, 0, 0, 0, 0)
-shader_parameter/billboard = false
-shader_parameter/animation_speed = 0.32999999262384
-
-[sub_resource type="QuadMesh" id="QuadMesh_81l0q"]
-material = SubResource("ShaderMaterial_58pty")
-size = Vector2(0.4, 0.4)
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_1d05p"]
-render_priority = 2
-shader = ExtResource("6_m17kh")
-shader_parameter/tex = ExtResource("13_1d05p")
-shader_parameter/sprite_size = Vector2i(128, 128)
-shader_parameter/sprite_spacing = Vector2i(0, 0)
-shader_parameter/sprites = Vector2i(2, 1)
-shader_parameter/directions = 1
-shader_parameter/sequence_start = PackedInt32Array(0, 0, 0, 0, 0, 0, 0, 0)
-shader_parameter/sequence_length = PackedInt32Array(2, 0, 0, 0, 0, 0, 0, 0)
-shader_parameter/billboard = false
-shader_parameter/animation_speed = 0.32999999262384
-
-[sub_resource type="QuadMesh" id="QuadMesh_6kqwp"]
-material = SubResource("ShaderMaterial_1d05p")
 size = Vector2(0.4, 0.4)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_taco4"]
@@ -325,6 +240,91 @@ shader_parameter/animation_speed = 0.32999999262384
 
 [sub_resource type="QuadMesh" id="QuadMesh_5gf62"]
 material = SubResource("ShaderMaterial_46y2r")
+size = Vector2(0.4, 0.4)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_i3jg0"]
+render_priority = 2
+shader = ExtResource("6_m17kh")
+shader_parameter/tex = ExtResource("13_1d05p")
+shader_parameter/sprite_size = Vector2i(128, 128)
+shader_parameter/sprite_spacing = Vector2i(0, 0)
+shader_parameter/sprites = Vector2i(2, 1)
+shader_parameter/directions = 1
+shader_parameter/sequence_start = PackedInt32Array(0, 0, 0, 0, 0, 0, 0, 0)
+shader_parameter/sequence_length = PackedInt32Array(2, 0, 0, 0, 0, 0, 0, 0)
+shader_parameter/billboard = false
+shader_parameter/animation_speed = 0.32999999262384
+
+[sub_resource type="QuadMesh" id="QuadMesh_w7fie"]
+material = SubResource("ShaderMaterial_i3jg0")
+size = Vector2(0.4, 0.4)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8g2xe"]
+render_priority = 2
+shader = ExtResource("6_m17kh")
+shader_parameter/tex = ExtResource("14_6kqwp")
+shader_parameter/sprite_size = Vector2i(128, 128)
+shader_parameter/sprite_spacing = Vector2i(0, 0)
+shader_parameter/sprites = Vector2i(2, 1)
+shader_parameter/directions = 1
+shader_parameter/sequence_start = PackedInt32Array(0, 0, 0, 0, 0, 0, 0, 0)
+shader_parameter/sequence_length = PackedInt32Array(2, 0, 0, 0, 0, 0, 0, 0)
+shader_parameter/billboard = false
+shader_parameter/animation_speed = 0.32999999262384
+
+[sub_resource type="QuadMesh" id="QuadMesh_5qjco"]
+material = SubResource("ShaderMaterial_8g2xe")
+size = Vector2(0.4, 0.4)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_li71o"]
+render_priority = 2
+shader = ExtResource("6_m17kh")
+shader_parameter/tex = ExtResource("15_tcd4a")
+shader_parameter/sprite_size = Vector2i(128, 128)
+shader_parameter/sprite_spacing = Vector2i(0, 0)
+shader_parameter/sprites = Vector2i(2, 1)
+shader_parameter/directions = 1
+shader_parameter/sequence_start = PackedInt32Array(0, 0, 0, 0, 0, 0, 0, 0)
+shader_parameter/sequence_length = PackedInt32Array(2, 0, 0, 0, 0, 0, 0, 0)
+shader_parameter/billboard = false
+shader_parameter/animation_speed = 0.32999999262384
+
+[sub_resource type="QuadMesh" id="QuadMesh_1yn8p"]
+material = SubResource("ShaderMaterial_li71o")
+size = Vector2(0.4, 0.4)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_58pty"]
+render_priority = 2
+shader = ExtResource("6_m17kh")
+shader_parameter/tex = ExtResource("27_cypbv")
+shader_parameter/sprite_size = Vector2i(128, 128)
+shader_parameter/sprite_spacing = Vector2i(0, 0)
+shader_parameter/sprites = Vector2i(2, 1)
+shader_parameter/directions = 1
+shader_parameter/sequence_start = PackedInt32Array(0, 0, 0, 0, 0, 0, 0, 0)
+shader_parameter/sequence_length = PackedInt32Array(2, 0, 0, 0, 0, 0, 0, 0)
+shader_parameter/billboard = false
+shader_parameter/animation_speed = 0.32999999262384
+
+[sub_resource type="QuadMesh" id="QuadMesh_81l0q"]
+material = SubResource("ShaderMaterial_58pty")
+size = Vector2(0.4, 0.4)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1d05p"]
+render_priority = 2
+shader = ExtResource("6_m17kh")
+shader_parameter/tex = ExtResource("13_1d05p")
+shader_parameter/sprite_size = Vector2i(128, 128)
+shader_parameter/sprite_spacing = Vector2i(0, 0)
+shader_parameter/sprites = Vector2i(2, 1)
+shader_parameter/directions = 1
+shader_parameter/sequence_start = PackedInt32Array(0, 0, 0, 0, 0, 0, 0, 0)
+shader_parameter/sequence_length = PackedInt32Array(2, 0, 0, 0, 0, 0, 0, 0)
+shader_parameter/billboard = false
+shader_parameter/animation_speed = 0.32999999262384
+
+[sub_resource type="QuadMesh" id="QuadMesh_6kqwp"]
+material = SubResource("ShaderMaterial_1d05p")
 size = Vector2(0.4, 0.4)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_sn04t"]
@@ -484,37 +484,151 @@ size = Vector3(0.05, 2, 2.45)
 [node name="Level" type="Node3D" unique_id=1796817656 node_paths=PackedStringArray("_force_order", "_easy_rooms", "_medium_rooms", "_hard_rooms", "_choice_rooms", "_dead_end")]
 script = ExtResource("1_xktuk")
 _music = "uid://dy638pj2i62i"
-_force_order = [NodePath("Room Fruits Hard"), NodePath("Room Fruits Easy"), NodePath("Room Worries Easy"), NodePath("Room Worries Medium"), NodePath("Room Fruits Medium"), NodePath("Room Worries Hard"), NodePath("Room Empty")]
+_force_order = [NodePath("Room Warnings Medium"), NodePath("Room Warnings Easy"), NodePath("Room Fruits Hard"), NodePath("Room Fruits Easy"), NodePath("Room Worries Easy"), NodePath("Room Worries Medium"), NodePath("Room Fruits Medium"), NodePath("Room Worries Hard"), NodePath("Room Empty")]
 _easy_rooms = [NodePath("Room Worries Easy"), NodePath("Room Fruits Easy"), NodePath("Room Warnings Easy")]
-_medium_rooms = [NodePath("Room Worries Medium"), NodePath("Room Fruits Medium")]
+_medium_rooms = [NodePath("Room Worries Medium"), NodePath("Room Fruits Medium"), NodePath("Room Warnings Medium")]
 _hard_rooms = [NodePath("Room Worries Hard"), NodePath("Room Fruits Hard")]
 _choice_rooms = [NodePath("Room Empty")]
 _dead_end = NodePath("DeadEnd")
 _number_mats = Array[Material]([SubResource("ShaderMaterial_ieofn"), SubResource("ShaderMaterial_op3gc"), SubResource("ShaderMaterial_nunso"), SubResource("ShaderMaterial_nkckd"), SubResource("ShaderMaterial_24sfg"), SubResource("ShaderMaterial_g0llx"), SubResource("ShaderMaterial_xitda"), SubResource("ShaderMaterial_mcl0i"), SubResource("ShaderMaterial_s8mnq")])
 
-[node name="Room Worries Easy" parent="." unique_id=976863180 node_paths=PackedStringArray("correct_doors") instance=ExtResource("1_opbm8")]
+[node name="Room Empty" parent="." unique_id=615196368 node_paths=PackedStringArray("correct_doors") instance=ExtResource("1_opbm8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.01612854, 0, -20.013237)
+correct_doors = [NodePath("Wall West/Door"), NodePath("Wall North/Door"), NodePath("Wall East/Door"), NodePath("Wall South/Door")]
+
+[node name="Door Sign" type="MeshInstance3D" parent="Room Empty/Wall West/Door/StaticBody3D/CollisionShape3D" parent_id_path=PackedInt32Array(615196368, 216262503) index="0" unique_id=1752019444]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.012170315, 0.21948242, -0.52379763)
+mesh = SubResource("QuadMesh_0ltmj")
+
+[node name="Door Sign" type="MeshInstance3D" parent="Room Empty/Wall North/Door" parent_id_path=PackedInt32Array(615196368, 1524364584, 1163846168) index="1" unique_id=447700594]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.012170315, 0.21948242, -0.52379763)
+mesh = SubResource("QuadMesh_0ltmj")
+
+[node name="Door Sign" type="MeshInstance3D" parent="Room Empty/Wall East/Door" parent_id_path=PackedInt32Array(615196368, 1960271088, 1163846168) index="1" unique_id=1846279479]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.012170315, 0.21948242, -0.52379763)
+mesh = SubResource("QuadMesh_0ltmj")
+
+[node name="Door Sign" type="MeshInstance3D" parent="Room Empty/Wall South/Door" parent_id_path=PackedInt32Array(615196368, 412282018, 1163846168) index="1" unique_id=1303107464]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.012170315, 0.21948242, -0.52379763)
+mesh = SubResource("QuadMesh_0ltmj")
+
+[node name="Room Warnings Easy" parent="." unique_id=1734800621 node_paths=PackedStringArray("correct_doors") instance=ExtResource("1_opbm8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.01612854, 0, 43.986763)
+correct_doors = [NodePath("Wall South/Door"), NodePath("Wall West/Door")]
+
+[node name="Door Sign" type="MeshInstance3D" parent="Room Warnings Easy/Wall West/Door/StaticBody3D/CollisionShape3D" parent_id_path=PackedInt32Array(1734800621, 216262503) index="0" unique_id=1794824974]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.012170315, 0.21948242, -0.52379763)
+mesh = SubResource("QuadMesh_4aud0")
+
+[node name="Door Sign" type="MeshInstance3D" parent="Room Warnings Easy/Wall North/Door" parent_id_path=PackedInt32Array(1734800621, 1524364584, 1163846168) index="1" unique_id=2111490045]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.012170315, 0.21948242, -0.52379763)
+mesh = SubResource("QuadMesh_n3ho6")
+
+[node name="Door Sign" type="MeshInstance3D" parent="Room Warnings Easy/Wall East/Door" parent_id_path=PackedInt32Array(1734800621, 1960271088, 1163846168) index="1" unique_id=2044819802]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.012170315, 0.21948242, -0.52379763)
+mesh = SubResource("QuadMesh_gecdy")
+
+[node name="Door Sign" type="MeshInstance3D" parent="Room Warnings Easy/Wall South/Door" parent_id_path=PackedInt32Array(1734800621, 412282018, 1163846168) index="1" unique_id=520714734]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.012170315, 0.21948242, -0.52379763)
+mesh = SubResource("QuadMesh_5gf62")
+
+[node name="Larvey" parent="Room Warnings Easy" unique_id=1072808151 instance=ExtResource("14_cypbv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6171875, 0)
+texts = Array[String](["I'M 'LETRIC.
+TOTALLY
+BUZZING!
+FEEL MY VIBE?
+KNOW WHERE
+TO GO?
+ "])
+
+[node name="Tvivel" parent="Room Warnings Easy" unique_id=1744457802 instance=ExtResource("15_58pty")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5653687, 0.40979004, -1.4821167)
+texts = Array[String](["I DON'T KNOW,
+MAYBE TRY
+THE DOOR
+THAT EXPLODES.
+ "])
+
+[node name="Room Warnings Medium" parent="." unique_id=976863180 instance=ExtResource("1_opbm8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.016129, 0, 43.986763)
+
+[node name="Door Sign" type="MeshInstance3D" parent="Room Warnings Medium/Wall West/Door/StaticBody3D/CollisionShape3D" parent_id_path=PackedInt32Array(976863180, 216262503) index="0" unique_id=133635192]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.012170315, 0.21948242, -0.52379763)
+mesh = SubResource("QuadMesh_4aud0")
+
+[node name="Door Sign" type="MeshInstance3D" parent="Room Warnings Medium/Wall North/Door" parent_id_path=PackedInt32Array(976863180, 1524364584, 1163846168) index="1" unique_id=133021637]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.012170315, 0.21948242, -0.52379763)
+mesh = SubResource("QuadMesh_n3ho6")
+
+[node name="Door Sign" type="MeshInstance3D" parent="Room Warnings Medium/Wall East/Door" parent_id_path=PackedInt32Array(976863180, 1960271088, 1163846168) index="1" unique_id=630418785]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.012170315, 0.21948242, -0.52379763)
+mesh = SubResource("QuadMesh_gecdy")
+
+[node name="Door Sign" type="MeshInstance3D" parent="Room Warnings Medium/Wall South/Door" parent_id_path=PackedInt32Array(976863180, 412282018, 1163846168) index="1" unique_id=786273467]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.012170315, 0.21948242, -0.52379763)
+mesh = SubResource("QuadMesh_5gf62")
+
+[node name="Woodlousie" parent="Room Warnings Medium" unique_id=1926230252 instance=ExtResource("13_tt44h")]
+transform = Transform3D(-0.71828705, 0, 0.69574684, 0, 1, 0, -0.69574684, 0, -0.71828705, -0.5876465, 0.33789063, 0.6229248)
+texts = Array[String](["I WOOD URGE
+AN EXIT THRU
+THE ULTIMATE
+DECAY - WHERE
+THE SMALL
+FALL APPART.
+ "])
+
+[node name="Snail" parent="Room Warnings Medium" unique_id=2077069823 instance=ExtResource("19_tcd4a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.37957764, 0.4807129, -1.0217743)
+texts = Array[String](["'PLOSIVE IS
+TOO LOUD -
+C'ROSIVE
+HURT MY
+SHELL...
+ ", "R' ACTIVE 
+MAKE NOXIC
+CLOUD -
+NOW GO
+WHERE I TELL!
+ "])
+
+[node name="Fly" parent="Room Warnings Medium" unique_id=878648819 instance=ExtResource("17_1d05p")]
+transform = Transform3D(-0.9659258, 0, -0.25881907, 0, 1, 0, 0.25881907, 0, -0.9659258, -0.83325195, 0.41366577, -0.89178467)
+texts = Array[String](["YOU HAVE
+TO
+IGNITE YOUR
+POTENTIAL...
+ ", "THE
+EXPLOSIVE
+ENERGY
+TO GO
+FURTHER!
+ "])
+
+[node name="Room Worries Easy" parent="." unique_id=235860304 node_paths=PackedStringArray("correct_doors") instance=ExtResource("1_opbm8")]
 correct_doors = [NodePath("Wall South/Door")]
 
 [node name="Floor" parent="Room Worries Easy" index="0" unique_id=1390837627]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0.018432617, -0.018432617, -0.0181427)
 
-[node name="Door Sign" type="MeshInstance3D" parent="Room Worries Easy/Wall West/Door" parent_id_path=PackedInt32Array(976863180, 1483052904, 1163846168) index="1" unique_id=764373043]
+[node name="Door Sign" type="MeshInstance3D" parent="Room Worries Easy/Wall West/Door" parent_id_path=PackedInt32Array(235860304, 1483052904, 1163846168) index="1" unique_id=764373043]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.012170315, 0.21948242, -0.52379763)
 mesh = SubResource("QuadMesh_w7fie")
 
-[node name="Door Sign" type="MeshInstance3D" parent="Room Worries Easy/Wall North/Door" parent_id_path=PackedInt32Array(976863180, 1524364584, 1163846168) index="1" unique_id=490744208]
+[node name="Door Sign" type="MeshInstance3D" parent="Room Worries Easy/Wall North/Door" parent_id_path=PackedInt32Array(235860304, 1524364584, 1163846168) index="1" unique_id=490744208]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.012170315, 0.21948242, -0.52379763)
 mesh = SubResource("QuadMesh_5qjco")
 
-[node name="Door Sign" type="MeshInstance3D" parent="Room Worries Easy/Wall East/Door" parent_id_path=PackedInt32Array(976863180, 1960271088, 1163846168) index="1" unique_id=1093521535]
+[node name="Door Sign" type="MeshInstance3D" parent="Room Worries Easy/Wall East/Door" parent_id_path=PackedInt32Array(235860304, 1960271088, 1163846168) index="1" unique_id=1093521535]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.012170315, 0.21948242, -0.52379763)
 mesh = SubResource("QuadMesh_1yn8p")
 
-[node name="Door Sign" type="MeshInstance3D" parent="Room Worries Easy/Wall South/Door" parent_id_path=PackedInt32Array(976863180, 412282018, 1163846168) index="1" unique_id=1235381554]
+[node name="Door Sign" type="MeshInstance3D" parent="Room Worries Easy/Wall South/Door" parent_id_path=PackedInt32Array(235860304, 412282018, 1163846168) index="1" unique_id=1235381554]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.012170315, 0.21948242, -0.52379763)
 mesh = SubResource("QuadMesh_0ltmj")
 
-[node name="Woodlousie" parent="Room Worries Easy" unique_id=1926230252 instance=ExtResource("13_tt44h")]
+[node name="Woodlousie" parent="Room Worries Easy" unique_id=628704665 instance=ExtResource("13_tt44h")]
 transform = Transform3D(-0.71828705, 0, 0.69574684, 0, 1, 0, -0.69574684, 0, -0.71828705, -1.620922, 0.44772023, 1.3993213)
 texts = Array[String](["I WOOD SAY
 WAR IS CHANGE
@@ -523,7 +637,7 @@ AND DECAY IS
 GOOD
  "])
 
-[node name="Tvivel" parent="Room Worries Easy" unique_id=1744457802 instance=ExtResource("15_58pty")]
+[node name="Tvivel" parent="Room Worries Easy" unique_id=930428774 instance=ExtResource("15_58pty")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1087952, 0.34448242, -1.3691406)
 texts = Array[String](["MAYBE IT IS
 BEST IF YOU
@@ -531,7 +645,7 @@ GO WHERE
 ALL ENDS
  "])
 
-[node name="Fly" parent="Room Worries Easy" unique_id=878648819 instance=ExtResource("17_1d05p")]
+[node name="Fly" parent="Room Worries Easy" unique_id=1326556099 instance=ExtResource("17_1d05p")]
 transform = Transform3D(-0.9659258, 0, -0.25881913, 0, 1, 0, 0.25881913, 0, -0.9659258, 1.7136841, 0.28759766, 1.736023)
 texts = Array[String](["ONLY ONE 
 THING COUNTS:
@@ -571,7 +685,7 @@ FEELINGS
 SHATTER
  "])
 
-[node name="Snail" parent="Room Worries Medium" unique_id=2077069823 instance=ExtResource("19_tcd4a")]
+[node name="Snail" parent="Room Worries Medium" unique_id=547132205 instance=ExtResource("19_tcd4a")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.361248, 0.4317627, 1.2878006)
 texts = Array[String](["IT IS ON 
 THE WALL
@@ -584,7 +698,7 @@ IT TICK-TOCKS
 FOR ALL
  "])
 
-[node name="Larvey" parent="Room Worries Medium" unique_id=1072808151 instance=ExtResource("14_cypbv")]
+[node name="Larvey" parent="Room Worries Medium" unique_id=114750606 instance=ExtResource("14_cypbv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.4954338, 0.61834717, -1.4459305)
 texts = Array[String](["I SHOULD BE
 IN THE CENTER!
@@ -635,45 +749,6 @@ BLOOD TASTE
 TEN TIMES 
 BETTER!
   "])
-
-[node name="Room Empty" parent="." unique_id=615196368 node_paths=PackedStringArray("correct_doors") instance=ExtResource("1_opbm8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.01612854, 0, -20.013237)
-correct_doors = [NodePath("Wall West/Door"), NodePath("Wall North/Door"), NodePath("Wall East/Door"), NodePath("Wall South/Door")]
-
-[node name="Door Sign" type="MeshInstance3D" parent="Room Empty/Wall West/Door/StaticBody3D/CollisionShape3D" parent_id_path=PackedInt32Array(615196368, 216262503) index="0" unique_id=1752019444]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.012170315, 0.21948242, -0.52379763)
-mesh = SubResource("QuadMesh_0ltmj")
-
-[node name="Door Sign" type="MeshInstance3D" parent="Room Empty/Wall North/Door" parent_id_path=PackedInt32Array(615196368, 1524364584, 1163846168) index="1" unique_id=447700594]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.012170315, 0.21948242, -0.52379763)
-mesh = SubResource("QuadMesh_0ltmj")
-
-[node name="Door Sign" type="MeshInstance3D" parent="Room Empty/Wall East/Door" parent_id_path=PackedInt32Array(615196368, 1960271088, 1163846168) index="1" unique_id=1846279479]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.012170315, 0.21948242, -0.52379763)
-mesh = SubResource("QuadMesh_0ltmj")
-
-[node name="Door Sign" type="MeshInstance3D" parent="Room Empty/Wall South/Door" parent_id_path=PackedInt32Array(615196368, 412282018, 1163846168) index="1" unique_id=1303107464]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.012170315, 0.21948242, -0.52379763)
-mesh = SubResource("QuadMesh_0ltmj")
-
-[node name="Room Warnings Easy" parent="." unique_id=1734800621 instance=ExtResource("1_opbm8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.01612854, 0, 43.986763)
-
-[node name="Door Sign" type="MeshInstance3D" parent="Room Warnings Easy/Wall West/Door/StaticBody3D/CollisionShape3D" parent_id_path=PackedInt32Array(1734800621, 216262503) index="0" unique_id=1794824974]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.012170315, 0.21948242, -0.52379763)
-mesh = SubResource("QuadMesh_4aud0")
-
-[node name="Door Sign" type="MeshInstance3D" parent="Room Warnings Easy/Wall North/Door" parent_id_path=PackedInt32Array(1734800621, 1524364584, 1163846168) index="1" unique_id=2111490045]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.012170315, 0.21948242, -0.52379763)
-mesh = SubResource("QuadMesh_n3ho6")
-
-[node name="Door Sign" type="MeshInstance3D" parent="Room Warnings Easy/Wall East/Door" parent_id_path=PackedInt32Array(1734800621, 1960271088, 1163846168) index="1" unique_id=2044819802]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.012170315, 0.21948242, -0.52379763)
-mesh = SubResource("QuadMesh_gecdy")
-
-[node name="Door Sign" type="MeshInstance3D" parent="Room Warnings Easy/Wall South/Door" parent_id_path=PackedInt32Array(1734800621, 412282018, 1163846168) index="1" unique_id=520714734]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.012170315, 0.21948242, -0.52379763)
-mesh = SubResource("QuadMesh_5gf62")
 
 [node name="Room Fruits Medium" parent="." unique_id=1042837682 node_paths=PackedStringArray("correct_doors") instance=ExtResource("1_opbm8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.016129, 0, 22.986763)
@@ -889,6 +964,21 @@ shape = SubResource("BoxShape3D_t3m14")
 transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, -1.2484512, 1, -0.97129154)
 shape = SubResource("BoxShape3D_fdqvq")
 
+[editable path="Room Empty"]
+[editable path="Room Empty/Wall West"]
+[editable path="Room Empty/Wall North"]
+[editable path="Room Empty/Wall East"]
+[editable path="Room Empty/Wall South"]
+[editable path="Room Warnings Easy"]
+[editable path="Room Warnings Easy/Wall West"]
+[editable path="Room Warnings Easy/Wall North"]
+[editable path="Room Warnings Easy/Wall East"]
+[editable path="Room Warnings Easy/Wall South"]
+[editable path="Room Warnings Medium"]
+[editable path="Room Warnings Medium/Wall West"]
+[editable path="Room Warnings Medium/Wall North"]
+[editable path="Room Warnings Medium/Wall East"]
+[editable path="Room Warnings Medium/Wall South"]
 [editable path="Room Worries Easy"]
 [editable path="Room Worries Easy/Wall West"]
 [editable path="Room Worries Easy/Wall North"]
@@ -904,16 +994,6 @@ shape = SubResource("BoxShape3D_fdqvq")
 [editable path="Room Worries Hard/Wall North"]
 [editable path="Room Worries Hard/Wall East"]
 [editable path="Room Worries Hard/Wall South"]
-[editable path="Room Empty"]
-[editable path="Room Empty/Wall West"]
-[editable path="Room Empty/Wall North"]
-[editable path="Room Empty/Wall East"]
-[editable path="Room Empty/Wall South"]
-[editable path="Room Warnings Easy"]
-[editable path="Room Warnings Easy/Wall West"]
-[editable path="Room Warnings Easy/Wall North"]
-[editable path="Room Warnings Easy/Wall East"]
-[editable path="Room Warnings Easy/Wall South"]
 [editable path="Room Fruits Medium"]
 [editable path="Room Fruits Medium/Wall West"]
 [editable path="Room Fruits Medium/Wall North"]
