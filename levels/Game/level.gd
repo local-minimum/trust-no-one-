@@ -38,7 +38,8 @@ func _enter_tree() -> void:
         push_error("Failed to connect exit room")
 
 func _ready() -> void:
-    AudioHub.play_music(_music, 0.5)
+    if !AudioHub.is_busy(AudioHub.Bus.MUSIC):
+        AudioHub.play_music(_music, 0.5)
     _disable_all_rooms()
 
     var start_room: Room = _get_next_room(null, Vector2i.ZERO)

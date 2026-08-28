@@ -54,6 +54,9 @@
 [ext_resource type="Texture2D" uid="uid://bbdapon5xs7pr" path="res://sprites/door_cherries.png" id="27_li71o"]
 [ext_resource type="Texture2D" uid="uid://d2w7g02qlbucm" path="res://sprites/door_apple.png" id="28_1yn8p"]
 [ext_resource type="Texture2D" uid="uid://dxg41iea6krql" path="res://sprites/door_acid.png" id="28_cm5ca"]
+[ext_resource type="Script" uid="uid://byjgbxxo75rip" path="res://fonts/wiggly_ui_text.gd" id="55_5imcb"]
+[ext_resource type="FontFile" uid="uid://dkqm23662tqn1" path="res://fonts/wiggle_normal.fnt" id="55_hnrhq"]
+[ext_resource type="FontFile" uid="uid://vdjnsx82vh0f" path="res://fonts/wiggle_bold.fnt" id="56_ejeva"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ieofn"]
 render_priority = 0
@@ -781,6 +784,10 @@ size = Vector3(0.05, 2, 2)
 [sub_resource type="BoxShape3D" id="BoxShape3D_fdqvq"]
 size = Vector3(0.05, 2, 2.45)
 
+[sub_resource type="Environment" id="Environment_kjfgv"]
+background_mode = 1
+background_color = Color(0.05882353, 0.105882354, 0.14117648, 1)
+
 [node name="Level" type="Node3D" unique_id=1796817656 node_paths=PackedStringArray("_force_order", "_easy_rooms", "_medium_rooms", "_hard_rooms", "_pre_ending", "_ending_up", "_ending_down", "_ending_left", "_ending_right", "_dead_end")]
 script = ExtResource("1_xktuk")
 _music = "uid://dy638pj2i62i"
@@ -828,7 +835,7 @@ visible = false
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.012170315, 0.21948242, -0.52379763)
 mesh = SubResource("QuadMesh_2ubc5")
 
-[node name="HallBlocked" type="MeshInstance3D" parent="Room Ending/Wall West" parent_id_path=PackedInt32Array(976863180, 1483052904) index="5" unique_id=185026412]
+[node name="HallBlocked West" type="MeshInstance3D" parent="Room Ending/Wall West" parent_id_path=PackedInt32Array(976863180, 1483052904) index="5" unique_id=185026412]
 mesh = ExtResource("19_8u1ia")
 surface_material_override/0 = SubResource("ShaderMaterial_2ubc5")
 
@@ -836,7 +843,7 @@ surface_material_override/0 = SubResource("ShaderMaterial_2ubc5")
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.012170315, 0.21948242, -0.52379763)
 mesh = SubResource("QuadMesh_uyaqc")
 
-[node name="HallBlocked" type="MeshInstance3D" parent="Room Ending/Wall North" parent_id_path=PackedInt32Array(976863180, 1524364584) index="5" unique_id=1343417487]
+[node name="HallBlocked North" type="MeshInstance3D" parent="Room Ending/Wall North" parent_id_path=PackedInt32Array(976863180, 1524364584) index="5" unique_id=1343417487]
 mesh = ExtResource("19_8u1ia")
 surface_material_override/0 = SubResource("ShaderMaterial_2ubc5")
 
@@ -844,7 +851,7 @@ surface_material_override/0 = SubResource("ShaderMaterial_2ubc5")
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.012170315, 0.21948242, -0.52379763)
 mesh = SubResource("QuadMesh_q6pkm")
 
-[node name="HallBlocked" type="MeshInstance3D" parent="Room Ending/Wall East" parent_id_path=PackedInt32Array(976863180, 1960271088) index="5" unique_id=616106382]
+[node name="HallBlocked East" type="MeshInstance3D" parent="Room Ending/Wall East" parent_id_path=PackedInt32Array(976863180, 1960271088) index="5" unique_id=616106382]
 mesh = ExtResource("19_8u1ia")
 surface_material_override/0 = SubResource("ShaderMaterial_2ubc5")
 
@@ -852,14 +859,14 @@ surface_material_override/0 = SubResource("ShaderMaterial_2ubc5")
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.012170315, 0.21948242, -0.52379763)
 mesh = SubResource("QuadMesh_vc7yy")
 
-[node name="HallBlocked" type="MeshInstance3D" parent="Room Ending/Wall South" parent_id_path=PackedInt32Array(976863180, 412282018) index="5" unique_id=528240757]
+[node name="HallBlocked South" type="MeshInstance3D" parent="Room Ending/Wall South" parent_id_path=PackedInt32Array(976863180, 412282018) index="5" unique_id=528240757]
 mesh = ExtResource("19_8u1ia")
 surface_material_override/0 = SubResource("ShaderMaterial_2ubc5")
 
-[node name="Ending Manager" type="Node3D" parent="Room Ending" unique_id=1558518604 node_paths=PackedStringArray("_room", "_deadends", "_colliders", "_halls")]
+[node name="Ending Manager" type="Node3D" parent="Room Ending" unique_id=1558518604 node_paths=PackedStringArray("_room", "_deadends", "_colliders", "_halls", "_end_bg", "_end_end_text", "_end_thanks_text")]
 script = ExtResource("23_lnwpo")
 _room = NodePath("..")
-_deadends = [NodePath("../Wall South/HallBlocked"), NodePath("../Wall East/HallBlocked"), NodePath("../Wall North/HallBlocked"), NodePath("../Wall North/HallBlocked")]
+_deadends = [NodePath("../Wall South/HallBlocked South"), NodePath("../Wall East/HallBlocked East"), NodePath("../Wall North/HallBlocked North"), NodePath("../Wall West/HallBlocked West")]
 _colliders = {
 NodePath("../StaticBody3D/CollisionShape3D13"): Vector3(-0.10000038, 1, -3.9000015),
 NodePath("../StaticBody3D/CollisionShape3D15"): Vector3(3.8999996, 1, 1),
@@ -867,6 +874,39 @@ NodePath("../StaticBody3D/CollisionShape3D12"): Vector3(-1, 1, 3.8999996),
 NodePath("../StaticBody3D/CollisionShape3D14"): Vector3(-3.8999996, 1, -1)
 }
 _halls = [NodePath("../Wall South/Hall Floor"), NodePath("../Wall East/Hall Floor"), NodePath("../Wall North/Hall Floor"), NodePath("../Wall West/Hall Floor")]
+_end_bg = NodePath("../../End Canvas/Ending")
+_end_end_text = NodePath("../../End Canvas/Ending/CenterContainer/The End")
+_end_thanks_text = NodePath("../../End Canvas/Ending/MarginContainer/Thanks")
+
+[node name="Snail" parent="Room Ending" unique_id=2077069823 instance=ExtResource("19_tcd4a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.42651367, 0)
+texts = Array[String](["I'M A BIT
+UPSET THAT
+YOU DIDN'T
+CHOOSE ME
+AS YOUR DATE!
+ ", "BUT YOU
+WERE A
+SPORT
+GETTING
+HERE 
+WITHOUT:
+ ", "GETTING
+FRUSTRATED.
+NOT EVEN A
+LITTLE BIT!
+ ", "OR EVEN
+GETTING
+CONFUSED
+A SINGLE 
+TIME!
+ ", "SO IF YOU
+SOLVE THIS
+FINAL TEST
+I FORGIVE ALL
+YOUR TRANS-
+GRESSIONS.
+ "])
 
 [node name="Room Cards Easy" parent="." unique_id=215299971 node_paths=PackedStringArray("correct_doors") instance=ExtResource("1_opbm8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.01612854, 0, 81.98676)
@@ -966,7 +1006,7 @@ GO!
  
 "])
 
-[node name="Snail" parent="Room Cards Medium" unique_id=2077069823 instance=ExtResource("19_tcd4a")]
+[node name="Snail" parent="Room Cards Medium" unique_id=940071110 instance=ExtResource("19_tcd4a")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.80057716, 0.37573242, -1.0645447)
 texts = Array[String](["TIS HARD
 TO GET HEARD
@@ -1674,6 +1714,76 @@ shape = SubResource("BoxShape3D_t3m14")
 [node name="CollisionShape3D23" type="CollisionShape3D" parent="DeadEnd/StaticBody3D" unique_id=1339438557]
 transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, -1.2484512, 1, -0.97129154)
 shape = SubResource("BoxShape3D_fdqvq")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=696554227]
+environment = SubResource("Environment_kjfgv")
+
+[node name="End Canvas" type="CanvasLayer" parent="." unique_id=889929449]
+
+[node name="Ending" type="ColorRect" parent="End Canvas" unique_id=146868069]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.05882353, 0.105882354, 0.14117648, 1)
+
+[node name="CenterContainer" type="CenterContainer" parent="End Canvas/Ending" unique_id=50993382]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="The End" type="RichTextLabel" parent="End Canvas/Ending/CenterContainer" unique_id=1513491697]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+theme_override_fonts/normal_font = ExtResource("55_hnrhq")
+theme_override_fonts/bold_font = ExtResource("56_ejeva")
+theme_override_font_sizes/normal_font_size = 96
+theme_override_font_sizes/bold_font_size = 96
+text = "THE END"
+fit_content = true
+autowrap_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("55_5imcb")
+wiggly_text = "THE END"
+wave_length = 2
+speed = 3.673
+metadata/_custom_type_script = "uid://byjgbxxo75rip"
+
+[node name="MarginContainer" type="MarginContainer" parent="End Canvas/Ending" unique_id=1732792984]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 30
+theme_override_constants/margin_right = 30
+theme_override_constants/margin_bottom = 30
+
+[node name="Thanks" type="RichTextLabel" parent="End Canvas/Ending/MarginContainer" unique_id=2069728731]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+theme_override_fonts/normal_font = ExtResource("55_hnrhq")
+theme_override_fonts/bold_font = ExtResource("56_ejeva")
+theme_override_font_sizes/normal_font_size = 24
+theme_override_font_sizes/bold_font_size = 24
+text = "THANK YOU FOR PLAYING!"
+fit_content = true
+autowrap_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("55_5imcb")
+wiggly_text = "THANK YOU FOR PLAYING!"
+speed = 3.673
+metadata/_custom_type_script = "uid://byjgbxxo75rip"
 
 [editable path="Room Pre-Ending"]
 [editable path="Room Pre-Ending/Wall West"]
