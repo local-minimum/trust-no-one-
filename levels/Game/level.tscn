@@ -625,15 +625,15 @@ size = Vector3(0.05, 2, 2)
 [sub_resource type="BoxShape3D" id="BoxShape3D_fdqvq"]
 size = Vector3(0.05, 2, 2.45)
 
-[node name="Level" type="Node3D" unique_id=1796817656 node_paths=PackedStringArray("_force_order", "_easy_rooms", "_medium_rooms", "_hard_rooms", "_choice_rooms", "_dead_end")]
+[node name="Level" type="Node3D" unique_id=1796817656 node_paths=PackedStringArray("_force_order", "_easy_rooms", "_medium_rooms", "_hard_rooms", "_pre_ending", "_dead_end")]
 script = ExtResource("1_xktuk")
 _music = "uid://dy638pj2i62i"
 _laugh = "uid://7k2pimpnaxxt"
-_force_order = [NodePath("Room Elements Easy"), NodePath("Room Cards Easy"), NodePath("Room Cards Medium"), NodePath("Room Elements Medium"), NodePath("Room Elements Hard"), NodePath("Room Cards Hard"), NodePath("Room Empty")]
+_force_order = [NodePath("Room Elements Easy"), NodePath("Room Cards Easy"), NodePath("Room Cards Medium"), NodePath("Room Elements Medium"), NodePath("Room Elements Hard"), NodePath("Room Cards Hard")]
 _easy_rooms = [NodePath("Room Worries Easy"), NodePath("Room Fruits Easy"), NodePath("Room Warnings Easy"), NodePath("Room Elements Easy"), NodePath("Room Cards Easy")]
 _medium_rooms = [NodePath("Room Worries Medium"), NodePath("Room Fruits Medium"), NodePath("Room Warnings Medium"), NodePath("Room Elements Medium"), NodePath("Room Cards Medium")]
 _hard_rooms = [NodePath("Room Worries Hard"), NodePath("Room Fruits Hard"), NodePath("Room Warnings Hard"), NodePath("Room Elements Hard"), NodePath("Room Cards Hard")]
-_choice_rooms = [NodePath("Room Empty")]
+_pre_ending = NodePath("Room Empty")
 _dead_end = NodePath("DeadEnd")
 _number_mats = Array[Material]([SubResource("ShaderMaterial_ieofn"), SubResource("ShaderMaterial_op3gc"), SubResource("ShaderMaterial_nunso"), SubResource("ShaderMaterial_nkckd"), SubResource("ShaderMaterial_24sfg"), SubResource("ShaderMaterial_g0llx"), SubResource("ShaderMaterial_xitda"), SubResource("ShaderMaterial_mcl0i"), SubResource("ShaderMaterial_s8mnq")])
 

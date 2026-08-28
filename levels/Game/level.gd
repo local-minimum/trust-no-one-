@@ -8,7 +8,11 @@ class_name Level
 @export var _easy_rooms: Array[Room]
 @export var _medium_rooms: Array[Room]
 @export var _hard_rooms: Array[Room]
-@export var _choice_rooms: Array[Room]
+@export var _pre_ending: Room
+@export var _ending_up: Room
+@export var _ending_down: Room
+@export var _ending_left: Room
+@export var _ending_right: Room
 @export var _dead_end: Node3D
 @export var _number_mats: Array[Material]
 
@@ -37,7 +41,7 @@ func _ready() -> void:
     AudioHub.play_music(_music)
     _disable_all_rooms()
 
-    var start_room: Room = _get_next_room(null)
+    var start_room: Room = _get_next_room(null, Vector2i.ZERO)
     start_room.global_position = Vector3.ZERO
     start_room.visible = true
     start_room.set_process(true)
@@ -57,13 +61,10 @@ func _disable_all_rooms() -> void:
         _disable_room(room)
     for room: Room in _hard_rooms:
         _disable_room(room)
-    for room: Room in _choice_rooms:
-        _disable_room(room)
 
-func _get_next_room(current: Room) -> Room:
-    if _rooms_visited < _force_order.size():
-        return _force_order[_rooms_visited]
+    _disable_room(_pre_ending)
 
+func _get_next_room(current: Room, direction: Vector2i) -> Room:
     var options: Array[Room]
     var _rooms: Array[Room]
 
@@ -75,11 +76,24 @@ func _get_next_room(current: Room) -> Room:
         _rooms = _easy_rooms if randf() < 0.5 else _medium_rooms
     elif _stage < 7:
         _rooms = _hard_rooms
+    elif current == _pre_ending:
+        match direction:
+            Vector2i.UP:
+                return _ending_up
+            Vector2i.DOWN:
+                return _ending_down
+            Vector2i.LEFT:
+                return _ending_left
+            Vector2i.RIGHT:
+                return _ending_right
+            _:
+                push_error("Illegal direction leaving %s to the %s" % [current, direction])
+                return _pre_ending
     else:
-        if !_choice_rooms:
-            push_error("Lacking ending!")
+        return _pre_ending
 
-        return _choice_rooms.pick_random()
+    if _rooms_visited < _force_order.size():
+        return _force_order[_rooms_visited]
 
     for room: Room in _rooms:
         if room && room != current && !_room_history.has(room):
@@ -125,9 +139,13 @@ func _handle_exit_room(room: Room, correct: bool, direction: Vector2i) -> void:
     else:
         _next_stage = 0
 
-    var next: Room = _get_next_room(room)
+    var next: Room = _get_next_room(room, direction)
+    if next == null:
+        return
+
     if next == room:
         push_error("Trying to go back to same room!")
+
     next.global_position = room.neighbour_global_position(direction)
     next.visible = true
     next.set_process(true)

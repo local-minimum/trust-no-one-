@@ -7,6 +7,7 @@
 [ext_resource type="Script" uid="uid://myodc6ti2elg" path="res://levels/Game/speech_bubble.gd" id="5_h6j0o"]
 [ext_resource type="FontFile" uid="uid://dkqm23662tqn1" path="res://fonts/wiggle_normal.fnt" id="6_s76xv"]
 [ext_resource type="FontFile" uid="uid://vdjnsx82vh0f" path="res://fonts/wiggle_bold.fnt" id="7_qtnbh"]
+[ext_resource type="Texture2D" uid="uid://cw2xnqrii12cr" path="res://sprites/more_arrow.png" id="8_ypmh0"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_m8n3x"]
 render_priority = 3
@@ -44,11 +45,29 @@ shader_parameter/animation_speed = 0.45999998971808
 material = SubResource("ShaderMaterial_7sa57")
 size = Vector2(1.2, 1)
 
-[node name="Knott" type="MeshInstance3D" unique_id=60636311 node_paths=PackedStringArray("bubble", "detection_area")]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0ltmj"]
+render_priority = 10
+shader = ExtResource("1_u5e0d")
+shader_parameter/tex = ExtResource("8_ypmh0")
+shader_parameter/sprite_size = Vector2i(128, 16)
+shader_parameter/sprite_spacing = Vector2i(0, 0)
+shader_parameter/sprites = Vector2i(1, 2)
+shader_parameter/directions = 1
+shader_parameter/sequence_start = PackedInt32Array(0, 0, 0, 0, 0, 0, 0, 0)
+shader_parameter/sequence_length = PackedInt32Array(2, 0, 0, 0, 0, 0, 0, 0)
+shader_parameter/billboard = true
+shader_parameter/animation_speed = 0.1999999955296
+
+[sub_resource type="QuadMesh" id="QuadMesh_d6oxs"]
+material = SubResource("ShaderMaterial_0ltmj")
+size = Vector2(0.8, 0.1)
+
+[node name="Knott" type="MeshInstance3D" unique_id=60636311 node_paths=PackedStringArray("bubble", "detection_area", "more_text")]
 mesh = SubResource("QuadMesh_wfk6r")
 script = ExtResource("3_d6oxs")
 bubble = NodePath("Speech Bubble")
 detection_area = NodePath("Area3D")
+more_text = NodePath("Speech Bubble/More Text")
 
 [node name="Area3D" type="Area3D" parent="." unique_id=1456256909]
 collision_layer = 0
@@ -92,3 +111,7 @@ modulate = Color(0, 0, 0, 1)
 font = ExtResource("7_qtnbh")
 font_size = 16
 autowrap_trim_flags = 0
+
+[node name="More Text" type="MeshInstance3D" parent="Speech Bubble" unique_id=602806204]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.005, -0.5, 0)
+mesh = SubResource("QuadMesh_d6oxs")

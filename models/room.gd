@@ -93,4 +93,5 @@ func _handle_door_closed(room_side: bool, door: RoomDoor) -> void:
             solved_times += 1
 
 func set_room_number(material: Material) -> void:
-    (_room_number.mesh as QuadMesh).material = material
+    if _room_number:
+        (_room_number.mesh as QuadMesh).material = material

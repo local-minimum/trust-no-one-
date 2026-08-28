@@ -5,6 +5,7 @@ extends MeshInstance3D
 @export_file("*.mp3") var speach_sound: String
 @export_multiline() var texts: Array[String]
 @export var speech_speed: float = 5.5
+@export var more_text: Node3D
 
 var _showing: bool
 var talking: bool
@@ -18,6 +19,7 @@ func _enter_tree() -> void:
 func _ready() -> void:
     bubble.visible = false
     set_process(false)
+    more_text.visible = texts.size() >  1
 
 var text_idx: int = -1
 var next_text: float

@@ -7,6 +7,7 @@
 [ext_resource type="Script" uid="uid://myodc6ti2elg" path="res://levels/Game/speech_bubble.gd" id="5_5svcf"]
 [ext_resource type="FontFile" uid="uid://dkqm23662tqn1" path="res://fonts/wiggle_normal.fnt" id="6_vsj1y"]
 [ext_resource type="FontFile" uid="uid://vdjnsx82vh0f" path="res://fonts/wiggle_bold.fnt" id="7_e5lgg"]
+[ext_resource type="Texture2D" uid="uid://cw2xnqrii12cr" path="res://sprites/more_arrow.png" id="8_77bmk"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_hmnmk"]
 render_priority = 0
@@ -41,15 +42,33 @@ shader_parameter/animation_speed = 0.45999998971808
 material = SubResource("ShaderMaterial_81l0q")
 size = Vector2(1.2, 1)
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_hau71"]
+render_priority = 10
+shader = ExtResource("1_hljqi")
+shader_parameter/tex = ExtResource("8_77bmk")
+shader_parameter/sprite_size = Vector2i(128, 16)
+shader_parameter/sprite_spacing = Vector2i(0, 0)
+shader_parameter/sprites = Vector2i(1, 2)
+shader_parameter/directions = 1
+shader_parameter/sequence_start = PackedInt32Array(0, 0, 0, 0, 0, 0, 0, 0)
+shader_parameter/sequence_length = PackedInt32Array(2, 0, 0, 0, 0, 0, 0, 0)
+shader_parameter/billboard = false
+shader_parameter/animation_speed = 0.1999999955296
+
+[sub_resource type="QuadMesh" id="QuadMesh_t50nr"]
+material = SubResource("ShaderMaterial_hau71")
+size = Vector2(0.8, 0.1)
+
 [sub_resource type="SphereShape3D" id="SphereShape3D_tt44h"]
 radius = 1.2826781
 
-[node name="Ticks" type="MeshInstance3D" unique_id=584970961 node_paths=PackedStringArray("bubble", "detection_area")]
+[node name="Ticks" type="MeshInstance3D" unique_id=584970961 node_paths=PackedStringArray("bubble", "detection_area", "more_text")]
 transform = Transform3D(1.1924881e-08, 0, -1, -0.31648102, -0.94859886, -3.7739984e-09, -0.94859886, 0.31648102, -1.1311928e-08, 0, 0, 0)
 mesh = SubResource("QuadMesh_7sa57")
 script = ExtResource("3_hau71")
 bubble = NodePath("Speech Bubble")
 detection_area = NodePath("Area3D")
+more_text = NodePath("Speech Bubble/More Text")
 
 [node name="Speech Bubble" type="MeshInstance3D" parent="." unique_id=809188684 node_paths=PackedStringArray("label1", "label2")]
 transform = Transform3D(-0.9995913, -0.028596222, -2.3844896e-08, 0.028596222, -0.9995913, 3.4100633e-10, -2.3844887e-08, -3.4100656e-10, 1, -0.24012733, -0.66419953, 0.010192871)
@@ -84,6 +103,10 @@ modulate = Color(0, 0, 0, 1)
 font = ExtResource("7_e5lgg")
 font_size = 16
 autowrap_trim_flags = 0
+
+[node name="More Text" type="MeshInstance3D" parent="Speech Bubble" unique_id=703361167]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.005, -0.4450705, 0)
+mesh = SubResource("QuadMesh_t50nr")
 
 [node name="Area3D" type="Area3D" parent="." unique_id=1844359389]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 8.881784e-16, 0, 1, 0, 0, 0.34227085)
