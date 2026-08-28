@@ -87,18 +87,6 @@ shader_parameter/animation_speed = 0.3499999921768
 material = SubResource("ShaderMaterial_ir86x")
 size = Vector2(0.8, 0.6)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_kr4f2"]
-size = Vector3(0.4, 2, 3)
-
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_t3m14"]
-points = PackedVector3Array(0.01, 1, 0, -0.01, 1, 0, 0.01, -1, 0, 0.01, 1, -1.05, -0.01, 1, -1.05, -0.01, -1, 0, 0.01, -1, -1.05, -0.01, -1, -1.05)
-
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_fdqvq"]
-points = PackedVector3Array(0.01, 1, 0, -0.01, 1, 0, 0.01, -1, 0, 0.01, 1, -1.05, -0.01, 1, -1.05, -0.01, -1, 0, 0.01, -1, -1.05, -0.01, -1, -1.05)
-
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_ulu4o"]
-points = PackedVector3Array(0.01, 1, 0, -0.01, 1, 0, 0.01, -1, 0, 0.01, 1, -1.05, -0.01, 1, -1.05, -0.01, -1, 0, 0.01, -1, -1.05, -0.01, -1, -1.05)
-
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_yvs3c"]
 render_priority = 0
 shader = ExtResource("1_ycakp")
@@ -115,6 +103,18 @@ shader_parameter/animation_speed = 0.3499999921768
 [sub_resource type="QuadMesh" id="QuadMesh_dmi1t"]
 material = SubResource("ShaderMaterial_yvs3c")
 size = Vector2(0.8, 0.6)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_kr4f2"]
+size = Vector3(0.4, 2, 3)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_t3m14"]
+points = PackedVector3Array(0.01, 1, 0, -0.01, 1, 0, 0.01, -1, 0, 0.01, 1, -1.05, -0.01, 1, -1.05, -0.01, -1, 0, 0.01, -1, -1.05, -0.01, -1, -1.05)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_fdqvq"]
+points = PackedVector3Array(0.01, 1, 0, -0.01, 1, 0, 0.01, -1, 0, 0.01, 1, -1.05, -0.01, 1, -1.05, -0.01, -1, 0, 0.01, -1, -1.05, -0.01, -1, -1.05)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_ulu4o"]
+points = PackedVector3Array(0.01, 1, 0, -0.01, 1, 0, 0.01, -1, 0, 0.01, 1, -1.05, -0.01, 1, -1.05, -0.01, -1, 0, 0.01, -1, -1.05, -0.01, -1, -1.05)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_kjfgv"]
 size = Vector3(15, 0.5, 15)
@@ -183,6 +183,10 @@ mesh = SubResource("QuadMesh_d5ec4")
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -1.6690092, 1.4385633, 0.97847456)
 mesh = SubResource("QuadMesh_0ltmj")
 
+[node name="Text" type="MeshInstance3D" parent="Wall West/Hall Floor/Painting3" unique_id=858650035]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.0146820545)
+mesh = SubResource("QuadMesh_dmi1t")
+
 [node name="Room Side" parent="Wall West" index="2" unique_id=1540176426]
 surface_material_override/0 = ExtResource("4_flvyy")
 
@@ -243,6 +247,10 @@ mesh = SubResource("QuadMesh_d5ec4")
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -1.6690092, 1.4385633, 0.97847456)
 mesh = SubResource("QuadMesh_0ltmj")
 
+[node name="Text" type="MeshInstance3D" parent="Wall North/Hall Floor/Painting3" unique_id=1810440718]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.0146820545)
+mesh = SubResource("QuadMesh_dmi1t")
+
 [node name="Room Side" parent="Wall North" index="2" unique_id=1540176426]
 surface_material_override/0 = ExtResource("4_flvyy")
 
@@ -302,6 +310,10 @@ mesh = SubResource("QuadMesh_d5ec4")
 [node name="Painting3" type="MeshInstance3D" parent="Wall East/Hall Floor" index="2" unique_id=911525529]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -1.6690092, 1.4385633, 0.97847456)
 mesh = SubResource("QuadMesh_0ltmj")
+
+[node name="Text" type="MeshInstance3D" parent="Wall East/Hall Floor/Painting3" unique_id=1299011339]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.0146820545)
+mesh = SubResource("QuadMesh_dmi1t")
 
 [node name="Room Side" parent="Wall East" index="2" unique_id=1540176426]
 surface_material_override/0 = ExtResource("4_flvyy")

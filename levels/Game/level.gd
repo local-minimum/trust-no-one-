@@ -38,7 +38,7 @@ func _enter_tree() -> void:
         push_error("Failed to connect exit room")
 
 func _ready() -> void:
-    AudioHub.play_music(_music)
+    AudioHub.play_music(_music, 0.5)
     _disable_all_rooms()
 
     var start_room: Room = _get_next_room(null, Vector2i.ZERO)
@@ -65,18 +65,7 @@ func _disable_all_rooms() -> void:
     _disable_room(_pre_ending)
 
 func _get_next_room(current: Room, direction: Vector2i) -> Room:
-    var options: Array[Room]
-    var _rooms: Array[Room]
-
-    if _stage < 2:
-        _rooms = _easy_rooms
-    elif _stage < 4:
-        _rooms = _medium_rooms
-    elif _stage == 5:
-        _rooms = _easy_rooms if randf() < 0.5 else _medium_rooms
-    elif _stage < 7:
-        _rooms = _hard_rooms
-    elif current == _pre_ending:
+    if current == _pre_ending:
         match direction:
             Vector2i.UP:
                 return _ending_up
@@ -89,6 +78,20 @@ func _get_next_room(current: Room, direction: Vector2i) -> Room:
             _:
                 push_error("Illegal direction leaving %s to the %s" % [current, direction])
                 return _pre_ending
+    elif current == _ending_up || current == _ending_down || current == _ending_left || current == _ending_right:
+        return
+
+    var options: Array[Room]
+    var _rooms: Array[Room]
+
+    if _stage < 2:
+        _rooms = _easy_rooms
+    elif _stage < 4:
+        _rooms = _medium_rooms
+    elif _stage == 5:
+        _rooms = _easy_rooms if randf() < 0.5 else _medium_rooms
+    elif _stage < 7:
+        _rooms = _hard_rooms
     else:
         return _pre_ending
 
