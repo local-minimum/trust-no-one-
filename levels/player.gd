@@ -11,6 +11,9 @@ class_name HubPlayerCharacter
 @export var focus_effect: float = 0.5
 @export var focus_fov_factor: float = 0.7
 @export var focus_fov_ease_time: float = 0.3
+@export var ui_sounds: FlipUITextureRect
+@export var ui_no_music: FlipUITextureRect
+@export var ui_no_sounds: FlipUITextureRect
 
 var _cinematic_reasons: Array[Node]
 var cinematic: bool:
@@ -248,6 +251,8 @@ func _ready() -> void:
     duck_ray.enabled = false
     _last_pos = global_position
 
+    ui_sounds.fade_out(10.0)
+
 var _joy_look: Vector2
 var _using_joy_look: bool
 var _focusing: bool:
@@ -283,14 +288,26 @@ func _input(event: InputEvent) -> void:
     if event.is_action_pressed(&"mute"):
         match _mute:
             MuteState.NOTHING:
+                ui_sounds.visible = false
+                ui_no_music.modulate = Color.WHITE
+                ui_no_music.visible = true
+                ui_no_music.fade_out(5.0)
                 AudioHub.mute_bus(AudioHub.Bus.MUSIC)
                 _mute = MuteState.MUSIC
             MuteState.MUSIC:
+                ui_no_music.visible = false
+                ui_no_sounds.modulate = Color.WHITE
+                ui_no_sounds.visible = true
+                ui_no_sounds.fade_out(5.0)
                 AudioHub.mute_bus(AudioHub.Bus.MASTER)
                 _mute = MuteState.ALL
             _:
+                ui_sounds.modulate = Color.WHITE
+                ui_sounds.visible = true
+                ui_no_sounds.visible = false
                 AudioHub.unmute_bus(AudioHub.Bus.MUSIC)
                 AudioHub.unmute_bus(AudioHub.Bus.MASTER)
+                ui_sounds.fade_out(5.0)
                 _mute = MuteState.NOTHING
 
     if !cinematic:
