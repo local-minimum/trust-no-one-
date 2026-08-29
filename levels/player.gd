@@ -15,6 +15,8 @@ class_name HubPlayerCharacter
 @export var ui_no_music: FlipUITextureRect
 @export var ui_no_sounds: FlipUITextureRect
 
+var look_locked: bool
+
 var _cinematic_reasons: Array[Node]
 var cinematic: bool:
     get():
@@ -314,7 +316,7 @@ func _input(event: InputEvent) -> void:
         if Input.mouse_mode != Input.MOUSE_MODE_CAPTURED && event is InputEventMouseButton:
             Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 
-        elif Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
+        elif !look_locked && Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
             if event is InputEventMouseMotion:
                 var m_event: InputEventMouseMotion = event
                 var delta: Vector2 = m_event.relative

@@ -15,7 +15,7 @@ var idx: int = 0
 var remaining: float
 
 func _process(delta: float) -> void:
-    if !visible:
+    if !visible || textures.size() == 0:
         return
 
     remaining -= delta

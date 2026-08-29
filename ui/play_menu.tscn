@@ -1,0 +1,132 @@
+[gd_scene format=3 uid="uid://dnueaj6jdrlv"]
+
+[ext_resource type="Script" uid="uid://b7mmgnunrw5fl" path="res://ui/container_button.gd" id="1_wjssj"]
+[ext_resource type="Texture2D" uid="uid://duts8vkj51f88" path="res://sprites/blank_painting_alt.png" id="2_w1yye"]
+[ext_resource type="Script" uid="uid://ds774qo1fvna8" path="res://levels/Game/flip_ui_texture_rect.gd" id="3_wp1dy"]
+[ext_resource type="Texture2D" uid="uid://dlhcdg7e1rol4" path="res://sprites/blank_painting.png" id="4_sor8q"]
+[ext_resource type="FontFile" uid="uid://dkqm23662tqn1" path="res://fonts/wiggle_normal.fnt" id="5_xu7gy"]
+[ext_resource type="FontFile" uid="uid://vdjnsx82vh0f" path="res://fonts/wiggle_bold.fnt" id="6_wihn4"]
+[ext_resource type="Script" uid="uid://byjgbxxo75rip" path="res://fonts/wiggly_ui_text.gd" id="7_ttyok"]
+
+[node name="Play Menu" type="MarginContainer" unique_id=1423559025]
+theme_override_constants/margin_top = 150
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=1634715490]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer" unique_id=1625154524]
+layout_mode = 2
+
+[node name="Play Button" type="BaseButton" parent="CenterContainer/VBoxContainer" unique_id=66546694]
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 2
+auto_translate_mode = 0
+editor_description = ""
+visible = true
+modulate = Color(1, 1, 1, 1)
+self_modulate = Color(1, 1, 1, 1)
+show_behind_parent = false
+top_level = false
+clip_children = 0
+oversampling_with_scale = 0
+light_mask = 1
+visibility_layer = 1
+z_index = 0
+z_as_relative = true
+y_sort_enabled = false
+texture_filter = 0
+texture_repeat = 0
+material = null
+use_parent_material = false
+custom_minimum_size = Vector2(350, 150)
+custom_maximum_size = Vector2(-1, -1)
+propagate_maximum_size = false
+clip_contents = false
+layout_mode = 2
+size_flags_horizontal = 1
+size_flags_vertical = 1
+size_flags_stretch_ratio = 1.0
+offset_transform_enabled = false
+offset_transform_position = Vector2(0, 0)
+offset_transform_position_ratio = Vector2(0, 0)
+offset_transform_scale = Vector2(1, 1)
+offset_transform_rotation = 0.0
+offset_transform_pivot = Vector2(0, 0)
+offset_transform_pivot_ratio = Vector2(0.5, 0.5)
+offset_transform_visual_only = true
+localize_numeral_system = true
+layout_direction = 0
+translation_context = &""
+tooltip_text = ""
+tooltip_auto_translate_mode = 0
+focus_neighbor_left = NodePath("")
+focus_neighbor_top = NodePath("")
+focus_neighbor_right = NodePath("")
+focus_neighbor_bottom = NodePath("")
+focus_next = NodePath("")
+focus_previous = NodePath("")
+focus_mode = 2
+focus_behavior_recursive = 0
+mouse_filter = 0
+mouse_behavior_recursive = 0
+mouse_force_pass_scroll_events = true
+mouse_default_cursor_shape = 0
+accessibility_name = ""
+accessibility_description = ""
+accessibility_live = 0
+accessibility_controls_nodes = Array[NodePath]([])
+accessibility_described_by_nodes = Array[NodePath]([])
+accessibility_labeled_by_nodes = Array[NodePath]([])
+accessibility_flow_to_nodes = Array[NodePath]([])
+theme = null
+theme_type_variation = &""
+disabled = false
+toggle_mode = false
+button_pressed = false
+action_mode = 1
+button_mask = 1
+keep_pressed_outside = false
+button_group = null
+shortcut = null
+shortcut_feedback = true
+shortcut_in_tooltip = true
+script = ExtResource("1_wjssj")
+metadata/_custom_type_script = "uid://b7mmgnunrw5fl"
+
+[node name="FlipUITextureRect" type="TextureRect" parent="CenterContainer/VBoxContainer/Play Button" unique_id=772593444]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_w1yye")
+expand_mode = 1
+script = ExtResource("3_wp1dy")
+textures = Array[Texture2D]([ExtResource("2_w1yye"), ExtResource("4_sor8q")])
+metadata/_custom_type_script = "uid://ds774qo1fvna8"
+
+[node name="WigglyText" type="RichTextLabel" parent="CenterContainer/VBoxContainer/Play Button" unique_id=161034468]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/default_color = Color(0.05882353, 0.105882354, 0.14117648, 1)
+theme_override_fonts/normal_font = ExtResource("5_xu7gy")
+theme_override_fonts/bold_font = ExtResource("6_wihn4")
+theme_override_font_sizes/normal_font_size = 48
+theme_override_font_sizes/bold_font_size = 48
+text = "PLAY"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("7_ttyok")
+wiggly_text = "PLAY"
+wave_length = 2
+speed = 2.9539999999999997
+metadata/_custom_type_script = "uid://byjgbxxo75rip"

@@ -57,6 +57,7 @@
 [ext_resource type="Script" uid="uid://byjgbxxo75rip" path="res://fonts/wiggly_ui_text.gd" id="55_5imcb"]
 [ext_resource type="FontFile" uid="uid://dkqm23662tqn1" path="res://fonts/wiggle_normal.fnt" id="55_hnrhq"]
 [ext_resource type="FontFile" uid="uid://vdjnsx82vh0f" path="res://fonts/wiggle_bold.fnt" id="56_ejeva"]
+[ext_resource type="Script" uid="uid://bfdjw1gtnprwi" path="res://levels/Game/game_ui.gd" id="58_m3lpc"]
 [ext_resource type="Texture2D" uid="uid://domvcxyk1ekpq" path="res://sprites/ui_sound.png" id="58_we5v2"]
 [ext_resource type="Script" uid="uid://ds774qo1fvna8" path="res://levels/Game/flip_ui_texture_rect.gd" id="59_x5tug"]
 [ext_resource type="Texture2D" uid="uid://baq027w7ngxce" path="res://sprites/ui_sound_alt.png" id="60_x5tug"]
@@ -1794,8 +1795,11 @@ wiggly_text = "THANK YOU FOR PLAYING!"
 speed = 3.673
 metadata/_custom_type_script = "uid://byjgbxxo75rip"
 
-[node name="UI" type="CanvasLayer" parent="." unique_id=1283903532]
+[node name="UI" type="CanvasLayer" parent="." unique_id=1283903532 node_paths=PackedStringArray("title", "player")]
 layer = 2
+script = ExtResource("58_m3lpc")
+title = NodePath("MarginContainer/Title")
+player = NodePath("../Player")
 
 [node name="MarginContainer" type="MarginContainer" parent="UI" unique_id=2038285735]
 anchors_preset = 15
@@ -1813,7 +1817,7 @@ custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 8
-texture = ExtResource("58_we5v2")
+texture = ExtResource("60_x5tug")
 expand_mode = 1
 stretch_mode = 4
 script = ExtResource("59_x5tug")
@@ -1837,11 +1841,48 @@ custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 8
-texture = ExtResource("63_q6pkm")
+texture = ExtResource("64_7jgqb")
 expand_mode = 1
 stretch_mode = 4
 script = ExtResource("59_x5tug")
 textures = Array[Texture2D]([ExtResource("64_7jgqb"), ExtResource("63_q6pkm")])
+
+[node name="Title" type="RichTextLabel" parent="UI/MarginContainer" unique_id=20984636]
+custom_minimum_size = Vector2(0, 150)
+layout_mode = 2
+size_flags_vertical = 0
+mouse_filter = 2
+theme_override_fonts/normal_font = ExtResource("55_hnrhq")
+theme_override_fonts/bold_font = ExtResource("56_ejeva")
+theme_override_font_sizes/normal_font_size = 64
+theme_override_font_sizes/bold_font_size = 64
+text = "TRUST NO ONE..."
+horizontal_alignment = 1
+script = ExtResource("55_5imcb")
+wiggly_text = "TRUST NO ONE..."
+speed = 4.6
+metadata/_custom_type_script = "uid://byjgbxxo75rip"
+
+[node name="Title2" type="RichTextLabel" parent="UI/MarginContainer/Title" unique_id=1261654608]
+custom_minimum_size = Vector2(0, 150)
+layout_mode = 0
+offset_left = 3.0
+offset_top = 3.0
+offset_right = 1095.0
+offset_bottom = 153.0
+size_flags_vertical = 0
+mouse_filter = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("55_hnrhq")
+theme_override_fonts/bold_font = ExtResource("56_ejeva")
+theme_override_font_sizes/normal_font_size = 64
+theme_override_font_sizes/bold_font_size = 64
+text = "TRUST NO ONE..."
+horizontal_alignment = 1
+script = ExtResource("55_5imcb")
+wiggly_text = "TRUST NO ONE..."
+speed = 3.5989999999999998
+metadata/_custom_type_script = "uid://byjgbxxo75rip"
 
 [editable path="Room Pre-Ending"]
 [editable path="Room Pre-Ending/Wall West"]
