@@ -154,6 +154,7 @@ surface_material_override/0 = ExtResource("4_bnc1o")
 script = ExtResource("5_qh6cp")
 room_area = NodePath("../West Room Area")
 hall_area = NodePath("../West Hall Area")
+sound = "uid://bpcypfu2qu4vq"
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Wall West/Door" index="0" unique_id=187454499]
 
@@ -218,6 +219,7 @@ surface_material_override/0 = ExtResource("4_bnc1o")
 script = ExtResource("5_qh6cp")
 room_area = NodePath("../North Room Area")
 hall_area = NodePath("../North Hall Area")
+sound = "uid://bpcypfu2qu4vq"
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Wall North/Door" index="0" unique_id=216266877]
 
@@ -282,6 +284,7 @@ surface_material_override/0 = ExtResource("4_bnc1o")
 script = ExtResource("5_qh6cp")
 room_area = NodePath("../East Room Area")
 hall_area = NodePath("../East Hall Area")
+sound = "uid://bpcypfu2qu4vq"
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Wall East/Door" index="0" unique_id=247418898]
 
@@ -347,6 +350,7 @@ surface_material_override/0 = ExtResource("4_bnc1o")
 script = ExtResource("5_qh6cp")
 room_area = NodePath("../South Room Area")
 hall_area = NodePath("../South Hall Area")
+sound = "uid://bpcypfu2qu4vq"
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Wall South/Door" index="0" unique_id=703857064]
 

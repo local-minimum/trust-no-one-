@@ -8,6 +8,7 @@ signal closed(room_side: bool)
 @export var hall_area: Area3D
 @export var open_angle: float = -PI * 0.8
 @export var transition_duration: float = 1.0
+@export_file("*.wav") var sound: String
 
 var _opened: bool = false
 var _active_area: Area3D
@@ -33,7 +34,8 @@ func _enter_area(_b: Node3D, a: Area3D) -> void:
             _tween.kill()
         _tween = create_tween()
         _tween.tween_property(self, "rotation:y", open_angle if a == hall_area else -open_angle, transition_duration);
-
+        if sound:
+            AudioHub.play_sfx(sound, 0.3)
         opened.emit(a == room_area)
 
 func _exit_area(_b: Node3D, a: Area3D) -> void:
