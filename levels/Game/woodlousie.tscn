@@ -69,6 +69,7 @@ mesh = SubResource("QuadMesh_6kqwp")
 script = ExtResource("3_cstb5")
 bubble = NodePath("Speech Bubble")
 detection_area = NodePath("Area3D")
+speach_sound = "uid://c07p2gnin8sqy"
 more_text = NodePath("Speech Bubble/More Text")
 
 [node name="Speech Bubble" type="MeshInstance3D" parent="." unique_id=1940162752 node_paths=PackedStringArray("label1", "label2")]

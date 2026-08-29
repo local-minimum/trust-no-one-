@@ -68,6 +68,7 @@ mesh = SubResource("QuadMesh_hmnmk")
 script = ExtResource("3_hjhht")
 bubble = NodePath("Speech Bubble")
 detection_area = NodePath("Area3D")
+speach_sound = "uid://c07p2gnin8sqy"
 texts = Array[String](["ONLY ON THING
 COUNTS
 THE DOLLAR

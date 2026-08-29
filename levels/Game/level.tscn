@@ -887,33 +887,37 @@ _end_thanks_text = NodePath("../../End Canvas/Ending/MarginContainer/Thanks")
 
 [node name="Snail" parent="Room Ending" unique_id=2077069823 instance=ExtResource("19_tcd4a")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.42651367, 0)
-texts = Array[String](["I'M A BIT
-UPSET THAT
-YOU DIDN'T
-CHOOSE ME
-AS YOUR DATE!
- ", "BUT YOU
-WERE A
-SPORT
-GETTING
-HERE 
-WITHOUT:
- ", "GETTING
-FRUSTRATED.
-NOT EVEN A
-LITTLE BIT!
- ", "OR EVEN
-GETTING
-CONFUSED
-A SINGLE 
-TIME!
- ", "SO IF YOU
-SOLVE THIS
-FINAL TEST
-I FORGIVE ALL
-YOUR TRANS-
-GRESSIONS.
- "])
+texts = Array[String](["YOU MADE IT,
+THAT'S GOOD!
+ALWAYS KNEW
+YOU WOULD!
+ ", "NOT A SINGLE
+MISED TURN!
+YOUR TRICKS
+I MUST LEARN!
+ ", "SUCH CALM,
+CLEAR SIGHT.
+EVERY CHOICE,
+ALWAYS RIGHT!
+ ", "BUT I MUST
+ADMIT:
+ONE CHOICE
+WAS UNFIT.
+ ", "WHY NOT ME
+AS YOUR DATE?
+IT WOULD HAVE
+BEEN GREAT!
+ ", "WE'D HAVE HAD
+SO MUCH FUN.
+MAYBE ON YOUR
+NEXT RUN?
+ ", "FOR NOW HERE
+IS A LAST,
+TEST TO GET
+PAST.", "IF YOU PASS
+THIS SIEVE,
+YOUR SNUB
+I'LL FORGIVE."])
 
 [node name="Room Cards Easy" parent="." unique_id=215299971 node_paths=PackedStringArray("correct_doors") instance=ExtResource("1_opbm8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.01612854, 0, 81.98676)
@@ -1659,6 +1663,7 @@ FRIEND.
 
 [node name="Player" parent="." unique_id=1942068578 node_paths=PackedStringArray("ui_sounds", "ui_no_music", "ui_no_sounds") instance=ExtResource("2_dlgm3")]
 transform = Transform3D(0.9999796, 0, -0.0063995123, 0, 1, 0, 0.0063995123, 0, 0.9999796, -5.9819374, 0, 8.895155)
+footfalls = Array[String](["uid://c112k8pf4iaup", "uid://dc4aixveok3c0", "uid://bukh4wnod5oy7", "uid://cnxfkuuc3rgmy", "uid://c63w4x1r70rvp", "uid://ckrt6nsraajcs"])
 ui_sounds = NodePath("../UI/MarginContainer/Sounds")
 ui_no_music = NodePath("../UI/MarginContainer/No Music")
 ui_no_sounds = NodePath("../UI/MarginContainer/No Sounds")
