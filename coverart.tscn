@@ -1,0 +1,111 @@
+[gd_scene format=3 uid="uid://clggf45oem4gg"]
+
+[ext_resource type="FontFile" uid="uid://dkqm23662tqn1" path="res://fonts/wiggle_normal.fnt" id="1_nnfxa"]
+[ext_resource type="FontFile" uid="uid://vdjnsx82vh0f" path="res://fonts/wiggle_bold.fnt" id="2_m74hy"]
+[ext_resource type="Texture2D" uid="uid://gtynorktejtk" path="res://sprites/worm.png" id="3_eum85"]
+[ext_resource type="Script" uid="uid://byjgbxxo75rip" path="res://fonts/wiggly_ui_text.gd" id="3_loxm3"]
+[ext_resource type="Texture2D" uid="uid://di5lme7eoak5v" path="res://sprites/vivel.png" id="4_20ocr"]
+[ext_resource type="Texture2D" uid="uid://ba1nhgqijr2ys" path="res://sprites/tick.png" id="4_fgew4"]
+[ext_resource type="Texture2D" uid="uid://b2bpdu0e6eonj" path="res://sprites/woodlouse.png" id="4_m74hy"]
+[ext_resource type="Texture2D" uid="uid://byhxt730e66r8" path="res://sprites/larva.png" id="5_bna61"]
+[ext_resource type="Texture2D" uid="uid://n5x8yt50iotw" path="res://sprites/fly.png" id="6_6bdym"]
+
+[node name="Control" type="Control" unique_id=1904943271]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Woodlouse" type="Sprite2D" parent="." unique_id=1968559686]
+position = Vector2(1127, 401.99994)
+rotation = -0.53828967
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("4_m74hy")
+
+[node name="Vivel" type="Sprite2D" parent="." unique_id=1864730874]
+position = Vector2(977, 681)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("4_20ocr")
+
+[node name="Worm" type="Sprite2D" parent="." unique_id=1364605325]
+position = Vector2(172.99998, 774)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("3_eum85")
+
+[node name="Tick" type="Sprite2D" parent="." unique_id=51729097]
+position = Vector2(233.99998, -48.000015)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("4_fgew4")
+
+[node name="Larva" type="Sprite2D" parent="." unique_id=443548622]
+position = Vector2(559, 599)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("5_bna61")
+
+[node name="Fly" type="Sprite2D" parent="." unique_id=501891843]
+position = Vector2(746, -18)
+rotation = -0.73957115
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("6_6bdym")
+
+[node name="Title" type="RichTextLabel" parent="." unique_id=203403647]
+custom_minimum_size = Vector2(800, 400)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -317.0
+offset_top = -145.0
+offset_right = 483.0
+offset_bottom = 255.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.8, 0.8)
+size_flags_vertical = 0
+mouse_filter = 2
+theme_override_fonts/normal_font = ExtResource("1_nnfxa")
+theme_override_fonts/bold_font = ExtResource("2_m74hy")
+theme_override_font_sizes/normal_font_size = 82
+theme_override_font_sizes/bold_font_size = 82
+text = "TRUST
+NO ONE..."
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("3_loxm3")
+wiggly_text = "TRUST
+NO ONE..."
+speed = 4.6
+metadata/_custom_type_script = "uid://byjgbxxo75rip"
+
+[node name="Title2" type="RichTextLabel" parent="Title" unique_id=930932207]
+custom_minimum_size = Vector2(0, 150)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 3.0
+offset_top = 3.0
+offset_right = 3.0
+offset_bottom = 3.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 0
+mouse_filter = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("1_nnfxa")
+theme_override_fonts/bold_font = ExtResource("2_m74hy")
+theme_override_font_sizes/normal_font_size = 82
+theme_override_font_sizes/bold_font_size = 82
+text = "TRUST
+NO ONE..."
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("3_loxm3")
+wiggly_text = "TRUST
+NO ONE..."
+speed = 3.5989999999999998
+metadata/_custom_type_script = "uid://byjgbxxo75rip"
