@@ -49,7 +49,7 @@ static var mouse_inverted_y: bool:
                 GameSettingsProvider.set_settingb(_MOUSE_INVERT_Y, value)
 
 
-static var mouse_sensitivity: float = 1.0:
+static var mouse_sensitivity: float = 0.8:
     set(value):
         mouse_sensitivity = value
         SignalBus.on_update_mouse_sensitivity.emit(value)

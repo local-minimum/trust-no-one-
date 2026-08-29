@@ -917,7 +917,8 @@ TEST TO GET
 PAST.", "IF YOU PASS
 THIS SIEVE,
 YOUR SNUB
-I'LL FORGIVE."])
+I'LL FORGIVE.
+ "])
 
 [node name="Room Cards Easy" parent="." unique_id=215299971 node_paths=PackedStringArray("correct_doors") instance=ExtResource("1_opbm8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.01612854, 0, 81.98676)
@@ -1822,7 +1823,7 @@ custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 8
-texture = ExtResource("60_x5tug")
+texture = ExtResource("58_we5v2")
 expand_mode = 1
 stretch_mode = 4
 script = ExtResource("59_x5tug")
