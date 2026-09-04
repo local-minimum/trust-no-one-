@@ -1901,7 +1901,7 @@ vertical_alignment = 1
 script = ExtResource("55_5imcb")
 wiggly_text = "TRUST
 NO ONE..."
-speed = 3.5989999999999998
+speed = 3.599
 metadata/_custom_type_script = "uid://byjgbxxo75rip"
 
 [editable path="Room Pre-Ending"]

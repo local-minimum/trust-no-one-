@@ -54,6 +54,13 @@ func _handle_open(room_side: bool, door: RoomDoor) -> void:
 
             await get_tree().create_timer(10).timeout
 
+            AudioHub.clear_all_dialogues()
+            AudioHub.clear_callbacks(AudioHub.Bus.MASTER)
+            AudioHub.clear_callbacks(AudioHub.Bus.MUSIC)
+            AudioHub.clear_callbacks(AudioHub.Bus.SFX)
+            AudioHub.clear_callbacks(AudioHub.Bus.SFX_ALT)
+            AudioHub.clear_callbacks(AudioHub.Bus.DIALGUE)
+
             get_tree().reload_current_scene()
 
 
